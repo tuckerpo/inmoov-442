@@ -1,2 +1,4 @@
 # inmoov-442
-442 kinematics module
+dual kinematics/graphics repository for plug-in for the chorenoid humanoid robotics simulation tool
+
+done as coursework for CSE442 Software Engineering @ UB
