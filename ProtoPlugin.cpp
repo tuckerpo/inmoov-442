@@ -24,7 +24,7 @@ private:
     void onProtoTriggered()
     {
        	// make things binded to ProtoPlugin() happen
-	// must return true (good way to test functionality)
+	
     }
 };
 
