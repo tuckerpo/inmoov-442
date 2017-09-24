@@ -19,10 +19,10 @@ public:
     virtual bool initialize()
     {
         ToolBar* toolbar = new ToolBar("PrototypeToolbar");
-        bar->addButton("Movement++")
-            ->sigClicked().connect(bind(&Sample1Plugin::onButtonClicked, this, +0.04));
-        bar->addButton("Movement--")
-                ->sigClicked().connect(bind(&Sample1Plugin::onButtonClicked, this, -0.04));
+        toolbar->addButton("Movement++")
+            ->sigClicked().connect(bind(&PrototypePlugin::onButtonClicked, this, +0.04));
+        toolbar->addButton("Movement--")
+                ->sigClicked().connect(bind(&PrototypePlugin::onButtonClicked, this, -0.04));
         addToolBar(toolbar);
 
         return true;
