@@ -64,7 +64,7 @@ If at any point you encounter an error with these commands, visit http://choreon
 for debugging information.
 
 
-After executing these commands, follow the instructions in the youtube video.
+After executing these commands, follow the instructions in the youtube video found here: https://youtu.be/8YtfI-X9g58
 
 
 
