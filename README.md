@@ -9,7 +9,7 @@ Then open a terminal and do:
 
 sudo apt-get install git
 
-git clone -b main https://github.com/TheNergaL/inmoov-442.git
+git clone -b develop https://github.com/TheNergaL/inmoov-442.git
 
 git clone https://github.com/s-nakaoka/choreonoid.git
 
