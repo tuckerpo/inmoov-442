@@ -10,7 +10,7 @@ Done (partially) as coursework for CSE442 Software Engineering @ UB
 - ### Clone Choreonoid and our project repository:
 
   - Open the terminal and run
-
+  
     > sudo apt-get install git
 
     > git clone -b main https://github.com/TheNergaL/inmoov-442.git
