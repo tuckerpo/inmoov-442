@@ -9,7 +9,7 @@ Done (partially) as coursework for CSE442 Software Engineering @ UB
 
 - ### Clone Choreonoid and our project repository:
 
-  - Open the terminal and run this in the directory you want to clone the repositories
+  - Open the terminal and run
 
     > sudo apt-get install git
 
@@ -27,11 +27,11 @@ Done (partially) as coursework for CSE442 Software Engineering @ UB
   
     - ##### Note that this may take some time to run this script. You will also be prompted to enter your sudo password. If you are running a free virtual machine, the password should available from the publisher site. If you run Ubuntu native, enter your sudo password.
 
-- ### Copy and paste plugin into choreonoid directory
+- ### Copy plugin into choreonoid directory
 
   - Go into the inmoov-442 directory and run
 
-    > cp -r Prototype choreonoid/sample/
+    > cp -r Prototype ~/choreonoid/sample/
     
 - ### Configure Choreonoid CMAKE build flags to include plugin
 
@@ -55,7 +55,7 @@ Done (partially) as coursework for CSE442 Software Engineering @ UB
   
       - ##### Note that this will take a considerable amount of time
       
-  - Run Choreonoid using this command
+  - Run Choreonoid after using this command
 
     > ./bin/choreonoid
 
