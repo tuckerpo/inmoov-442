@@ -61,6 +61,7 @@ Done (partially) as coursework for CSE442 Software Engineering @ UB
 
 ### The Choreonoid simulator should be up and running
 
+
 Now the program is running with our working plug-in. To see how to interact with the GUI and get our plug-in to do something, follow the instructions in the YouTube video found here: https://youtu.be/8YtfI-X9g58
 
 If at any point you encounter an error with these commands, visit http://choreonoid.org/en/manuals/1.5/install/build-ubuntu.html for debugging information.
