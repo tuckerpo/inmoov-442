@@ -1,70 +1,74 @@
-# inmoov-442
-dual kinematics/graphics repository for a plug-in for the choreonoid humanoid robotics simulation tool found at choreonoid.org
+# InMoov-442
+Dual kinematics/graphics repository for a plug-in for the choreonoid humanoid robotics simulation tool found at http://choreonoid.org
 
-done (partially) as coursework for CSE442 Software Engineering @ UB
+Done (partially) as coursework for CSE442 Software Engineering @ UB
 
-To use our plugin first install Ubuntu 14.04 or Ubuntu 16.04
+## Installing our Choreonoid plugin
 
-Then open a terminal and do:
+- ### Install Ubuntu 14.04 or Ubuntu 16.04
 
-sudo apt-get install git
+- ### Clone Choreonoid and our project repository:
 
-git clone -b develop https://github.com/TheNergaL/inmoov-442.git
+  - Open the terminal and run
+  
+    > sudo apt-get install git
 
-git clone https://github.com/s-nakaoka/choreonoid.git
+    > git clone -b main https://github.com/TheNergaL/inmoov-442.git
 
-#At this point, ensure that you are inside the choreonoid directory
+    > git clone https://github.com/s-nakaoka/choreonoid.git
+    
+- ### Install necessary libraries and update repository
 
-git pull
+  - Ensure that you are inside the choreonoid directory and run
 
-misc/script/install-requisites-ubuntu-14.04.sh #Note that this may take some time to run this script. You will also be prompted to enter your sudo password. If you are running a free virtual machine, the password should available from the publisher site. If you run Ubuntu native, enter your sudo password.
+    > git pull
 
-cp inmoov-442/CMakeCache.txt choreonoid
+    > misc/script/install-requisites-ubuntu-14.04.sh
+  
+    - ##### Note that this may take some time to run this script. You will also be prompted to enter your sudo password. If you are running a free virtual machine, the password should available from the publisher site. If you run Ubuntu native, enter your sudo password.
 
-cp inmoov-442/Prototype choreonoid/sample/
+- ### Copy plugin into choreonoid directory
 
-#Again, ensure you are in the choreonoid directory here
+  - Go into the inmoov-442 directory and run
 
-cmake .
+    > cp -r Prototype ~/choreonoid/sample/
+    
+    - ##### Command will not work if choreonoid directory isn't in home directory.
+    
+    - You can manually copy the Prototype folder in the inmoov-442 directory into the /choreonoid/sample/ directory
+    
+- ### Configure Choreonoid CMAKE build flags to include plugin
 
-make 
+  - Again, ensure you are in the choreonoid directory and run
 
-#Note that this (make) will take a considerable amount of time
+    > cmake .
+  
+    > ccmake .
 
-./bin/choreonoid
+    - This should open a list of possible CMake build flags. If you are instead prompted with a message to install ccmake, do so.
+  
+    - Navigate down the ccmake list to the BUILD_PROTOTYPE and flag it to ON by pressing the ENTER key (if it is not already flagged for  building).
+  
+    - Save the configuration by pressing C and then generate the configuration by pressing G.
+  
+- ### Build and run Choreonoid
 
-#At this point, the Choreonoid simulator should be up and running
+  - Again, ensure you are in the choreonoid directory here and run
+  
+    > make
+  
+      - ##### Note that this will take a considerable amount of time
+      
+  - Run Choreonoid after using this command
 
-Close the simulator, and go back to the terminal. Ensure that you are in the /choreonoid/.. directory.
+    > ./bin/choreonoid
 
-Type:
-
-ccmake .
-
-This should open a list of possible CMake build flags. If you are instead prompted with a message to install ccmake, do so.
-
-Navigate down the ccmake list to the BUILD_PROTOTYPE and flag it to ON by pressing the enter key (if it is not already flagged for building).
-
-Now type:
-
-make
-
-This should now rebuild the project with our plug-in enabled.
-
-Type:
-
-./bin/choreonoid
-
-Now the program is running with our working plug-in. To see how to interact with the GUI and get our plug-in to do something,
-
-see the YouTube video.
-
-If at any point you encounter an error with these commands, visit http://choreonoid.org/en/manuals/1.5/install/build-ubuntu.html 
-
-for debugging information.
+### The Choreonoid simulator should be up and running
 
 
-After executing these commands, follow the instructions in the youtube video found here: https://youtu.be/8YtfI-X9g58
+Now the program is running with our working plug-in. To see how to interact with the GUI and get our plug-in to do something, follow the instructions in the YouTube video found here: https://youtu.be/8YtfI-X9g58
+
+If at any point you encounter an error with these commands, visit http://choreonoid.org/en/manuals/1.5/install/build-ubuntu.html for debugging information.
 
 
 
