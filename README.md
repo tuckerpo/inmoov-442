@@ -49,7 +49,7 @@ Now type:
 
 make
 
-This should now rebuild the project without our plug-in enabled.
+This should now rebuild the project with our plug-in enabled.
 
 Type:
 
