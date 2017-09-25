@@ -33,6 +33,10 @@ Done (partially) as coursework for CSE442 Software Engineering @ UB
 
     > cp -r Prototype ~/choreonoid/sample/
     
+    - Command will not work if choreonoid directory isn't in home directory.
+    
+    - You can manually copy the Prototype folder in the inmoov-442 directory into the /choreonoid/sample/ directory
+    
 - ### Configure Choreonoid CMAKE build flags to include plugin
 
   - Again, ensure you are in the choreonoid directory and run
