@@ -17,7 +17,8 @@ cp inmoov-442/CMakeCache.txt choreonoid
 cp inmoov-442/Prototype choreonoid/sample/
 #Again, ensure you are in the choreonoid directory here
 cmake .
-make #Note that this will take a considerable amount of time
+make 
+#Note that this (make) will take a considerable amount of time
 ./bin/choreonoid
 #At this point, the Choreonoid simulator should be up and running
 Close the simulator, and go back to the terminal. Ensure that you are in the /choreonoid/.. directory.
