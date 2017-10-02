@@ -34,6 +34,7 @@ class BipedalMovement : public Plugin
 		/* Note that this virtual function must return true. 
 		It may be a good idea to use this restriction as a 
 		testing parameter */
+		return true;
 	}
 
 }
