@@ -1,0 +1,256 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: radian
+name: testModel
+
+links:
+  -
+    name: WAIST
+    jointType: free
+    translation: [ 0, 0, 1.605 ]
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/WAIST.wrl" } }
+  -
+    name: R_HIP
+    parent: WAIST
+    jointType: revolute
+    jointId: 0
+    jointAxis: [ 0.0, 0.0, 1.0 ]
+    translation: [ 0.0, -0.245, -0.023 ]
+    jointRange: [ -2.618, 0.524 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/R_HIP.wrl" } }
+  -
+    name: R_THIGH
+    parent: R_HIP
+    jointType: revolute
+    jointId: 1
+    jointAxis: [ -1, 0, 0 ]
+    translation: [ 0.026, 0.0, -0.20 ]
+    jointRange: [ -1.571, 1.571 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/R_THIGH.wrl" } }
+  -
+    name: R_KNEE
+    parent: R_THIGH
+    jointType: revolute
+    jointId: 2
+    jointAxis: [ 0, -1, 0 ]
+    translation: [ 0.0, 0.0, 0.0 ]
+    jointRange: [ -0.698, 2.094 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/R_KNEE.wrl" } }
+  -
+    name: R_SHIN
+    parent: R_KNEE
+    jointType: revolute
+    jointId: 3
+    jointAxis: [ 0, -1, 0 ]
+    translation: [ -0.01, 0, -0.635 ]
+    jointRange: [ -2.269, 0.0 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/R_SHIN.wrl" } }
+  -
+    name: R_ANKLE
+    parent: R_SHIN
+    jointType: revolute
+    jointId: 4
+    jointAxis: [ 0, 1, 0 ]
+    translation: [ 0.1, 0, -0.67 ]
+    jointRange: [ -1.658, 1.047 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/R_ANKLE.wrl" } }
+  -
+    name: R_FOOT
+    parent: R_ANKLE
+    jointType: revolute
+    jointId: 5
+    jointAxis: [ 1, 0, 0 ]
+    translation: [ 0, -.05, 0 ]
+    jointRange: [ -0.785, 1.571 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/R_FOOT.wrl" } }
+  -
+    name: L_HIP
+    parent: WAIST
+    jointType: revolute
+    jointId: 6
+    jointAxis: [ 0.0, 0.0, 1.0 ]
+    translation: [ 0.0, 0.245, -0.023 ]
+    jointRange: [ -0.524, 2.618 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia:  [0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/L_HIP.wrl" } }
+  -
+    name: L_THIGH
+    parent: L_HIP
+    jointType: revolute
+    jointId: 7
+    jointAxis: [ -1, 0, 0 ]
+    translation: [ 0.026, 0.0, -0.20 ]
+    jointRange: [ -1.571, 1.571 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/L_THIGH.wrl" } }
+  -
+    name: L_KNEE
+    parent: L_THIGH
+    jointType: revolute
+    jointId: 8
+    jointAxis: [ 0, 1, 0 ]
+    translation: [ 0.0, 0.0, 0.0 ]
+    jointRange: [ -2.094, 0.698 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [0,0,0,
+			0,0,0,
+			0,0,0]
+    elements: { Resource: { uri: "parts/L_KNEE.wrl" } }
+  -
+    name: L_SHIN
+    parent: L_KNEE
+    jointType: revolute
+    jointId: 9
+    jointAxis: [ 0, 1, 0 ]
+    translation: [ -0.01, 0, -0.635 ]
+    jointRange: [ 0.0, 2.269 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/L_SHIN.wrl" } }
+  -
+    name: L_ANKLE
+    parent: L_SHIN
+    jointType: revolute
+    jointId: 10
+    jointAxis: [ 0, -1, 0 ]
+    translation: [ 0.1, 0, -0.67 ]
+    jointRange: [ -1.047, 1.658 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/L_ANKLE.wrl" } }
+  -
+    name: L_FOOT
+    parent: L_ANKLE
+    jointType: revolute
+    jointId: 11
+    jointAxis: [ 1, 0, 0 ]
+    translation: [ 0, .05, 0 ]
+    jointRange: [ -1.571, 0.785 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/L_FOOT.wrl" } }
+
+standardPose: [
+0, 0,  20, -40, -20, 0,
+0, 0, -20,  40,  20, 0,
+0, 0]
+
+linkGroup:
+  - WAIST
+  - name: LOWER-BODY
+    links:
+      - name: LEGS
+        links:
+        - name: R-LEG
+          links: [ R_HIP, R_THIGH, R_KNEE, R_SHIN, R_ANKLE, R_FOOT ]
+        - name: L-LEG
+          links: [ L_HIP, L_THIGH, L_KNEE, L_SHIN, L_ANKLE, L_FOOT ]
+
+possibleIkInterpolationLinks: [ WAIST, R_FOOT, L_FOOT ]
+defaultIkInterpolationLinks: [ WAIST, R_FOOT, L_FOOT ]
+possileSupportLinks: [ R_FOOT, L_FOOT ]
+
+defaultIKsetup:
+  WAIST: [ R_FOOT, L_FOOT ]
+  R_ANKLE_R: [ WAIST ]
+  L_ANKLE_R: [ WAIST ]
+
+footLinks:
+  - link: R_FOOT
+    soleCenter: [ 0,0,0 ]
+  - link: L_FOOT
+    soleCenter: [ 0,0,0 ]
+
+symmetricJoints:
+  - [ L_HIP,      R_HIP,      -1 ]
+  - [ L_THIGH,      R_THIGH,      -1 ]
+  - [ L_KNEE,      R_KNEE,      -1 ]
+  - [ L_SHIN,     R_SHIN,     -1 ]
+  - [ L_ANKLE,    R_ANKLE,    -1 ]
+  - [ L_FOOT,    R_FOOT,    -1 ]
+
+symmetricIkLinks:
+  - [ WAIST ]
+  - [ L_FOOT, R_FOOT ]
+
+
+selfCollisionDetection:
+  excludeTreeDepth: 3
+  excludeLinks: [ ]
