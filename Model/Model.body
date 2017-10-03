@@ -47,3 +47,40 @@ links:
       0, 1, 0,
       0, 0, 1 ]
     elements: *HipShape
+
+
+
+
+  -
+    name: THIGH_RIGHT
+    parent: HIP_RIGHT
+    jointType: fixed
+    jointId: 2
+    translation: [ 0, 0, -0.34 ]
+    centerOfMass: [ 0, 0.04, 0 ]
+    mass: 5.1
+    inertia: [
+      1, 0, 0,
+      0, 1, 0,
+      0, 0, 1 ]
+    elements: &ThighShape
+      -
+        type: Transform
+        translation: [ 0, 0, 0.1765 ]
+        elements:
+          Shape:
+            appearance: &ThighRight
+            geometry: { type: Box, size: [ 0.1, 0.1, 0.2535 ] }
+  -
+    name: THIGH_LEFT
+    parent: HIP_LEFT
+    jointType: fixed
+    jointId: 3
+    translation: [ 0, 0, -0.34 ]
+    centerOfMass: [ 0, -0.04, 0 ]
+    mass: 5.1
+    inertia: [
+      1, 0, 0,
+      0, 1, 0,
+      0, 0, 1 ]
+    elements: *ThighShape
