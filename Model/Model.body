@@ -1,0 +1,49 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: Model
+
+links:
+  -
+    name: WAIST
+    jointType: free
+    translation: [ 0, 0, 0.7135 ]
+    centerOfMass: [ 0, 0, 0.0375 ]
+    mass: 27.0
+    inertia: [
+      1, 0, 0,
+      0, 1, 0,
+      0, 0, 1 ]
+    elements: &Waist
+        Shape:
+          geometry: { type: Cylinder, radius: 0.065, height: 0.1 }
+  -
+    name: HIP_RIGHT
+    parent: WAIST
+    jointType: revolute
+    jointAxis: [ 0, 1, 0 ]
+    jointId: 0
+    translation: [ 0, 0.09, 0 ]
+    centerOfMass: [ 0, 0, -0.15 ]
+    mass: 2.0
+    inertia: [
+      1, 0, 0,
+      0, 1, 0,
+      0, 0, 1 ]
+    elements: &HipShape
+        Shape:
+          geometry: { type: Cylinder, radius: 0.065, height: 0.1 }
+  -
+    name: HIP_LEFT
+    parent: WAIST
+    jointType: revolute
+    jointAxis: [ 0, 1, 0 ]
+    jointId: 1
+    translation: [ 0, -0.09, 0 ]
+    centerOfMass: [ 0, 0, -0.15 ]
+    mass: 2.0
+    inertia: [
+      1, 0, 0,
+      0, 1, 0,
+      0, 0, 1 ]
+    elements: *HipShape
