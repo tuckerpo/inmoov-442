@@ -84,7 +84,7 @@ links:
     jointType: revolute
     jointId: 4
     jointAxis: [ 0, 1, 0 ]
-    translation: [ 0.1, 0, -0.67 ]
+    translation: [ 0, 0, -0.67 ]
     jointRange: [ -1.658, 1.047 ]
     rotorInertia: 1.0
     rotorResistor: 1.0
@@ -180,7 +180,7 @@ links:
     jointType: revolute
     jointId: 10
     jointAxis: [ 0, -1, 0 ]
-    translation: [ 0.1, 0, -0.67 ]
+    translation: [ 0, 0, -0.67 ]
     jointRange: [ -1.047, 1.658 ]
     rotorInertia: 1.0
     rotorResistor: 1.0
