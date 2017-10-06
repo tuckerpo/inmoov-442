@@ -9,7 +9,7 @@ links:
     jointType: free
     translation: [ 0, 0, 0.7135 ]
     centerOfMass: [ 0, 0, 0.0375 ]
-    mass: 27.0
+    mass: 5.0
     inertia: [
       1, 0, 0,
       0, 1, 0,
@@ -17,6 +17,8 @@ links:
     elements: &Waist
         Shape:
           geometry: { type: Cylinder, radius: 0.065, height: 0.1 }
+
+
   -
     name: HIP_RIGHT
     parent: WAIST
@@ -24,13 +26,14 @@ links:
     jointAxis: [ 0, 1, 0 ]
     jointId: 0
     translation: [ 0, 0.09, 0 ]
+    jointRange: [ -80, 80 ]
     centerOfMass: [ 0, 0, -0.15 ]
     mass: 2.0
     inertia: [
       1, 0, 0,
       0, 1, 0,
       0, 0, 1 ]
-    elements: &HipShape
+    elements: &Hips
         Shape:
           geometry: { type: Cylinder, radius: 0.065, height: 0.1 }
   -
@@ -40,10 +43,182 @@ links:
     jointAxis: [ 0, 1, 0 ]
     jointId: 1
     translation: [ 0, -0.09, 0 ]
+    jointRange: [ -80, 80 ]
     centerOfMass: [ 0, 0, -0.15 ]
     mass: 2.0
     inertia: [
       1, 0, 0,
       0, 1, 0,
       0, 0, 1 ]
-    elements: *HipShape
+    elements: *Hips
+
+
+  -
+    name: THIGH_RIGHT
+    parent: HIP_RIGHT
+    jointType: fixed
+    translation: [ 0, 0, -0.34 ]
+    centerOfMass: [ 0, 0.04, 0 ]
+    mass: 5.1
+    inertia: [
+      1, 0, 0,
+      0, 1, 0,
+      0, 0, 1 ]
+    elements: &Thighs
+      -
+        type: Transform
+        translation: [ 0, 0, 0.1765 ]
+        elements:
+          Shape:
+            appearance: &ThighShape
+            geometry: { type: Box, size: [ 0.1, 0.1, 0.2535 ] }
+  -
+    name: THIGH_LEFT
+    parent: HIP_LEFT
+    jointType: fixed
+    translation: [ 0, 0, -0.34 ]
+    centerOfMass: [ 0, -0.04, 0 ]
+    mass: 5.1
+    inertia: [
+      1, 0, 0,
+      0, 1, 0,
+      0, 0, 1 ]
+    elements: *Thighs
+
+
+  -
+    name: KNEE_RIGHT
+    parent: THIGH_RIGHT
+    jointType: revolute
+    jointAxis: [ 0, 1, 0 ]
+    jointId: 2
+    translation: [ 0, 0, 0.04 ]
+    jointRange: [ -150, 0 ]
+    centerOfMass: [ 0, 0, -0.3 ]
+    mass: 7.0
+    inertia: [
+      1, 0, 0,
+      0, 1, 0,
+      0, 0, 1 ]
+    elements: &Knees
+        Shape:
+          geometry: { type: Cylinder, radius: 0.06, height: 0.1 }
+  -
+    name: KNEE_LEFT
+    parent: THIGH_LEFT
+    jointType: revolute
+    jointAxis: [ 0, 1, 0 ]
+    jointId: 3
+    translation: [ 0, 0, 0.04 ]
+    jointRange: [ -150, 0 ]
+    centerOfMass: [ 0, 0, -0.3 ]
+    mass: 7.0
+    inertia: [
+      1, 0, 0,
+      0, 1, 0,
+      0, 0, 1 ]
+    elements: *Knees
+
+
+  -
+    name: CALVES_RIGHT
+    parent: KNEE_RIGHT
+    jointType: fixed
+    translation: [ 0, 0, -0.34 ]
+    centerOfMass: [ 0, 0.04, 0 ]
+    mass: 5.1
+    inertia: [
+      1, 0, 0,
+      0, 1, 0,
+      0, 0, 1 ]
+    elements: &Calves
+      -
+        type: Transform
+        translation: [ 0, 0, 0.188 ]
+        elements:
+          Shape:
+            appearance: &CalvesShape
+            geometry: { type: Box, size: [ 0.1, 0.1, 0.242 ] }
+  -
+    name: CALVES_LEFT
+    parent: KNEE_LEFT
+    jointType: fixed
+    translation: [ 0, 0, -0.34 ]
+    centerOfMass: [ 0, 0.04, 0 ]
+    mass: 5.1
+    inertia: [
+      1, 0, 0,
+      0, 1, 0,
+      0, 0, 1 ]
+    elements: *Calves
+
+
+  -
+    name: ANKLE_RIGHT
+    parent: CALVES_RIGHT
+    jointType: revolute
+    jointAxis: [ 0, 1, 0 ]
+    jointId: 4
+    translation: [ 0, 0, 0.072 ]
+    jointRange: [ -20, 20 ]
+    centerOfMass: [ -0.15, 0, 0 ]
+    mass: 2.5
+    inertia: [
+      1, 0, 0,
+      0, 1, 0,
+      0, 0, 1 ]
+    elements: &Ankles
+      Shape:
+        geometry: { type: Cylinder, radius: 0.05, height: 0.1 }
+  -
+    name: ANKLE_LEFT
+    parent: CALVES_LEFT
+    jointType: revolute
+    jointAxis: [ 0, 1, 0 ]
+    jointId: 5
+    translation: [ 0, 0, 0.072 ]
+    jointRange: [ -20, 20 ]
+    centerOfMass: [ -0.15, 0, 0 ]
+    mass: 2.5
+    inertia: [
+      1, 0, 0,
+      0, 1, 0, 
+      0, 0, 1 ]
+    elements: *Ankles
+
+
+  -
+    name: FOOT_RIGHT
+    parent: ANKLE_RIGHT
+    jointType: fixed
+    jointAxis: [ 1, 0, 0 ]
+    translation: [ -0.05, 0, -0.035 ]
+    centerOfMass: [ 0.28, 0, -0.2 ]
+    mass: 1.9
+    inertia: [
+      1, 0, 0,
+      0, 1, 0,
+      0, 0, 1 ]
+    elements: &Feet
+      Shape:
+        geometry: { type: Box, size: [ 0.21, 0.11, 0.055 ] }
+  -
+    name: FOOT_LEFT
+    parent: ANKLE_LEFT
+    jointType: fixed
+    jointAxis: [ 1, 0, 0 ]
+    translation: [ -0.05, 0, -0.035 ]
+    centerOfMass: [ 0.28, 0, -0.2 ]
+    mass: 1.9
+    inertia: [
+      1, 0, 0,
+      0, 1, 0,
+      0, 0, 1 ]
+    elements: *Feet
+
+linkGroup:
+  - WAIST
+  - name: RIGHT-LEG
+    links: [ HIP_RIGHT, THIGH_RIGHT, KNEE_RIGHT, CALVES_RIGHT, ANKLE_RIGHT, FOOT_RIGHT ]
+  - name: LEFT-LEG
+    links: [ HIP_LEFT, THIGH_LEFT, KNEE_LEFT, CALVES_LEFT, ANKLE_LEFT, FOOT_LEFT ]
