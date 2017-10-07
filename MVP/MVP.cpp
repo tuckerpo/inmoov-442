@@ -3,6 +3,12 @@
 #include <cnoid/ItemTreeView>
 #include <cnoid/BodyItem>
 #include <cnoid/ToolBar>
+#include <cnoid/SimpleController>
+#include <cnoid/MenuManager>
+#include <cnoid/MessageView>
+#include <string>
+#include <stdlib.h>
+
 
 /* Begin namespace(s) to not have to fully qualify every line of code */
 using namespace cnoid;
@@ -16,6 +22,8 @@ class BipedalMovement : public Plugin
 {
   public:
 	bool leftLeg;
+	int frame_count;
+	Action* menuItem = menuManager().setPath("/View").addItem("Frame Count");
 	BipedalMovement() : Plugin("InMoov Bipedal Kinematics")
 	{
 		/* define that Body files will be implemented */
@@ -39,14 +47,25 @@ class BipedalMovement : public Plugin
 			->sigClicked()
 			.connect(bind(&BipedalMovement::swingLegs, this, 0.04));
 
+		TB->addButton("RotateRLEG")
+			->sigClicked()
+			.connect(bind(&BipedalMovement::changeOrientationR, this, 0.04));
+		TB->addButton("RotateLLEG")
+			->sigClicked()
+			.connect(bind(&BipedalMovement::changeOrientationL, this, 0.04));
+		TB->addButton("Frames++")
+			->sigClicked()
+			.connect(bind(&BipedalMovement::changeFrame, this, 100));
+
+		menuItem->sigTriggered().connect(bind(&BipedalMovement::frameTrigger, this));
 		/* Note that this virtual function must return true.
 		It may be a good idea to use this restriction as a
 		testing parameter */
     addToolBar(TB);
-		return true;
+	return true;
 	}
 
-	void onButtonClicked(double dq)
+  void onButtonClicked(double dq)
 	{
 		/* vector of type BodyItem */
 		ItemList<BodyItem> bodyItems =
@@ -63,7 +82,7 @@ class BipedalMovement : public Plugin
 		}
 	}
 
-	void swingLegs(double dq)
+ 	void swingLegs(double dq)
     	{
 		ItemList<BodyItem> bodyItems =
 		    ItemTreeView::mainInstance()->selectedItems<BodyItem>();
@@ -74,13 +93,13 @@ class BipedalMovement : public Plugin
 		    int rleg_hip_p = body->link("RLEG_HIP_P")->jointId();
 		    int lleg_knee = body->link("LLEG_KNEE")->jointId();
 		    int rleg_knee = body->link("RLEG_KNEE")->jointId();
-
+			
 		    if(body->joint(lleg_hip_p)->q() < -1) {
 		        this->leftLeg = true;
 		    } else if(body->joint(lleg_hip_p)->q() > 1) {
 		        this->leftLeg = false;
 		    }
-
+			
 		    if(this->leftLeg) {
 		        body->joint(lleg_hip_p)->q() += dq;
 		        if(body->joint(lleg_knee)->q() > 0)
@@ -93,12 +112,52 @@ class BipedalMovement : public Plugin
 		        body->joint(rleg_hip_p)->q() += dq;
 		        if(body->joint(rleg_knee)->q() > 0)
 		            body->joint(rleg_knee)->q() -= dq;
-
+	
 		    }
 		    bodyItems[i]->notifyKinematicStateChange(true);
 		}
     	}
+	void changeOrientationL(double dq) 
+	{	
+		ItemList<BodyItem> bodyItems =
+		    ItemTreeView::mainInstance()->selectedItems<BodyItem>();
+		for(size_t i=0; i < bodyItems.size(); ++i){
+		    BodyPtr body = bodyItems[i]->body();
+			int LLEG_HIP_Y = body->link("LLEG_HIP_Y")->jointId();
+			int RLEG_HIP_Y = body->link("RLEG_HIP_Y")->jointId();
+		
+		
+		body->joint(LLEG_HIP_Y)->q() += dq;
+   		bodyItems[i]->notifyKinematicStateChange(true);
+		}
 
+	}	
+
+
+	void changeOrientationR(double dq) {
+	ItemList<BodyItem> bodyItems =
+		    ItemTreeView::mainInstance()->selectedItems<BodyItem>();
+		for(size_t i=0; i < bodyItems.size(); ++i){
+		    BodyPtr body = bodyItems[i]->body();
+			int LLEG_HIP_Y = body->link("LLEG_HIP_Y")->jointId();
+			int RLEG_HIP_Y = body->link("RLEG_HIP_Y")->jointId();
+		
+		
+		body->joint(RLEG_HIP_Y)->q() += dq;
+   		bodyItems[i]->notifyKinematicStateChange(true);
+		}
+	}
+
+	void changeFrame(int frames) {
+		frame_count += frames;
+	}
+
+void frameTrigger()
+    {
+	string frameNum = to_string(frame_count);
+        MessageView::instance()->putln("Frames to be walked: ");
+	MessageView::instance()->putln(frameNum);
+    }
 };
 
 
