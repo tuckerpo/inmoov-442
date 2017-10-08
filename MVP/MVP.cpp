@@ -8,6 +8,8 @@
 #include <cnoid/MessageView>
 #include <string>
 #include <stdlib.h>
+#include <iostream>
+#include <fstream>
 
 
 /* Begin namespace(s) to not have to fully qualify every line of code */
@@ -23,6 +25,7 @@ class BipedalMovement : public Plugin
   public:
 	bool leftLeg;
 	int frame_count;
+  std::ofstream file;
 	Action* menuItem = menuManager().setPath("/View").addItem("Frame Count");
 	BipedalMovement() : Plugin("InMoov Bipedal Kinematics")
 	{
@@ -32,6 +35,8 @@ class BipedalMovement : public Plugin
 
 	virtual bool initialize()
 	{
+    // Output file of all joint positions of SR1
+    file.open("jointPos");
 		leftLeg = true;
 		ToolBar* TB = new ToolBar("InMoov Kinematics");
 		TB->addButton("Walk")
@@ -89,17 +94,24 @@ class BipedalMovement : public Plugin
 
 		for(size_t i=0; i < bodyItems.size(); ++i){
 		    BodyPtr body = bodyItems[i]->body();
+
+        file << " - [ ";
+        for(int i = 0; i < body->numJoints(); i++) {
+            file << body->joint(i)->q() << ", ";
+        }
+        file << " ]""\n";
+
 		    int lleg_hip_p = body->link("LLEG_HIP_P")->jointId();
 		    int rleg_hip_p = body->link("RLEG_HIP_P")->jointId();
 		    int lleg_knee = body->link("LLEG_KNEE")->jointId();
 		    int rleg_knee = body->link("RLEG_KNEE")->jointId();
-			
+
 		    if(body->joint(lleg_hip_p)->q() < -1) {
 		        this->leftLeg = true;
 		    } else if(body->joint(lleg_hip_p)->q() > 1) {
 		        this->leftLeg = false;
 		    }
-			
+
 		    if(this->leftLeg) {
 		        body->joint(lleg_hip_p)->q() += dq;
 		        if(body->joint(lleg_knee)->q() > 0)
@@ -112,26 +124,26 @@ class BipedalMovement : public Plugin
 		        body->joint(rleg_hip_p)->q() += dq;
 		        if(body->joint(rleg_knee)->q() > 0)
 		            body->joint(rleg_knee)->q() -= dq;
-	
+
 		    }
 		    bodyItems[i]->notifyKinematicStateChange(true);
 		}
     	}
-	void changeOrientationL(double dq) 
-	{	
+	void changeOrientationL(double dq)
+	{
 		ItemList<BodyItem> bodyItems =
 		    ItemTreeView::mainInstance()->selectedItems<BodyItem>();
 		for(size_t i=0; i < bodyItems.size(); ++i){
 		    BodyPtr body = bodyItems[i]->body();
 			int LLEG_HIP_Y = body->link("LLEG_HIP_Y")->jointId();
 			int RLEG_HIP_Y = body->link("RLEG_HIP_Y")->jointId();
-		
-		
+
+
 		body->joint(LLEG_HIP_Y)->q() += dq;
    		bodyItems[i]->notifyKinematicStateChange(true);
 		}
 
-	}	
+	}
 
 
 	void changeOrientationR(double dq) {
@@ -141,8 +153,8 @@ class BipedalMovement : public Plugin
 		    BodyPtr body = bodyItems[i]->body();
 			int LLEG_HIP_Y = body->link("LLEG_HIP_Y")->jointId();
 			int RLEG_HIP_Y = body->link("RLEG_HIP_Y")->jointId();
-		
-		
+
+
 		body->joint(RLEG_HIP_Y)->q() += dq;
    		bodyItems[i]->notifyKinematicStateChange(true);
 		}
