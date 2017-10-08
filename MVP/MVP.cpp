@@ -92,42 +92,50 @@ class BipedalMovement : public Plugin
 		ItemList<BodyItem> bodyItems =
 		    ItemTreeView::mainInstance()->selectedItems<BodyItem>();
 
-		for(size_t i=0; i < bodyItems.size(); ++i){
-		    BodyPtr body = bodyItems[i]->body();
+        for(size_t i=0; i < bodyItems.size(); ++i){
+    		    BodyPtr body = bodyItems[i]->body();
 
-        file << " - [ ";
-        for(int i = 0; i < body->numJoints(); i++) {
-            file << body->joint(i)->q() << ", ";
-        }
-        file << " ]""\n";
+            file << " - [ ";
+            for(int i = 0; i < body->numJoints(); i++) {
+                file << body->joint(i)->q() << ", ";
+            }
+            file << " ]""\n";
 
-		    int lleg_hip_p = body->link("LLEG_HIP_P")->jointId();
-		    int rleg_hip_p = body->link("RLEG_HIP_P")->jointId();
-		    int lleg_knee = body->link("LLEG_KNEE")->jointId();
-		    int rleg_knee = body->link("RLEG_KNEE")->jointId();
+    		    int lleg_hip_p = body->link("LLEG_HIP_P")->jointId();
+    		    int rleg_hip_p = body->link("RLEG_HIP_P")->jointId();
+    		    int lleg_knee = body->link("LLEG_KNEE")->jointId();
+    		    int rleg_knee = body->link("RLEG_KNEE")->jointId();
 
-		    if(body->joint(lleg_hip_p)->q() < -1) {
-		        this->leftLeg = true;
-		    } else if(body->joint(lleg_hip_p)->q() > 1) {
-		        this->leftLeg = false;
-		    }
+            int rarm_shoulder_p = body->link("RARM_SHOULDER_P")->jointId();
+            int larm_shoulder_p = body->link("LARM_SHOULDER_P")->jointId();
 
-		    if(this->leftLeg) {
-		        body->joint(lleg_hip_p)->q() += dq;
-		        if(body->joint(lleg_knee)->q() > 0)
-		            body->joint(lleg_knee)->q() -= dq;
-		        body->joint(rleg_hip_p)->q() -= dq;
-		        body->joint(rleg_knee)->q() += dq;
-		    } else {
-		        body->joint(lleg_hip_p)->q() -= dq;
-		        body->joint(lleg_knee)->q() += dq;
-		        body->joint(rleg_hip_p)->q() += dq;
-		        if(body->joint(rleg_knee)->q() > 0)
-		            body->joint(rleg_knee)->q() -= dq;
+    		    if(body->joint(lleg_hip_p)->q() < -1) {
+    		        this->leftLeg = true;
+    		    } else if(body->joint(lleg_hip_p)->q() > 1) {
+    		        this->leftLeg = false;
+    		    }
 
-		    }
-		    bodyItems[i]->notifyKinematicStateChange(true);
-		}
+    		    if(this->leftLeg) {
+    		        body->joint(lleg_hip_p)->q() += dq;
+    		        if(body->joint(lleg_knee)->q() > 0)
+    		            body->joint(lleg_knee)->q() -= dq;
+    		        body->joint(rleg_hip_p)->q() -= dq;
+    		        body->joint(rleg_knee)->q() += dq;
+                body->joint(rarm_shoulder_p)->q() += dq;
+                body->joint(larm_shoulder_p)->q() -= dq;
+
+    		    } else {
+    		        body->joint(lleg_hip_p)->q() -= dq;
+    		        body->joint(lleg_knee)->q() += dq;
+    		        body->joint(rleg_hip_p)->q() += dq;
+    		        if(body->joint(rleg_knee)->q() > 0)
+    		            body->joint(rleg_knee)->q() -= dq;
+                body->joint(rarm_shoulder_p)->q() -= dq;
+                body->joint(larm_shoulder_p)->q() += dq;
+
+    		    }
+    		    bodyItems[i]->notifyKinematicStateChange(true);
+    		}
     	}
 	void changeOrientationL(double dq)
 	{
