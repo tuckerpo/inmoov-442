@@ -30,12 +30,27 @@ Done (partially) as coursework for CSE442 Software Engineering @ UB
 - ### Copy plugin into choreonoid directory
 
   - Go into the inmoov-442 directory and run
+  
+  # MVP Plugin
+ 
+  > cp -r MVP ~/choreonoid/sample/
+  
+  - ### Configure Choreonoid CMAKE build flags to include plugin
 
-    > cp -r Prototype ~/choreonoid/sample/
+  - Again, ensure you are in the choreonoid directory and run
+
+    > cmake .
+  
+    > ccmake .
+
+- Turn flag BUILD_InMoovPlugin to ON
+- Press "C" to configure and "G" to generate
+
+
     
     - ##### Command will not work if choreonoid directory isn't in home directory.
     
-    - You can manually copy the Prototype folder in the inmoov-442 directory into the /choreonoid/sample/ directory
+    - You can manually copy the MVP folder in the inmoov-442 directory into the /choreonoid/sample/ directory
     
 - ### Configure Choreonoid CMAKE build flags to include plugin
 
@@ -61,7 +76,22 @@ Done (partially) as coursework for CSE442 Software Engineering @ UB
       
   - Run Choreonoid after using this command
 
-    > ./bin/choreonoid
+    > ./bin/choreonoid /sample/MVP/InMoov.cnoid
+    
+    
+- Plugin and models should now be loaded
+
+  - Plugin buttons are on the toolbar of choreonoid near the top
+  - Buttons must be pressed multiple times to continue walking simulation
+
+  - "SR1" buttons can only be used with the SR1 model. Use it by clicking on SR1 on the left of choreonoid to highlight it.
+  - "SR1 Walk" simulates a walking animation for SR1 model.
+  - "SR1 RotateRLEG" rotates SR1 model's right leg counter clockwise.
+  - "SR1 RotateLLEG" rotates SR1 model's left leg counter clockwise.
+
+  - "LEGS" buttons must be used with the LEGS model. Use it by clicking on LEGS on the left of choreonoid to highlight it.
+  - "LEGS Walk" simulates a walking animation for LEGS model.
+  - "LEGS Reset" resets the LEGS model back to neutral/standing position.
 
 ### The Choreonoid simulator should be up and running
 
