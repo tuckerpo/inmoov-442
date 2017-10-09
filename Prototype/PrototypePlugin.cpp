@@ -91,86 +91,107 @@ class PrototypePlugin : public Plugin
  	void swingLegs(double dq)
     	{
 		ItemList<BodyItem> bodyItems =
-		    ItemTreeView::mainInstance()->selectedItems<BodyItem>();
+		ItemTreeView::mainInstance()->selectedItems<BodyItem>();
 
-        for(size_t i=0; i < bodyItems.size(); ++i){
-    		    BodyPtr body = bodyItems[i]->body();
+		for(size_t i=0; i < bodyItems.size(); ++i)
+		{
+	    		BodyPtr body = bodyItems[i]->body();
 
-			file << " - [ ";
-           		for(int i = 0; i < body->numJoints(); i++)
+			// Checks if SR1 model
+			if(body->numJoints() != 29)
 			{
-                		file << body->joint(i)->q() << ", ";
-            		}
-            		file << " ]""\n";
+				MessageView::instance()->putln("Incorrect model! Please select the SR1 model.");
+			}
+			else
+			{
 
-    		    int lleg_hip_p = body->link("LLEG_HIP_P")->jointId();
-    		    int rleg_hip_p = body->link("RLEG_HIP_P")->jointId();
-    		    int lleg_knee = body->link("LLEG_KNEE")->jointId();
-    		    int rleg_knee = body->link("RLEG_KNEE")->jointId();
+				file << " - [ ";
+		   		for(int i = 0; i < body->numJoints(); i++)
+				{
+		        		file << body->joint(i)->q() << ", ";
+		    		}
+		    		file << " ]""\n";
 
-            int rarm_shoulder_p = body->link("RARM_SHOULDER_P")->jointId();
-            int larm_shoulder_p = body->link("LARM_SHOULDER_P")->jointId();
+	    		    	int lleg_hip_p = body->link("LLEG_HIP_P")->jointId();
+	    		    	int rleg_hip_p = body->link("RLEG_HIP_P")->jointId();
+	    		    	int lleg_knee = body->link("LLEG_KNEE")->jointId();
+	    		    	int rleg_knee = body->link("RLEG_KNEE")->jointId();
+		    		int rarm_shoulder_p = body->link("RARM_SHOULDER_P")->jointId();
+		    		int larm_shoulder_p = body->link("LARM_SHOULDER_P")->jointId();
 
-    		    if(body->joint(lleg_hip_p)->q() < -1) {
-    		        this->leftLeg = true;
-    		    } else if(body->joint(lleg_hip_p)->q() > 1) {
-    		        this->leftLeg = false;
-    		    }
+	    		    	if(body->joint(lleg_hip_p)->q() < -1) {
+	    		        	this->leftLeg = true;
+	    		    	} else if(body->joint(lleg_hip_p)->q() > 1) {
+	    		        	this->leftLeg = false;
+	    		    	}
 
-    		    if(this->leftLeg) {
-    		        body->joint(lleg_hip_p)->q() += dq;
-    		        if(body->joint(lleg_knee)->q() > 0)
-    		            body->joint(lleg_knee)->q() -= dq;
-    		        body->joint(rleg_hip_p)->q() -= dq;
-    		        body->joint(rleg_knee)->q() += dq;
-                body->joint(rarm_shoulder_p)->q() += dq;
-                body->joint(larm_shoulder_p)->q() -= dq;
+	    		    	if(this->leftLeg) {
+	    		        	body->joint(lleg_hip_p)->q() += dq;
+	    		        	if(body->joint(lleg_knee)->q() > 0)
+	    		            		body->joint(lleg_knee)->q() -= dq;
+	    		        		body->joint(rleg_hip_p)->q() -= dq;
+	    		        		body->joint(rleg_knee)->q() += dq;
+		        			body->joint(rarm_shoulder_p)->q() += dq;
+		        			body->joint(larm_shoulder_p)->q() -= dq;
+	    		    	} else {
+	    		        	body->joint(lleg_hip_p)->q() -= dq;
+	    		        	body->joint(lleg_knee)->q() += dq;
+	    		        	body->joint(rleg_hip_p)->q() += dq;
+	    		        	if(body->joint(rleg_knee)->q() > 0)
+	    		            		body->joint(rleg_knee)->q() -= dq;
+		        			body->joint(rarm_shoulder_p)->q() -= dq;
+		        			body->joint(larm_shoulder_p)->q() += dq;
 
-    		    } else {
-    		        body->joint(lleg_hip_p)->q() -= dq;
-    		        body->joint(lleg_knee)->q() += dq;
-    		        body->joint(rleg_hip_p)->q() += dq;
-    		        if(body->joint(rleg_knee)->q() > 0)
-    		            body->joint(rleg_knee)->q() -= dq;
-                body->joint(rarm_shoulder_p)->q() -= dq;
-                body->joint(larm_shoulder_p)->q() += dq;
+	    		    	}
+	    		    	bodyItems[i]->notifyKinematicStateChange(true);
+			}
 
-    		    }
-    		    bodyItems[i]->notifyKinematicStateChange(true);
     		}
     	}
 
 	void changeOrientationL(double dq)
 	{
 		ItemList<BodyItem> bodyItems =
-		    ItemTreeView::mainInstance()->selectedItems<BodyItem>();
+		ItemTreeView::mainInstance()->selectedItems<BodyItem>();
 		for(size_t i=0; i < bodyItems.size(); ++i){
-		    BodyPtr body = bodyItems[i]->body();
-			int LLEG_HIP_Y = body->link("LLEG_HIP_Y")->jointId();
-			int RLEG_HIP_Y = body->link("RLEG_HIP_Y")->jointId();
-
-
-		body->joint(LLEG_HIP_Y)->q() += dq;
-   		bodyItems[i]->notifyKinematicStateChange(true);
+		    	BodyPtr body = bodyItems[i]->body();
+			if(body->numJoints() != 29)
+			{
+				MessageView::instance()->putln("Incorrect model! Please select the SR1 model.");
+			}
+			else
+			{
+				int LLEG_HIP_Y = body->link("LLEG_HIP_Y")->jointId();
+				int RLEG_HIP_Y = body->link("RLEG_HIP_Y")->jointId();
+				body->joint(LLEG_HIP_Y)->q() += dq;
+   				bodyItems[i]->notifyKinematicStateChange(true);
+			}
 		}
 
 	}
 
-	void changeOrientationR(double dq) {
-	ItemList<BodyItem> bodyItems =
-		    ItemTreeView::mainInstance()->selectedItems<BodyItem>();
+	void changeOrientationR(double dq)
+	{
+		ItemList<BodyItem> bodyItems =
+		ItemTreeView::mainInstance()->selectedItems<BodyItem>();
 		for(size_t i=0; i < bodyItems.size(); ++i){
-		    BodyPtr body = bodyItems[i]->body();
-			int LLEG_HIP_Y = body->link("LLEG_HIP_Y")->jointId();
-			int RLEG_HIP_Y = body->link("RLEG_HIP_Y")->jointId();
-
-
-		body->joint(RLEG_HIP_Y)->q() += dq;
-   		bodyItems[i]->notifyKinematicStateChange(true);
+			BodyPtr body = bodyItems[i]->body();
+			if(body->numJoints() != 29)
+			{
+				MessageView::instance()->putln("Incorrect model! Please select the SR1 model.");
+			}
+			else
+			{
+				int LLEG_HIP_Y = body->link("LLEG_HIP_Y")->jointId();
+				int RLEG_HIP_Y = body->link("RLEG_HIP_Y")->jointId();
+				body->joint(RLEG_HIP_Y)->q() += dq;
+   				bodyItems[i]->notifyKinematicStateChange(true);
+			}
 		}
 	}
 
-	void changeFrame(int frames) {
+	void changeFrame(int frames)
+	{
 		frame_count += frames;
 	}
 
@@ -198,157 +219,165 @@ class PrototypePlugin : public Plugin
 			/* Obtain joint ids from model */
 			BodyPtr body = bodyItems[i]->body();
 
-			int hip_right = body->link("HIP_RIGHT")->jointId();
-			int hip_left = body->link("HIP_LEFT")->jointId();
-			int knee_right = body->link("KNEE_RIGHT")->jointId();
-			int knee_left = body->link("KNEE_LEFT")->jointId();
-			int ankle_right = body->link("ANKLE_RIGHT")->jointId();
-			int ankle_left = body->link("ANKLE_LEFT")->jointId();
-
-			/* Left leg moves forward first */
-			if(this->stepDone)
+			// Checks if LEGS model
+			if(body->numJoints() != 6)
 			{
-				/* When left leg back and right leg forward */
-				if(body->joint(hip_left)->q() < -0.01)
-				{
-					// Left leg moves forward
-					body->joint(hip_left)->q() += dq;
-					if(body->joint(hip_left)->q() > -0.19)
-					{
-						body->joint(knee_left)->q() += dq * 2.5;
-						if(body->joint(hip_left)->q() > -0.07)
-						{
-							body->joint(ankle_left)->q() += dq / 2;
-						}
-					}
-
-					// Right leg moves back
-					if(body->joint(hip_left)->q() < -0.19)
-					{
-						body->joint(knee_right)->q() -= dq * 2.5;
-					}
-					else if(body->joint(hip_left)->q() >= -0.19 && body->joint(knee_right)->q() < -0.01)
-					{
-						body->joint(knee_right)->q() += dq * 2.5;
-					}
-
-					if(body->joint(hip_right)->q() > 0.17)
-					{
-						body->joint(hip_right)->q() -= dq / 0.625;
-					}
-					else if(body->joint(hip_right)->q() <= 0.17)
-					{
-						body->joint(hip_right)->q() -= dq;
-					}
-					
-				}
-				/* When both legs in neutral/straight position */			
-				else if(body->joint(hip_left)->q() >= -0.01 && body->joint(hip_left)->q() < 0.15)
-				{
-					// Left leg continues to move forward
-					body->joint(hip_left)->q() += dq;
-					if(body->joint(knee_left)->q() > -0.39)
-					{
-						body->joint(knee_left)->q() -= dq * 2.5;
-					}
-
-					// Right leg continues to move back
-					body->joint(hip_right)->q() -= dq;
-					body->joint(ankle_right)->q() += dq;
-				}
-				/* Left leg halfway forwards and right leg halfway backwards */
-				else if(body->joint(hip_left)->q() >= 0.15 && body->joint(hip_left)->q() < 0.47)
-				{
-					// Right leg moving fully backwards
-					if(body->joint(hip_left)->q() < 0.35)
-					{
-						body->joint(knee_right)->q() -= dq * 2.5;
-						body->joint(ankle_right)->q() -= dq;
-					}
-					body->joint(hip_right)->q() -= dq * 0.625;
-
-					// Left leg extending fully forwards
-					if(body->joint(hip_left)->q() >= 0.3)
-					{
-						body->joint(knee_left)->q() += dq * 2.5;
-					}
-					body->joint(hip_left)->q() += dq;
-				}
-				/* Left leg front and right leg back complete.
-				   Switching to right leg front and left leg back. */
-				else if(body->joint(hip_left)->q() >= 0.47)
-				{
-					this->stepDone = false;
-				}
+				MessageView::instance()->putln("Incorrect model! Please select the LEGS model.");
 			}
-
 			else
 			{
-				/* Left leg starts moving backwards and right leg starts moving forward */
-				if(body->joint(hip_left)->q() <= 0.49 && body->joint(hip_left)->q() >= 0.33)
-				{
-					// Left leg moves backward
-					if(body->joint(knee_left)->q() > -0.4)
-					{
-						body->joint(knee_left)->q() -= dq * 2.5;
-					}
-					body->joint(hip_left)->q() -= dq;
+				int hip_right = body->link("HIP_RIGHT")->jointId();
+				int hip_left = body->link("HIP_LEFT")->jointId();
+				int knee_right = body->link("KNEE_RIGHT")->jointId();
+				int knee_left = body->link("KNEE_LEFT")->jointId();
+				int ankle_right = body->link("ANKLE_RIGHT")->jointId();
+				int ankle_left = body->link("ANKLE_LEFT")->jointId();
 
-					// Right leg moves forward
-					body->joint(hip_right)->q() += dq;
-				}
-				/* Moving both legs back to neutral/standing position */
-				else if(body->joint(hip_left)->q() < 0.33 && body->joint(hip_left)->q() >= 0.01)
+				/* Left leg moves forward first */
+				if(this->stepDone)
 				{
-					// Left leg moves backward
-					body->joint(knee_left)->q() += dq * 1.25;
-					body->joint(hip_left)->q() -= dq;
-
-					// Right leg moves forward
-					body->joint(hip_right)->q() += dq * 0.625;
-					if(body->joint(hip_left)->q() < 0.29 && body->joint(hip_left)->q() > 0.11)
+					/* When left leg back and right leg forward */
+					if(body->joint(hip_left)->q() < -0.01)
 					{
-						body->joint(knee_right)->q() += dq * 2.5;
-						if(body->joint(hip_left)->q() < 0.19)
+						// Left leg moves forward
+						body->joint(hip_left)->q() += dq;
+						if(body->joint(hip_left)->q() > -0.19)
 						{
-							body->joint(ankle_right)->q() += dq / 2;
+							body->joint(knee_left)->q() += dq * 2.5;
+							if(body->joint(hip_left)->q() > -0.07)
+							{
+								body->joint(ankle_left)->q() += dq / 2;
+							}
+						}
+
+						// Right leg moves back
+						if(body->joint(hip_left)->q() < -0.19)
+						{
+							body->joint(knee_right)->q() -= dq * 2.5;
+						}
+						else if(body->joint(hip_left)->q() >= -0.19 && body->joint(knee_right)->q() < -0.01)
+						{
+							body->joint(knee_right)->q() += dq * 2.5;
+						}
+
+						if(body->joint(hip_right)->q() > 0.17)
+						{
+							body->joint(hip_right)->q() -= dq / 0.625;
+						}
+						else if(body->joint(hip_right)->q() <= 0.17)
+						{
+							body->joint(hip_right)->q() -= dq;
+						}
+					
+					}
+					/* When both legs in neutral/straight position */			
+					else if(body->joint(hip_left)->q() >= -0.01 && body->joint(hip_left)->q() < 0.15)
+					{
+						// Left leg continues to move forward
+						body->joint(hip_left)->q() += dq;
+						if(body->joint(knee_left)->q() > -0.39)
+						{
+							body->joint(knee_left)->q() -= dq * 2.5;
+						}
+
+						// Right leg continues to move back
+						body->joint(hip_right)->q() -= dq;
+						body->joint(ankle_right)->q() += dq;
+					}
+					/* Left leg halfway forwards and right leg halfway backwards */
+					else if(body->joint(hip_left)->q() >= 0.15 && body->joint(hip_left)->q() < 0.47)
+					{
+						// Right leg moving fully backwards
+						if(body->joint(hip_left)->q() < 0.35)
+						{
+							body->joint(knee_right)->q() -= dq * 2.5;
+							body->joint(ankle_right)->q() -= dq;
+						}
+						body->joint(hip_right)->q() -= dq * 0.625;
+
+						// Left leg extending fully forwards
+						if(body->joint(hip_left)->q() >= 0.3)
+						{
+							body->joint(knee_left)->q() += dq * 2.5;
+						}
+						body->joint(hip_left)->q() += dq;
+					}
+					/* Left leg front and right leg back complete.
+					   Switching to right leg front and left leg back. */
+					else if(body->joint(hip_left)->q() >= 0.47)
+					{
+						this->stepDone = false;
+					}
+				}
+
+				else
+				{
+					/* Left leg starts moving backwards and right leg starts moving forward */
+					if(body->joint(hip_left)->q() <= 0.49 && body->joint(hip_left)->q() >= 0.33)
+					{
+						// Left leg moves backward
+						if(body->joint(knee_left)->q() > -0.4)
+						{
+							body->joint(knee_left)->q() -= dq * 2.5;
+						}
+						body->joint(hip_left)->q() -= dq;
+
+						// Right leg moves forward
+						body->joint(hip_right)->q() += dq;
+					}
+					/* Moving both legs back to neutral/standing position */
+					else if(body->joint(hip_left)->q() < 0.33 && body->joint(hip_left)->q() >= 0.01)
+					{
+						// Left leg moves backward
+						body->joint(knee_left)->q() += dq * 1.25;
+						body->joint(hip_left)->q() -= dq;
+
+						// Right leg moves forward
+						body->joint(hip_right)->q() += dq * 0.625;
+						if(body->joint(hip_left)->q() < 0.29 && body->joint(hip_left)->q() > 0.11)
+						{
+							body->joint(knee_right)->q() += dq * 2.5;
+							if(body->joint(hip_left)->q() < 0.19)
+							{
+								body->joint(ankle_right)->q() += dq / 2;
+							}
 						}
 					}
-				}
-				/* Both legs back to neutral/standing position.
-				   Begin moving left leg further back and right leg forwards*/
-				else if(body->joint(hip_left)->q() < 0.01 && body->joint(hip_left)->q() >= -0.35)
-				{
-					// Left leg steps backward
-					body->joint(hip_left)->q() -= dq;
-					body->joint(ankle_left)->q() += dq;
-					if(body->joint(hip_left)->q() <= -0.19)
+					/* Both legs back to neutral/standing position.
+					   Begin moving left leg further back and right leg forwards*/
+					else if(body->joint(hip_left)->q() < 0.01 && body->joint(hip_left)->q() >= -0.35)
 					{
-						body->joint(knee_left)->q() -= dq * 2.5;
-						body->joint(ankle_left)->q() -= dq * 2;
-					}
+						// Left leg steps backward
+						body->joint(hip_left)->q() -= dq;
+						body->joint(ankle_left)->q() += dq;
+						if(body->joint(hip_left)->q() <= -0.19)
+						{
+							body->joint(knee_left)->q() -= dq * 2.5;
+							body->joint(ankle_left)->q() -= dq * 2;
+						}
 
-					// Right leg extends forward
-					if(body->joint(knee_right)->q() > -0.39 && body->joint(hip_right)->q() < 0.25)
-					{
-						body->joint(knee_right)->q() -= dq * 2.5;
+						// Right leg extends forward
+						if(body->joint(knee_right)->q() > -0.39 && body->joint(hip_right)->q() < 0.25)
+						{
+							body->joint(knee_right)->q() -= dq * 2.5;
+						}
+						if(body->joint(hip_right)->q() >= 0.25)
+						{
+							body->joint(knee_right)->q() += dq * 2.5;
+						}
+						body->joint(hip_right)->q() += dq * 1.33333;
 					}
-					if(body->joint(hip_right)->q() >= 0.25)
+					/* Right leg front and left leg back complete.
+					   Switching back to right leg back and left leg front. */
+					else if(body->joint(hip_left)->q() < -0.35)
 					{
-						body->joint(knee_right)->q() += dq * 2.5;
+						this->stepDone = true;
 					}
-					body->joint(hip_right)->q() += dq * 1.33333;
 				}
-				/* Right leg front and left leg back complete.
-				   Switching back to right leg back and left leg front. */
-				else if(body->joint(hip_left)->q() < -0.35)
-				{
-					this->stepDone = true;
-				}
+
+				/* Update model's joint positions */
+				bodyItems[i]->notifyKinematicStateChange(true);
 			}
-
-			/* Update model's joint positions */
-			bodyItems[i]->notifyKinematicStateChange(true);
 		}
     	}
 
@@ -361,22 +390,30 @@ class PrototypePlugin : public Plugin
 		for(size_t i=0; i < bodyItems.size(); ++i)
 		{
 			BodyPtr body = bodyItems[i]->body();
-			int hip_right = body->link("HIP_RIGHT")->jointId();
-			int hip_left = body->link("HIP_LEFT")->jointId();
-			int knee_right = body->link("KNEE_RIGHT")->jointId();
-			int knee_left = body->link("KNEE_LEFT")->jointId();
-			int ankle_right = body->link("ANKLE_RIGHT")->jointId();
-			int ankle_left = body->link("ANKLE_LEFT")->jointId();
+			if(body->numJoints() != 6)
+			{
+				MessageView::instance()->putln("Incorrect model! Please select the LEGS model.");
+			}
+			else
+			{
+				int hip_right = body->link("HIP_RIGHT")->jointId();
+				int hip_left = body->link("HIP_LEFT")->jointId();
+				int knee_right = body->link("KNEE_RIGHT")->jointId();
+				int knee_left = body->link("KNEE_LEFT")->jointId();
+				int ankle_right = body->link("ANKLE_RIGHT")->jointId();
+				int ankle_left = body->link("ANKLE_LEFT")->jointId();
 
-			body->joint(hip_right)->q() = 0;
-			body->joint(hip_left)->q() = 0;
-			body->joint(knee_right)->q() = 0;
-			body->joint(knee_left)->q() = 0;
-			body->joint(ankle_right)->q() = 0;
-			body->joint(ankle_left)->q() = 0;
+				body->joint(hip_right)->q() = 0;
+				body->joint(hip_left)->q() = 0;
+				body->joint(knee_right)->q() = 0;
+				body->joint(knee_left)->q() = 0;
+				body->joint(ankle_right)->q() = 0;
+				body->joint(ankle_left)->q() = 0;
 
-			bodyItems[i]->notifyKinematicStateChange(true);
+				bodyItems[i]->notifyKinematicStateChange(true);
+			}
 		}
+
 	}
 
 	/* Blank function */
