@@ -6,13 +6,43 @@ items:
   children: 
     - 
       id: 1
-      name: "Model"
+      name: "SR1"
       plugin: Body
       class: BodyItem
       data: 
-        modelFile: "${PROJECT_DIR}/Model.body"
+        modelFile: "${PROJECT_DIR}/SR1.body"
         currentBaseLink: "WAIST"
         rootPosition: [ 0, 0, 0.7135 ]
+        rootAttitude: [ 
+          1, 0, 0, 
+          0, 1, 0, 
+          0, 0, 1 ]
+        jointPositions: [ 
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
+        initialRootPosition: [ 0, 0, 0.7135 ]
+        initialRootAttitude: [ 
+          1, 0, 0, 
+          0, 1, 0, 
+          0, 0, 1 ]
+        initialJointPositions: [ 
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
+        zmp: [ 0, 0, 0 ]
+        collisionDetection: true
+        selfCollisionDetection: false
+        isEditable: true
+    - 
+      id: 2
+      name: "LEGS"
+      plugin: Body
+      class: BodyItem
+      data: 
+        modelFile: "${PROJECT_DIR}/LEGS.body"
+        currentBaseLink: "WAIST"
+        rootPosition: [ 0.3, 0.7, 0.7135 ]
         rootAttitude: [ 
           1, 0, 0, 
           0, 1, 0, 
@@ -41,7 +71,7 @@ views:
     mounted: true
     state: 
       selected: [ 1 ]
-      checked: [ 1 ]
+      checked: [ 1, 2 ]
   - 
     id: 2
     plugin: Base
@@ -91,9 +121,9 @@ views:
           fieldOfView: 0.698132
           near: 0.01
           far: 100
-          eye: [ -0.743379235, -1.26684742, 1.00352746 ]
-          direction: [ 0.454709438, 0.821459156, -0.344157206 ]
-          up: [ 0.166673259, 0.301104977, 0.938912039 ]
+          eye: [ 2.42297639, 1.4677382, 1.03293455 ]
+          direction: [ -0.888888889, -0.444444444, -0.111111111 ]
+          up: [ -0.099380799, -0.0496903995, 0.99380799 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -204,6 +234,11 @@ Body:
         showCenterOfMass: false
         showPpcom: false
         showZmp: false
+      - 
+        bodyItem: 2
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
     staticModelEditing: true
   "KinematicFaultChecker": 
     checkJointPositions: true
@@ -249,7 +284,7 @@ viewAreas:
                 - 
                   type: pane
                   views: [ 4, 5 ]
-                  current: 5
+                  current: 4
                 - 
                   type: pane
                   views: [ 3 ]
@@ -271,4 +306,4 @@ layoutOfToolBars:
     - 
       - { name: "KinematicsBar", x: 0, priority: 0 }
       - { name: "BodyMotionGenerationBar", x: 234, priority: 0 }
-      - { name: "InMoov Plugin", x: 371, priority: 0 }
+      - { name: "InMoov Kinematics", x: 371, priority: 0 }
