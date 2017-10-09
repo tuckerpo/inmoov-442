@@ -1,10 +1,9 @@
 # MVP Plugin
-- Delete old Prototype folder in choreonoid/sample
-- Move entire Prototype folder into choreonoid/sample
-- Use "cmake ." then "ccmake ." and turn flag BUILD_PROTOTYPE to ON
+- Move entire MVP folder into choreonoid/sample
+- Use "cmake ." then "ccmake ." and turn flag BUILD_InMoovPlugin to ON
 - Press "C" to configure and "G" to generate
 - Use "make" to build choreonoid
-- Open choreonoid in choreonoid/bin and load the project InMoov.cnoid in choreonoid/sample/Prototype
+- Open choreonoid in choreonoid/bin and load the project InMoov.cnoid in choreonoid/sample/MVP
 - Plugin and models should now be loaded
 
   - Plugin buttons are on the toolbar of choreonoid near the top
