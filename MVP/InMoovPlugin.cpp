@@ -20,7 +20,7 @@ using namespace std;
 #define GRAVITY 9.8
 
 /* define our MVP logic class, declare plugin function */
-class PrototypePlugin : public Plugin
+class InMoovPlugin : public Plugin
 {
   public:
 	/* Boolean for completion of single step for LEGS MODEL */
@@ -30,7 +30,7 @@ class PrototypePlugin : public Plugin
 	int frame_count;
   	std::ofstream file;
 	Action* menuItem = menuManager().setPath("/View").addItem("Frame Count");
-	PrototypePlugin() : Plugin("InMoov Bipedal Kinematics")
+	InMoovPlugin() : Plugin("InMoov Bipedal Kinematics")
 	{
 		/* define that Body files will be implemented */
 		require("Body");
@@ -52,16 +52,16 @@ class PrototypePlugin : public Plugin
 		/* SR1 Buttons */
 		TB->addButton("SR1 Walk")
 			->sigClicked()
-			.connect(bind(&PrototypePlugin::swingLegs, this, 0.04));
+			.connect(bind(&InMoovPlugin::swingLegs, this, 0.04));
 		TB->addButton("SR1 RotateRLEG")
 			->sigClicked()
-			.connect(bind(&PrototypePlugin::changeOrientationR, this, 0.04));
+			.connect(bind(&InMoovPlugin::changeOrientationR, this, 0.04));
 		TB->addButton("SR1 RotateLLEG")
 			->sigClicked()
-			.connect(bind(&PrototypePlugin::changeOrientationL, this, 0.04));
+			.connect(bind(&InMoovPlugin::changeOrientationL, this, 0.04));
 		TB->addButton("SR1 Frames++")
 			->sigClicked()
-			.connect(bind(&PrototypePlugin::changeFrame, this, 100));
+			.connect(bind(&InMoovPlugin::changeFrame, this, 100));
 
 
 
@@ -70,17 +70,17 @@ class PrototypePlugin : public Plugin
 		/* Initialize stepDone boolean */
 		stepDone = true;
 		/* Separator button in plugin gui */
-		TB->addButton("          ")->sigClicked().connect(bind(&PrototypePlugin::separate, this));
+		TB->addButton("          ")->sigClicked().connect(bind(&InMoovPlugin::separate, this));
 		/* Adds Walk button to toolbar */
-		TB->addButton("LEGS Walk")->sigClicked().connect(bind(&PrototypePlugin::walk, this));
+		TB->addButton("LEGS Walk")->sigClicked().connect(bind(&InMoovPlugin::walk, this));
 		/* Adds Reset button to toolbar */
-		TB->addButton("LEGS Reset")->sigClicked().connect(bind(&PrototypePlugin::reset, this));
+		TB->addButton("LEGS Reset")->sigClicked().connect(bind(&InMoovPlugin::reset, this));
 
 		/* LEGS Model Buttons */
 
 
 
-		menuItem->sigTriggered().connect(bind(&PrototypePlugin::frameTrigger, this));
+		menuItem->sigTriggered().connect(bind(&InMoovPlugin::frameTrigger, this));
 		/* Note that this virtual function must return true.
 		It may be a good idea to use this restriction as a
 		testing parameter */
@@ -429,4 +429,4 @@ class PrototypePlugin : public Plugin
 
 };
 
-CNOID_IMPLEMENT_PLUGIN_ENTRY(PrototypePlugin)
+CNOID_IMPLEMENT_PLUGIN_ENTRY(InMoovPlugin)
