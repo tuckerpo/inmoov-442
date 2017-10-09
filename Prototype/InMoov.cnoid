@@ -42,10 +42,10 @@ items:
       data: 
         modelFile: "${PROJECT_DIR}/LEGS.body"
         currentBaseLink: "WAIST"
-        rootPosition: [ 0.3, 0.7, 0.7135 ]
+        rootPosition: [ 0, 0.7, 0.7135 ]
         rootAttitude: [ 
-          1, 0, 0, 
-          0, 1, 0, 
+          -1, -1.2246468e-16, 0, 
+          1.2246468e-16, -1, 0, 
           0, 0, 1 ]
         jointPositions: [  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
         initialRootPosition: [ 0, 0, 0.7135 ]
@@ -121,9 +121,9 @@ views:
           fieldOfView: 0.698132
           near: 0.01
           far: 100
-          eye: [ 2.42297639, 1.4677382, 1.03293455 ]
-          direction: [ -0.888888889, -0.444444444, -0.111111111 ]
-          up: [ -0.099380799, -0.0496903995, 0.99380799 ]
+          eye: [ 1.84872357, 1.96713147, 1.35324871 ]
+          direction: [ -0.721211224, -0.650177657, -0.239004988 ]
+          up: [ -0.177517841, -0.160033747, 0.97101834 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
