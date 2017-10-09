@@ -30,10 +30,9 @@ Done (partially) as coursework for CSE442 Software Engineering @ UB
 - ### Copy plugin into choreonoid directory
 
   - Go into the inmoov-442 directory and run
-  
-  # MVP Plugin
- 
-  > cp -r MVP ~/choreonoid/sample/
+    > cp -r MVP ~/choreonoid/sample/
+    
+  - You can manually copy the MVP folder in the inmoov-442 directory into the /choreonoid/sample/ directory
   
   - ### Configure Choreonoid CMAKE build flags to include plugin
 
@@ -42,27 +41,10 @@ Done (partially) as coursework for CSE442 Software Engineering @ UB
     > cmake .
   
     > ccmake .
-
-- Turn flag BUILD_InMoovPlugin to ON
-- Press "C" to configure and "G" to generate
-
-
     
-    - ##### Command will not work if choreonoid directory isn't in home directory.
-    
-    - You can manually copy the MVP folder in the inmoov-442 directory into the /choreonoid/sample/ directory
-    
-- ### Configure Choreonoid CMAKE build flags to include plugin
-
-  - Again, ensure you are in the choreonoid directory and run
-
-    > cmake .
-  
-    > ccmake .
-
     - This should open a list of possible CMake build flags. If you are instead prompted with a message to install ccmake, do so.
   
-    - Navigate down the ccmake list to the BUILD_PROTOTYPE and flag it to ON by pressing the ENTER key (if it is not already flagged for  building).
+    - Navigate down the ccmake list to the BUILD_InMoovPlugin and flag it to ON by pressing the ENTER key (if it is not already flagged for  building).
   
     - Save the configuration by pressing C and then generate the configuration by pressing G.
   
