@@ -15,7 +15,7 @@ links:
 			0,0,0 ]
     elements: { Resource: { uri: "parts/WAIST.wrl" } }
   -
-    name: R_HIP
+    name: HIP_RIGHT
     parent: WAIST
     jointType: revolute
     jointId: 0
@@ -29,10 +29,10 @@ links:
     inertia: [ 0,0,0,
 			0,0,0,
 			0,0,0 ]
-    elements: { Resource: { uri: "parts/R_HIP.wrl" } }
+    elements: { Resource: { uri: "parts/HIP_RIGHT.wrl" } }
   -
-    name: R_THIGH
-    parent: R_HIP
+    name: THIGH_RIGHT
+    parent: HIP_RIGHT
     jointType: revolute
     jointId: 1
     jointAxis: [ -1, 0, 0 ]
@@ -45,10 +45,10 @@ links:
     inertia: [ 0,0,0,
 			0,0,0,
 			0,0,0 ]
-    elements: { Resource: { uri: "parts/R_THIGH.wrl" } }
+    elements: { Resource: { uri: "parts/THIGH_RIGHT.wrl" } }
   -
-    name: R_KNEE
-    parent: R_THIGH
+    name: KNEE_RIGHT
+    parent: THIGH_RIGHT
     jointType: revolute
     jointId: 2
     jointAxis: [ 0, -1, 0 ]
@@ -61,10 +61,10 @@ links:
     inertia: [ 0,0,0,
 			0,0,0,
 			0,0,0 ]
-    elements: { Resource: { uri: "parts/R_KNEE.wrl" } }
+    elements: { Resource: { uri: "parts/KNEE_RIGHT.wrl" } }
   -
-    name: R_SHIN
-    parent: R_KNEE
+    name: CALVES_RIGHT
+    parent: KNEE_RIGHT
     jointType: revolute
     jointId: 3
     jointAxis: [ 0, -1, 0 ]
@@ -77,10 +77,10 @@ links:
     inertia: [ 0,0,0,
 			0,0,0,
 			0,0,0 ]
-    elements: { Resource: { uri: "parts/R_SHIN.wrl" } }
+    elements: { Resource: { uri: "parts/CALVES_RIGHT.wrl" } }
   -
-    name: R_ANKLE
-    parent: R_SHIN
+    name: ANKLE_RIGHT
+    parent: CALVES_RIGHT
     jointType: revolute
     jointId: 4
     jointAxis: [ 0, 1, 0 ]
@@ -93,10 +93,10 @@ links:
     inertia: [ 0,0,0,
 			0,0,0,
 			0,0,0 ]
-    elements: { Resource: { uri: "parts/R_ANKLE.wrl" } }
+    elements: { Resource: { uri: "parts/ANKLE_RIGHT.wrl" } }
   -
-    name: R_FOOT
-    parent: R_ANKLE
+    name: FOOT_RIGHT
+    parent: ANKLE_RIGHT
     jointType: revolute
     jointId: 5
     jointAxis: [ 1, 0, 0 ]
@@ -109,9 +109,9 @@ links:
     inertia: [ 0,0,0,
 			0,0,0,
 			0,0,0 ]
-    elements: { Resource: { uri: "parts/R_FOOT.wrl" } }
+    elements: { Resource: { uri: "parts/FOOT_RIGHT.wrl" } }
   -
-    name: L_HIP
+    name: HIP_LEFT
     parent: WAIST
     jointType: revolute
     jointId: 6
@@ -125,10 +125,10 @@ links:
     inertia:  [0,0,0,
 			0,0,0,
 			0,0,0 ]
-    elements: { Resource: { uri: "parts/L_HIP.wrl" } }
+    elements: { Resource: { uri: "parts/HIP_LEFT.wrl" } }
   -
-    name: L_THIGH
-    parent: L_HIP
+    name: THIGH_LEFT
+    parent: HIP_LEFT
     jointType: revolute
     jointId: 7
     jointAxis: [ -1, 0, 0 ]
@@ -141,10 +141,10 @@ links:
     inertia: [ 0,0,0,
 			0,0,0,
 			0,0,0 ]
-    elements: { Resource: { uri: "parts/L_THIGH.wrl" } }
+    elements: { Resource: { uri: "parts/THIGH_LEFT.wrl" } }
   -
-    name: L_KNEE
-    parent: L_THIGH
+    name: KNEE_LEFT
+    parent: THIGH_LEFT
     jointType: revolute
     jointId: 8
     jointAxis: [ 0, 1, 0 ]
@@ -157,10 +157,10 @@ links:
     inertia: [0,0,0,
 			0,0,0,
 			0,0,0]
-    elements: { Resource: { uri: "parts/L_KNEE.wrl" } }
+    elements: { Resource: { uri: "parts/KNEE_LEFT.wrl" } }
   -
-    name: L_SHIN
-    parent: L_KNEE
+    name: CALVES_LEFT
+    parent: KNEE_LEFT
     jointType: revolute
     jointId: 9
     jointAxis: [ 0, 1, 0 ]
@@ -173,10 +173,10 @@ links:
     inertia: [ 0,0,0,
 			0,0,0,
 			0,0,0 ]
-    elements: { Resource: { uri: "parts/L_SHIN.wrl" } }
+    elements: { Resource: { uri: "parts/CALVES_LEFT.wrl" } }
   -
-    name: L_ANKLE
-    parent: L_SHIN
+    name: ANKLE_LEFT
+    parent: CALVES_LEFT
     jointType: revolute
     jointId: 10
     jointAxis: [ 0, -1, 0 ]
@@ -189,10 +189,10 @@ links:
     inertia: [ 0,0,0,
 			0,0,0,
 			0,0,0 ]
-    elements: { Resource: { uri: "parts/L_ANKLE.wrl" } }
+    elements: { Resource: { uri: "parts/ANKLE_LEFT.wrl" } }
   -
-    name: L_FOOT
-    parent: L_ANKLE
+    name: FOOT_LEFT
+    parent: ANKLE_LEFT
     jointType: revolute
     jointId: 11
     jointAxis: [ 1, 0, 0 ]
@@ -205,7 +205,7 @@ links:
     inertia: [ 0,0,0,
 			0,0,0,
 			0,0,0 ]
-    elements: { Resource: { uri: "parts/L_FOOT.wrl" } }
+    elements: { Resource: { uri: "parts/FOOT_LEFT.wrl" } }
 
 standardPose: [
 0, 0,  20, -40, -20, 0,
@@ -219,36 +219,36 @@ linkGroup:
       - name: LEGS
         links:
         - name: R-LEG
-          links: [ R_HIP, R_THIGH, R_KNEE, R_SHIN, R_ANKLE, R_FOOT ]
+          links: [ HIP_RIGHT, THIGH_RIGHT, KNEE_RIGHT, CALVES_RIGHT, ANKLE_RIGHT, FOOT_RIGHT ]
         - name: L-LEG
-          links: [ L_HIP, L_THIGH, L_KNEE, L_SHIN, L_ANKLE, L_FOOT ]
+          links: [ HIP_LEFT, THIGH_LEFT, KNEE_LEFT, CALVES_LEFT, ANKLE_LEFT, FOOT_LEFT ]
 
-possibleIkInterpolationLinks: [ WAIST, R_FOOT, L_FOOT ]
-defaultIkInterpolationLinks: [ WAIST, R_FOOT, L_FOOT ]
-possileSupportLinks: [ R_FOOT, L_FOOT ]
+possibleIkInterpolationLinks: [ WAIST, FOOT_RIGHT, FOOT_LEFT ]
+defaultIkInterpolationLinks: [ WAIST, FOOT_RIGHT, FOOT_LEFT ]
+possileSupportLinks: [ FOOT_RIGHT, FOOT_LEFT ]
 
 defaultIKsetup:
-  WAIST: [ R_FOOT, L_FOOT ]
-  R_ANKLE_R: [ WAIST ]
-  L_ANKLE_R: [ WAIST ]
+  WAIST: [ FOOT_RIGHT, FOOT_LEFT ]
+  ANKLE_RIGHT_R: [ WAIST ]
+  ANKLE_LEFT_R: [ WAIST ]
 
 footLinks:
-  - link: R_FOOT
+  - link: FOOT_RIGHT
     soleCenter: [ 0,0,0 ]
-  - link: L_FOOT
+  - link: FOOT_LEFT
     soleCenter: [ 0,0,0 ]
 
 symmetricJoints:
-  - [ L_HIP,      R_HIP,      -1 ]
-  - [ L_THIGH,      R_THIGH,      -1 ]
-  - [ L_KNEE,      R_KNEE,      -1 ]
-  - [ L_SHIN,     R_SHIN,     -1 ]
-  - [ L_ANKLE,    R_ANKLE,    -1 ]
-  - [ L_FOOT,    R_FOOT,    -1 ]
+  - [ HIP_LEFT,      HIP_RIGHT,      -1 ]
+  - [ THIGH_LEFT,      THIGH_RIGHT,      -1 ]
+  - [ KNEE_LEFT,      KNEE_RIGHT,      -1 ]
+  - [ CALVES_LEFT,     CALVES_RIGHT,     -1 ]
+  - [ ANKLE_LEFT,    ANKLE_RIGHT,    -1 ]
+  - [ FOOT_LEFT,    FOOT_RIGHT,    -1 ]
 
 symmetricIkLinks:
   - [ WAIST ]
-  - [ L_FOOT, R_FOOT ]
+  - [ FOOT_LEFT, FOOT_RIGHT ]
 
 
 selfCollisionDetection:
