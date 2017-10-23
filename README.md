@@ -3,6 +3,20 @@ Dual kinematics/graphics repository for a plug-in for the choreonoid humanoid ro
 
 Done (partially) as coursework for CSE442 Software Engineering @ UB
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+111111
 ## Installing our Choreonoid plugin
 
 - ### Install Ubuntu 14.04 or Ubuntu 16.04
