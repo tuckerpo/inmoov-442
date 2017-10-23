@@ -13,7 +13,7 @@ Done (partially) as coursework for CSE442 Software Engineering @ UB
   
     > sudo apt-get install git
 
-    > git clone -b develop https://github.com/TheNergaL/inmoov-442.git
+    > git clone -b beta https://github.com/TheNergaL/inmoov-442.git
 
     > git clone https://github.com/s-nakaoka/choreonoid.git
     
