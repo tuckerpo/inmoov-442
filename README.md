@@ -13,7 +13,7 @@ Done (partially) as coursework for CSE442 Software Engineering @ UB
   
     > sudo apt-get install git
 
-    > git clone -b develop https://github.com/TheNergaL/inmoov-442.git
+    > git clone -b beta https://github.com/TheNergaL/inmoov-442.git
 
     > git clone https://github.com/s-nakaoka/choreonoid.git
     
@@ -82,6 +82,4 @@ Now the program is running with our working plug-in.
 
 If at any point you encounter an error with these commands, visit http://choreonoid.org/en/manuals/1.5/install/build-ubuntu.html for debugging information.
 
-
-
-
+kjwong2018 forked
