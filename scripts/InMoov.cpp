@@ -2,6 +2,6 @@
 #include "cstdlib"
 int main(int argc, char const *argv[])
 {
-	system("./Run.sh");
+	system("xterm ./Run.sh");
 	return 0;
 }
