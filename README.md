@@ -3,65 +3,13 @@ Dual kinematics/graphics repository for a plug-in for the choreonoid humanoid ro
 
 Done (partially) as coursework for CSE442 Software Engineering @ UB
 
-## Installing our Choreonoid plugin
-
-- ### Install Ubuntu 14.04 or Ubuntu 16.04
-
-- ### Clone Choreonoid and our project repository:
-
-  - Open the terminal and run
-  
-    > sudo apt-get install git
-
-    > git clone -b develop https://github.com/TheNergaL/inmoov-442.git
-
-    > git clone https://github.com/s-nakaoka/choreonoid.git
+## Running our Choreonoid plugin
+- Currently, our plugin only runs on Ubuntu 14.04 and 16.04.
+- You can download the software here https://www.acsu.buffalo.edu/~simonmai/InMoov.zip
+- Our user guide is located here https://www.acsu.buffalo.edu/~simonmai/#Guide
     
-- ### Install necessary libraries and update repository
-
-  - Ensure that you are inside the choreonoid directory and run
-
-    > git pull
-
-    > misc/script/install-requisites-ubuntu-14.04.sh
-  
-    - ##### Note that this may take some time to run this script. You will also be prompted to enter your sudo password. If you are running a free virtual machine, the password should available from the publisher site. If you run Ubuntu native, enter your sudo password.
-
-- ### Copy plugin into choreonoid directory
-
-  - Go into the inmoov-442 directory and run
-    > cp -r MVP ~/choreonoid/sample/
-    
-  - You can manually copy the MVP folder in the inmoov-442 directory into the /choreonoid/sample/ directory
-  
-  - ### Configure Choreonoid CMAKE build flags to include plugin
-
-  - Again, ensure you are in the choreonoid directory and run
-
-    > cmake .
-  
-    > ccmake .
-    
-    - This should open a list of possible CMake build flags. If you are instead prompted with a message to install ccmake, do so.
-  
-    - Navigate down the ccmake list to the BUILD_InMoovPlugin and flag it to ON by pressing the ENTER key (if it is not already flagged for  building).
-  
-    - Save the configuration by pressing C and then generate the configuration by pressing G.
-  
-- ### Build and run Choreonoid
-
-  - Again, ensure you are in the choreonoid directory here and run
-  
-    > make
-  
-      - ##### Note that this will take a considerable amount of time
-      
-  - Run Choreonoid after using this command
-
-    > ./bin/choreonoid /sample/MVP/InMoov.cnoid
-    
-    
-- Plugin and models should now be loaded
+## Choreonoid Plugin User Guide    
+- Plugin functions are listed below
 
   - Plugin buttons are on the toolbar of choreonoid near the top
   - Buttons must be pressed multiple times to continue walking simulation
@@ -74,9 +22,6 @@ Done (partially) as coursework for CSE442 Software Engineering @ UB
   - "LEGS" buttons must be used with the LEGS model. Use it by clicking on LEGS on the left of choreonoid to highlight it.
   - "LEGS Walk" simulates a walking animation for LEGS model.
   - "LEGS Reset" resets the LEGS model back to neutral/standing position.
-
-### The Choreonoid simulator should be up and running
-
 
 Now the program is running with our working plug-in.
 
