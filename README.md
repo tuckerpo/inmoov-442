@@ -81,7 +81,3 @@ Done (partially) as coursework for CSE442 Software Engineering @ UB
 Now the program is running with our working plug-in.
 
 If at any point you encounter an error with these commands, visit http://choreonoid.org/en/manuals/1.5/install/build-ubuntu.html for debugging information.
-
-
-
-
