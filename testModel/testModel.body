@@ -1,0 +1,256 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: radian
+name: testModel
+
+links:
+  -
+    name: WAIST
+    jointType: free
+    translation: [ 0, 0, 1.605 ]
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/WAIST.wrl" } }
+  -
+    name: HIP_RIGHT
+    parent: WAIST
+    jointType: revolute
+    jointId: 0
+    jointAxis: [ 0.0, 0.0, 1.0 ]
+    translation: [ 0.0, -0.245, -0.023 ]
+    jointRange: [ -2.618, 0.524 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/HIP_RIGHT.wrl" } }
+  -
+    name: THIGH_RIGHT
+    parent: HIP_RIGHT
+    jointType: revolute
+    jointId: 1
+    jointAxis: [ -1, 0, 0 ]
+    translation: [ 0.026, 0.0, -0.20 ]
+    jointRange: [ -1.571, 1.571 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/THIGH_RIGHT.wrl" } }
+  -
+    name: KNEE_RIGHT
+    parent: THIGH_RIGHT
+    jointType: revolute
+    jointId: 2
+    jointAxis: [ 0, -1, 0 ]
+    translation: [ 0.0, 0.0, 0.0 ]
+    jointRange: [ -0.698, 2.094 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/KNEE_RIGHT.wrl" } }
+  -
+    name: CALVES_RIGHT
+    parent: KNEE_RIGHT
+    jointType: revolute
+    jointId: 3
+    jointAxis: [ 0, -1, 0 ]
+    translation: [ -0.01, 0, -0.635 ]
+    jointRange: [ -2.269, 0.0 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/CALVES_RIGHT.wrl" } }
+  -
+    name: ANKLE_RIGHT
+    parent: CALVES_RIGHT
+    jointType: revolute
+    jointId: 4
+    jointAxis: [ 0, 1, 0 ]
+    translation: [ 0, 0, -0.67 ]
+    jointRange: [ -1.658, 1.047 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/ANKLE_RIGHT.wrl" } }
+  -
+    name: FOOT_RIGHT
+    parent: ANKLE_RIGHT
+    jointType: revolute
+    jointId: 5
+    jointAxis: [ 1, 0, 0 ]
+    translation: [ 0, -.05, 0 ]
+    jointRange: [ -0.785, 1.571 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/FOOT_RIGHT.wrl" } }
+  -
+    name: HIP_LEFT
+    parent: WAIST
+    jointType: revolute
+    jointId: 6
+    jointAxis: [ 0.0, 0.0, 1.0 ]
+    translation: [ 0.0, 0.245, -0.023 ]
+    jointRange: [ -0.524, 2.618 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia:  [0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/HIP_LEFT.wrl" } }
+  -
+    name: THIGH_LEFT
+    parent: HIP_LEFT
+    jointType: revolute
+    jointId: 7
+    jointAxis: [ -1, 0, 0 ]
+    translation: [ 0.026, 0.0, -0.20 ]
+    jointRange: [ -1.571, 1.571 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/THIGH_LEFT.wrl" } }
+  -
+    name: KNEE_LEFT
+    parent: THIGH_LEFT
+    jointType: revolute
+    jointId: 8
+    jointAxis: [ 0, 1, 0 ]
+    translation: [ 0.0, 0.0, 0.0 ]
+    jointRange: [ -2.094, 0.698 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [0,0,0,
+			0,0,0,
+			0,0,0]
+    elements: { Resource: { uri: "parts/KNEE_LEFT.wrl" } }
+  -
+    name: CALVES_LEFT
+    parent: KNEE_LEFT
+    jointType: revolute
+    jointId: 9
+    jointAxis: [ 0, 1, 0 ]
+    translation: [ -0.01, 0, -0.635 ]
+    jointRange: [ 0.0, 2.269 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/CALVES_LEFT.wrl" } }
+  -
+    name: ANKLE_LEFT
+    parent: CALVES_LEFT
+    jointType: revolute
+    jointId: 10
+    jointAxis: [ 0, -1, 0 ]
+    translation: [ 0, 0, -0.67 ]
+    jointRange: [ -1.047, 1.658 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/ANKLE_LEFT.wrl" } }
+  -
+    name: FOOT_LEFT
+    parent: ANKLE_LEFT
+    jointType: revolute
+    jointId: 11
+    jointAxis: [ 1, 0, 0 ]
+    translation: [ 0, .05, 0 ]
+    jointRange: [ -1.571, 0.785 ]
+    rotorInertia: 1.0
+    rotorResistor: 1.0
+    centerOfMass: [ 0,0,0 ]
+    mass: 0
+    inertia: [ 0,0,0,
+			0,0,0,
+			0,0,0 ]
+    elements: { Resource: { uri: "parts/FOOT_LEFT.wrl" } }
+
+standardPose: [
+0, 0,  20, -40, -20, 0,
+0, 0, -20,  40,  20, 0,
+0, 0]
+
+linkGroup:
+  - WAIST
+  - name: LOWER-BODY
+    links:
+      - name: LEGS
+        links:
+        - name: R-LEG
+          links: [ HIP_RIGHT, THIGH_RIGHT, KNEE_RIGHT, CALVES_RIGHT, ANKLE_RIGHT, FOOT_RIGHT ]
+        - name: L-LEG
+          links: [ HIP_LEFT, THIGH_LEFT, KNEE_LEFT, CALVES_LEFT, ANKLE_LEFT, FOOT_LEFT ]
+
+possibleIkInterpolationLinks: [ WAIST, FOOT_RIGHT, FOOT_LEFT ]
+defaultIkInterpolationLinks: [ WAIST, FOOT_RIGHT, FOOT_LEFT ]
+possileSupportLinks: [ FOOT_RIGHT, FOOT_LEFT ]
+
+defaultIKsetup:
+  WAIST: [ FOOT_RIGHT, FOOT_LEFT ]
+  ANKLE_RIGHT_R: [ WAIST ]
+  ANKLE_LEFT_R: [ WAIST ]
+
+footLinks:
+  - link: FOOT_RIGHT
+    soleCenter: [ 0,0,0 ]
+  - link: FOOT_LEFT
+    soleCenter: [ 0,0,0 ]
+
+symmetricJoints:
+  - [ HIP_LEFT,      HIP_RIGHT,      -1 ]
+  - [ THIGH_LEFT,      THIGH_RIGHT,      -1 ]
+  - [ KNEE_LEFT,      KNEE_RIGHT,      -1 ]
+  - [ CALVES_LEFT,     CALVES_RIGHT,     -1 ]
+  - [ ANKLE_LEFT,    ANKLE_RIGHT,    -1 ]
+  - [ FOOT_LEFT,    FOOT_RIGHT,    -1 ]
+
+symmetricIkLinks:
+  - [ WAIST ]
+  - [ FOOT_LEFT, FOOT_RIGHT ]
+
+
+selfCollisionDetection:
+  excludeTreeDepth: 3
+  excludeLinks: [ ]
