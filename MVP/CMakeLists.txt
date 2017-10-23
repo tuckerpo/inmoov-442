@@ -3,7 +3,7 @@ if(NOT ENABLE_GUI)
   return()
 endif()
 
-option(BUILD_InMoovPlugin "Building a sample plugin \"InMoovPlugin\"" OFF)
+option(BUILD_InMoovPlugin "Building a sample plugin \"InMoovPlugin\"" ON)
 
 if(BUILD_InMoovPlugin)
   set(target CnoidInMoovPlugin)

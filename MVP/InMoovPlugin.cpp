@@ -1,4 +1,4 @@
-/* Pull in cnoid functionality suite. There's a lot more if you need. */
+/* Pull in cnoid functionality suite */
 #include <cnoid/Plugin>
 #include <cnoid/ItemTreeView>
 #include <cnoid/BodyItem>
@@ -11,7 +11,6 @@
 #include <iostream>
 #include <fstream>
 
-
 /* Begin namespace(s) to not have to fully qualify every line of code */
 using namespace cnoid;
 using namespace std;
@@ -23,13 +22,14 @@ using namespace std;
 class InMoovPlugin : public Plugin
 {
   public:
-	/* Boolean for completion of single step for LEGS MODEL */
+	/* Boolean for LEGS walk method */
 	bool stepDone;
-
+	/* Boolean for SR1 swingLegs method */
 	bool leftLeg;
-	int frame_count;
-  	std::ofstream file;
-	Action* menuItem = menuManager().setPath("/View").addItem("Frame Count");
+	/* ADD BOOLEANS/VARIABLES HERE FOR NEW METHODS */
+
+
+
 	InMoovPlugin() : Plugin("InMoov Bipedal Kinematics")
 	{
 		/* define that Body files will be implemented */
@@ -38,10 +38,6 @@ class InMoovPlugin : public Plugin
 
 	virtual bool initialize()
 	{
-    		// Output file of all joint positions of SR1
-    		file.open("jointPos");
-
-		leftLeg = true;
 		ToolBar* TB = new ToolBar("InMoov Kinematics");
 		/* From here, add buttons and functionality to the TB.
 		ToolBar class has member functions for adding buttons
@@ -49,7 +45,8 @@ class InMoovPlugin : public Plugin
 		It is a self-bound function. Look around at the other
 		predefined functions for guidance. */
 
-		/* SR1 Buttons */
+		/* SR1 Model Buttons */
+		leftLeg = true;
 		TB->addButton("SR1 Walk")
 			->sigClicked()
 			.connect(bind(&InMoovPlugin::swingLegs, this, 0.04));
@@ -59,28 +56,36 @@ class InMoovPlugin : public Plugin
 		TB->addButton("SR1 RotateLLEG")
 			->sigClicked()
 			.connect(bind(&InMoovPlugin::changeOrientationL, this, 0.04));
-		TB->addButton("SR1 Frames++")
-			->sigClicked()
-			.connect(bind(&InMoovPlugin::changeFrame, this, 100));
+		/* SR1 Model Buttons */
 
 
-
-		/* LEGS Model Buttons */
-
-		/* Initialize stepDone boolean */
-		stepDone = true;
 		/* Separator button in plugin gui */
 		TB->addButton("          ")->sigClicked().connect(bind(&InMoovPlugin::separate, this));
-		/* Adds Walk button to toolbar */
-		TB->addButton("LEGS Walk")->sigClicked().connect(bind(&InMoovPlugin::walk, this));
-		/* Adds Reset button to toolbar */
-		TB->addButton("LEGS Reset")->sigClicked().connect(bind(&InMoovPlugin::reset, this));
 
+
+		/* LEGS Model Buttons */
+		// Initialize stepDone boolean
+		stepDone = true;
+		// Adds Walk button to toolbar
+		TB->addButton("LEGS Walk")->sigClicked().connect(bind(&InMoovPlugin::walk, this));
+		// Adds Reset button to toolbar
+		TB->addButton("LEGS Reset")->sigClicked().connect(bind(&InMoovPlugin::reset, this));
 		/* LEGS Model Buttons */
 
 
+		/* Separator button in plugin gui */
+		TB->addButton("          ")->sigClicked().connect(bind(&InMoovPlugin::separate, this));
 
-		menuItem->sigTriggered().connect(bind(&InMoovPlugin::frameTrigger, this));
+
+		/* >>>>> TEST MODEL BUTTONS HERE <<<<< */
+
+
+
+
+
+		/* >>>>> TEST MODEL BUTTONS HERE <<<<< */
+
+
 		/* Note that this virtual function must return true.
 		It may be a good idea to use this restriction as a
 		testing parameter */
@@ -88,6 +93,7 @@ class InMoovPlugin : public Plugin
 		return true;
 	}
 
+	/* SR1 Walk Function */
  	void swingLegs(double dq)
     	{
 		ItemList<BodyItem> bodyItems =
@@ -104,14 +110,7 @@ class InMoovPlugin : public Plugin
 			}
 			else
 			{
-
-				file << " - [ ";
-		   		for(int i = 0; i < body->numJoints(); i++)
-				{
-		        		file << body->joint(i)->q() << ", ";
-		    		}
-		    		file << " ]""\n";
-
+				// Get joints from model
 	    		    	int lleg_hip_p = body->link("LLEG_HIP_P")->jointId();
 	    		    	int rleg_hip_p = body->link("RLEG_HIP_P")->jointId();
 	    		    	int lleg_knee = body->link("LLEG_KNEE")->jointId();
@@ -149,6 +148,7 @@ class InMoovPlugin : public Plugin
     		}
     	}
 
+	/* SR1 Rotate Left Leg */
 	void changeOrientationL(double dq)
 	{
 		ItemList<BodyItem> bodyItems =
@@ -170,6 +170,7 @@ class InMoovPlugin : public Plugin
 
 	}
 
+	/* SR1 Rotate Right Leg */
 	void changeOrientationR(double dq)
 	{
 		ItemList<BodyItem> bodyItems =
@@ -190,22 +191,9 @@ class InMoovPlugin : public Plugin
 		}
 	}
 
-	void changeFrame(int frames)
-	{
-		frame_count += frames;
-	}
-
-	void frameTrigger()
-    	{
-		string frameNum = to_string(frame_count);
-        	MessageView::instance()->putln("Frames to be walked: ");
-		MessageView::instance()->putln(frameNum);
-    	}
 
 
-
-/* LEGS MODEL FEATURES */
-
+	/* LEGS Walk Function */
 	void walk()
     	{
 		/* vector of type BodyItem */
@@ -381,7 +369,7 @@ class InMoovPlugin : public Plugin
 		}
     	}
 
-	/* Resets position of model back to default */
+	/* Resets LEGS model position back to default */
 	void reset()
     	{
 		this->stepDone = true;
@@ -416,14 +404,20 @@ class InMoovPlugin : public Plugin
 
 	}
 
-	/* Blank function */
+	/* Blank function / Used to separate buttons on toolbar */
 	void separate()
     	{
 	}
 
-/* LEGS MODEL FEATURES */
 
 
+/* >>> TEST MODEL FEATURES HERE <<< */
+
+
+
+
+
+/* >>> TEST MODEL FEATURES HERE <<< */
 
 
 
