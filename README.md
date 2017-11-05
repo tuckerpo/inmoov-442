@@ -83,12 +83,17 @@ Done (partially) as coursework for CSE442 Software Engineering @ UB
   - If the 'e' or 'd' key is held, the robot will extend its legs too far, lose stability, and fall over. 
      - ##### Note that the mapping of keyboard input to the /dev/input directory of your Ubuntu build may be different from the mappings we discoverd in development. Therefore, if the robot suddenly does a u-shaped split, or simply doesn't respond to your clicks/keystrokes then one possible solution is to modify:
       > ./src/Util/JoystickLinux.cpp:105
+      
       from:
       > impl = new JoystickImpl(this, "/dev/input/js0");
+      
       to:
       > impl = new JoystickImpl(this, "/dev/input/event2");
+      
       and go back to the root directory of choreonoid and do:
+      
       >make
+      
       > ./bin/choreonoid /sample/Controller/InMoov.cnoid
       
 ### The Choreonoid simulator should be up and running
