@@ -13,7 +13,7 @@ Done (partially) as coursework for CSE442 Software Engineering @ UB
   
     > sudo apt-get install git
 
-    > git clone -b beta https://github.com/TheNergaL/inmoov-442.git
+    > git clone -b develop https://github.com/TheNergaL/inmoov-442.git
 
     > git clone https://github.com/s-nakaoka/choreonoid.git
     
@@ -30,9 +30,9 @@ Done (partially) as coursework for CSE442 Software Engineering @ UB
 - ### Copy plugin into choreonoid directory
 
   - Go into the inmoov-442 directory and run
-    > cp -r MVP ~/choreonoid/sample/
+    > cp -r Controller ~/choreonoid/sample/
     
-  - You can manually copy the MVP folder in the inmoov-442 directory into the /choreonoid/sample/ directory
+  - You can also manually copy the Controller folder in the inmoov-442 directory into the /choreonoid/sample/ directory
   
   - ### Configure Choreonoid CMAKE build flags to include plugin
 
@@ -58,14 +58,14 @@ Done (partially) as coursework for CSE442 Software Engineering @ UB
       
   - Run Choreonoid after using this command
 
-    > ./bin/choreonoid /sample/MVP/InMoov.cnoid
+    > ./bin/choreonoid /sample/Controller/InMoov.cnoid
     
     
 - Plugin and models should now be loaded
 
   - Plugin buttons are on the toolbar of choreonoid near the top
-  - Buttons must be pressed multiple times to continue walking simulation
-
+  - Buttons must be pressed multiple times to continue walking motion
+  
   - "SR1" buttons can only be used with the SR1 model. Use it by clicking on SR1 on the left of choreonoid to highlight it.
   - "SR1 Walk" simulates a walking animation for SR1 model.
   - "SR1 RotateRLEG" rotates SR1 model's right leg counter clockwise.
@@ -74,9 +74,24 @@ Done (partially) as coursework for CSE442 Software Engineering @ UB
   - "LEGS" buttons must be used with the LEGS model. Use it by clicking on LEGS on the left of choreonoid to highlight it.
   - "LEGS Walk" simulates a walking animation for LEGS model.
   - "LEGS Reset" resets the LEGS model back to neutral/standing position.
-
+    - ##### Note that the LEGS model is no longer loaded by default due to undefined behaviour with the phsyics engine i.e. AISTSimulator. However, the LEGS model can be manualy loaded from the MVP folder of the inmoov-442 directory. 
+    
+  - To enable physics click the start simulation button
+  - Once the AISTSimulator is activated the InMoovController will start acting on the robot and the robot should wobble slightly as it stabilizes. 
+  - Click inside the virtual joystick window to enable joystick control
+  - To make the robot "hop" tap the 'e' or 'd' key on a keyboard, or by clicking the equivalent virtual joystick buttons.
+  - If the 'e' or 'd' key is held, the robot will extend its legs too far, lose stability, and fall over. 
+     - ##### Note that the mapping of keyboard input to the /dev/input directory of your Ubuntu build may be different from the mappings we discoverd in development. Therefore, if the robot suddenly does a u-shaped split, or simply doesn't respond to your clicks/keystrokes then one possible solution is to modify:
+      > ./src/Util/JoystickLinux.cpp:105
+      from:
+      > impl = new JoystickImpl(this, "/dev/input/js0");
+      to:
+      > impl = new JoystickImpl(this, "/dev/input/event2");
+      and go back to the root directory of choreonoid and do:
+      >make
+      > ./bin/choreonoid /sample/Controller/InMoov.cnoid
+      
 ### The Choreonoid simulator should be up and running
-
 
 Now the program is running with our working plug-in.
 
