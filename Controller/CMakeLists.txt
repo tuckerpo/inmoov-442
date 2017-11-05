@@ -19,4 +19,4 @@ endif()
 install_sample_source(InMoovPlugin.cpp)
 
 add_cnoid_simple_controller(InMoovController InMoovController.cpp)
-configure_file(InMoovC.cnoid ${CNOID_SOURCE_SHARE_DIR}/project COPYONLY)
+configure_file(InMoov.cnoid ${CNOID_SOURCE_SHARE_DIR}/project COPYONLY)
