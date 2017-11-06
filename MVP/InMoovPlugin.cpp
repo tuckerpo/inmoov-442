@@ -1,4 +1,3 @@
-/* Pull in cnoid functionality suite */
 #include <cnoid/Plugin>
 #include <cnoid/ItemTreeView>
 #include <cnoid/BodyItem>
@@ -27,7 +26,7 @@ class InMoovPlugin : public Plugin
 	/* Boolean for SR1 swingLegs method */
 	bool leftLeg;
 	/* ADD BOOLEANS/VARIABLES HERE FOR NEW METHODS */
-
+  int dance = 0;
 
 
 	InMoovPlugin() : Plugin("InMoov Bipedal Kinematics")
@@ -56,6 +55,9 @@ class InMoovPlugin : public Plugin
 		TB->addButton("SR1 RotateLLEG")
 			->sigClicked()
 			.connect(bind(&InMoovPlugin::changeOrientationL, this, 0.04));
+      TB->addButton("SR1 Dance")
+        ->sigClicked()
+        .connect(bind(&InMoovPlugin::dance, this, 0.04));
 		/* SR1 Model Buttons */
 
 
@@ -256,9 +258,9 @@ class InMoovPlugin : public Plugin
 						{
 							body->joint(hip_right)->q() -= dq;
 						}
-					
+
 					}
-					/* When both legs in neutral/straight position */			
+					/* When both legs in neutral/straight position */
 					else if(body->joint(hip_left)->q() >= -0.01 && body->joint(hip_left)->q() < 0.15)
 					{
 						// Left leg continues to move forward
@@ -403,6 +405,62 @@ class InMoovPlugin : public Plugin
 		}
 
 	}
+
+  void dance(double dq)
+  {
+    ItemList<BodyItem> bodyItems =
+ 	  ItemTreeView::mainInstance()->selectedItems<BodyItem>();
+
+		for(size_t i=0; i < bodyItems.size(); ++i)
+		{
+	    		BodyPtr body = bodyItems[i]->body();
+
+			// Checks if SR1 model
+			if(body->numJoints() != 29)
+			{
+				MessageView::instance()->putln("Incorrect model! Please select the SR1 model.");
+			}
+			else
+      {
+          int rarm_shoulder_p = body->link("RARM_SHOULDER_P")->jointId();
+ 	    		int larm_shoulder_p = body->link("LARM_SHOULDER_P")->jointId();
+ 	    		int rarm_shoulder_y = body->link("RARM_SHOULDER_Y")->jointId();
+ 	    		int larm_shoulder_y = body->link("LARM_SHOULDER_Y")->jointId();
+ 	    		int rarm_elbow = body->link("RARM_ELBOW")->jointId();
+ 				  int larm_elbow = body->link("LARM_ELBOW")->jointId();
+          int knee_left = body->link("KNEE_LEFT")->jointId();
+
+          if(discoMode <= 20)
+          {
+ 		    		body->joint(rarm_elbow)->q() 	  -= dq;
+ 		    		body->joint(larm_elbow)->q() 	  -= dq;
+         			body->joint(rarm_shoulder_y)->q() += dq;
+         			body->joint(larm_shoulder_y)->q() -= dq;
+         			discoMode += 1;
+ 		    	}
+ 		    	if(discoMode > 20 && discoMode < 80){
+ 		    		body->joint(larm_shoulder_p)->q() -= dq;
+ 		    		body->joint(rarm_shoulder_p)->q() -= dq;
+ 		    		discoMode += 1;
+ 		    	}
+ 		    	if(discoMode >= 80 && discoMode < 135){
+
+ 		    		if(discoMode > 93 && discoMode%2 == 0){
+ 			    		body->joint(rarm_elbow)->q() 	  += dq;
+ 			    		body->joint(larm_elbow)->q() 	  += dq;
+ 	        			body->joint(rarm_shoulder_y)->q() -= dq;
+ 	        			body->joint(larm_shoulder_y)->q() += dq;
+ 		    		}
+ 		    		body->joint(larm_shoulder_p)->q() += dq;
+ 		    		body->joint(rarm_shoulder_p)->q() += dq;
+ 		    		discoMode += 1;
+ 		    	}
+
+          bodyItems[i]->notifyKinematicStateChange(true);
+
+      }
+    }
+  }
 
 	/* Blank function / Used to separate buttons on toolbar */
 	void separate()
