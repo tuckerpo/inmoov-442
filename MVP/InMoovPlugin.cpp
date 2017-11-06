@@ -436,12 +436,12 @@ class InMoovPlugin : public Plugin
  		    		body->joint(larm_elbow)->q() 	  -= dq;
          			body->joint(rarm_shoulder_y)->q() += dq;
          			body->joint(larm_shoulder_y)->q() -= dq;
-         			discoMode += 1;
+         			dance += 1;
  		    	}
  		    	if(discoMode > 20 && discoMode < 80){
  		    		body->joint(larm_shoulder_p)->q() -= dq;
  		    		body->joint(rarm_shoulder_p)->q() -= dq;
- 		    		discoMode += 1;
+ 		    		dance += 1;
  		    	}
  		    	if(discoMode >= 80 && discoMode < 135){
 
@@ -453,7 +453,7 @@ class InMoovPlugin : public Plugin
  		    		}
  		    		body->joint(larm_shoulder_p)->q() += dq;
  		    		body->joint(rarm_shoulder_p)->q() += dq;
- 		    		discoMode += 1;
+ 		    		dance += 1;
  		    	}
 
           bodyItems[i]->notifyKinematicStateChange(true);
