@@ -1,4 +1,4 @@
-/* Pull in cnoid functionality suite. There's a lot more if you need. */
+/* Pull in cnoid functionality suite */
 #include <cnoid/Plugin>
 #include <cnoid/ItemTreeView>
 #include <cnoid/BodyItem>
@@ -11,7 +11,6 @@
 #include <iostream>
 #include <fstream>
 
-
 /* Begin namespace(s) to not have to fully qualify every line of code */
 using namespace cnoid;
 using namespace std;
@@ -23,13 +22,16 @@ using namespace std;
 class InMoovPlugin : public Plugin
 {
   public:
-	/* Boolean for completion of single step for LEGS MODEL */
+	/* Boolean for LEGS walk method */
 	bool stepDone;
-
+	/* Boolean for SR1 swingLegs method */
 	bool leftLeg;
-	int frame_count;
-  	std::ofstream file;
-	Action* menuItem = menuManager().setPath("/View").addItem("Frame Count");
+	/* Mode for SR1 disco method */
+	int discoMode = 0;
+	/* ADD BOOLEANS/VARIABLES HERE FOR NEW METHODS */
+
+
+
 	InMoovPlugin() : Plugin("InMoov Bipedal Kinematics")
 	{
 		/* define that Body files will be implemented */
@@ -38,10 +40,6 @@ class InMoovPlugin : public Plugin
 
 	virtual bool initialize()
 	{
-    		// Output file of all joint positions of SR1
-    		file.open("jointPos");
-
-		leftLeg = true;
 		ToolBar* TB = new ToolBar("InMoov Kinematics");
 		/* From here, add buttons and functionality to the TB.
 		ToolBar class has member functions for adding buttons
@@ -49,7 +47,8 @@ class InMoovPlugin : public Plugin
 		It is a self-bound function. Look around at the other
 		predefined functions for guidance. */
 
-		/* SR1 Buttons */
+		/* SR1 Model Buttons */
+		leftLeg = true;
 		TB->addButton("SR1 Walk")
 			->sigClicked()
 			.connect(bind(&InMoovPlugin::swingLegs, this, 0.04));
@@ -59,28 +58,45 @@ class InMoovPlugin : public Plugin
 		TB->addButton("SR1 RotateLLEG")
 			->sigClicked()
 			.connect(bind(&InMoovPlugin::changeOrientationL, this, 0.04));
-		TB->addButton("SR1 Frames++")
+		TB->addButton("SR1 Disco")
 			->sigClicked()
-			.connect(bind(&InMoovPlugin::changeFrame, this, 100));
+			.connect(bind(&InMoovPlugin::discoDance, this, 0.04));
+		/* SR1 Model Buttons */
 
+
+		/* Separator button in plugin gui */
+		TB->addButton("          ")
+			->sigClicked()
+			.connect(bind(&InMoovPlugin::separate, this));
 
 
 		/* LEGS Model Buttons */
-
-		/* Initialize stepDone boolean */
+		// Initialize stepDone boolean
 		stepDone = true;
+		// Adds Walk button to toolbar
+		TB->addButton("LEGS Walk")
+			->sigClicked()
+			.connect(bind(&InMoovPlugin::walk, this));
+		// Adds Reset button to toolbar
+		TB->addButton("LEGS Reset")
+			->sigClicked()
+			.connect(bind(&InMoovPlugin::reset, this));
+		/* LEGS Model Buttons */
+
+
 		/* Separator button in plugin gui */
 		TB->addButton("          ")->sigClicked().connect(bind(&InMoovPlugin::separate, this));
-		/* Adds Walk button to toolbar */
-		TB->addButton("LEGS Walk")->sigClicked().connect(bind(&InMoovPlugin::walk, this));
-		/* Adds Reset button to toolbar */
-		TB->addButton("LEGS Reset")->sigClicked().connect(bind(&InMoovPlugin::reset, this));
 
-		/* LEGS Model Buttons */
+
+		/* >>>>> TEST MODEL BUTTONS HERE <<<<< */
 
 
 
-		menuItem->sigTriggered().connect(bind(&InMoovPlugin::frameTrigger, this));
+
+
+		/* >>>>> TEST MODEL BUTTONS HERE <<<<< */
+
+
 		/* Note that this virtual function must return true.
 		It may be a good idea to use this restriction as a
 		testing parameter */
@@ -88,6 +104,7 @@ class InMoovPlugin : public Plugin
 		return true;
 	}
 
+	/* SR1 Walk Function */
  	void swingLegs(double dq)
     	{
 		ItemList<BodyItem> bodyItems =
@@ -104,14 +121,7 @@ class InMoovPlugin : public Plugin
 			}
 			else
 			{
-
-				file << " - [ ";
-		   		for(int i = 0; i < body->numJoints(); i++)
-				{
-		        		file << body->joint(i)->q() << ", ";
-		    		}
-		    		file << " ]""\n";
-
+				// Get joints from model
 	    		    	int lleg_hip_p = body->link("LLEG_HIP_P")->jointId();
 	    		    	int rleg_hip_p = body->link("RLEG_HIP_P")->jointId();
 	    		    	int lleg_knee = body->link("LLEG_KNEE")->jointId();
@@ -149,6 +159,7 @@ class InMoovPlugin : public Plugin
     		}
     	}
 
+	/* SR1 Rotate Left Leg */
 	void changeOrientationL(double dq)
 	{
 		ItemList<BodyItem> bodyItems =
@@ -170,6 +181,7 @@ class InMoovPlugin : public Plugin
 
 	}
 
+	/* SR1 Rotate Right Leg */
 	void changeOrientationR(double dq)
 	{
 		ItemList<BodyItem> bodyItems =
@@ -190,22 +202,67 @@ class InMoovPlugin : public Plugin
 		}
 	}
 
-	void changeFrame(int frames)
+	// arthurdier -- collaboration 
+	void discoDance(double dq)
 	{
-		frame_count += frames;
+
+		ItemList<BodyItem> bodyItems =
+		ItemTreeView::mainInstance()->selectedItems<BodyItem>();
+
+		for(size_t i=0; i < bodyItems.size(); ++i)
+		{
+	    		BodyPtr body = bodyItems[i]->body();
+
+			// Checks if SR1 model
+			if(body->numJoints() != 29)
+			{
+				MessageView::instance()->putln("Incorrect model! Please select the SR1 model.");
+			}
+			else
+			{
+				// Get joints from model
+	    		int rarm_shoulder_p = body->link("RARM_SHOULDER_P")->jointId();
+	    		int larm_shoulder_p = body->link("LARM_SHOULDER_P")->jointId();
+	    		int rarm_shoulder_y = body->link("RARM_SHOULDER_Y")->jointId();
+	    		int larm_shoulder_y = body->link("LARM_SHOULDER_Y")->jointId();
+	    		int rarm_elbow 		= body->link("RARM_ELBOW")	   ->jointId();
+				int larm_elbow 		= body->link("LARM_ELBOW")	   ->jointId();
+
+				// cross hands over 
+		    	if(discoMode <= 25){
+		    		body->joint(rarm_elbow)->q() 	  -= dq;
+		    		body->joint(larm_elbow)->q() 	  -= dq;
+        			body->joint(rarm_shoulder_y)->q() += dq;
+        			body->joint(larm_shoulder_y)->q() -= dq;
+        			discoMode += 1;
+		    	}
+		    	if(discoMode > 25 && discoMode < 90){
+		    		body->joint(larm_shoulder_p)->q() -= dq;
+		    		body->joint(rarm_shoulder_p)->q() -= dq;
+		    		discoMode += 1;
+		    	}
+		    	if(discoMode >= 90 && discoMode < 155){
+		    		if(discoMode > 103 && discoMode%2 == 0){
+			    		body->joint(rarm_elbow)->q() 	  += dq;
+			    		body->joint(larm_elbow)->q() 	  += dq;
+	        			body->joint(rarm_shoulder_y)->q() -= dq;
+	        			body->joint(larm_shoulder_y)->q() += dq;
+		    		}
+		    		body->joint(larm_shoulder_p)->q() += dq;
+		    		body->joint(rarm_shoulder_p)->q() += dq;
+		    		discoMode += 1;
+		    	}
+		    	if(discoMode == 155) discoMode = 0;
+
+		    	bodyItems[i]->notifyKinematicStateChange(true);
+			}
+
+    	}
 	}
 
-	void frameTrigger()
-    	{
-		string frameNum = to_string(frame_count);
-        	MessageView::instance()->putln("Frames to be walked: ");
-		MessageView::instance()->putln(frameNum);
-    	}
 
 
-
-/* LEGS MODEL FEATURES */
-
+	/* LEGS Walk Function */
 	void walk()
     	{
 		/* vector of type BodyItem */
@@ -381,7 +438,7 @@ class InMoovPlugin : public Plugin
 		}
     	}
 
-	/* Resets position of model back to default */
+	/* Resets LEGS model position back to default */
 	void reset()
     	{
 		this->stepDone = true;
@@ -416,14 +473,20 @@ class InMoovPlugin : public Plugin
 
 	}
 
-	/* Blank function */
+	/* Blank function / Used to separate buttons on toolbar */
 	void separate()
     	{
 	}
 
-/* LEGS MODEL FEATURES */
 
 
+/* >>> TEST MODEL FEATURES HERE <<< */
+
+
+
+
+
+/* >>> TEST MODEL FEATURES HERE <<< */
 
 
 
