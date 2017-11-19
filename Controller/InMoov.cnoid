@@ -19,26 +19,26 @@ items:
           plugin: Body
           class: BodyItem
           data: 
-            modelFile: "${SHARE}/model/SR1/SR1.body"
+            modelFile: "${PROGRAM_TOP}/share/model/SR1/SR1.body"
             currentBaseLink: "WAIST"
-            rootPosition: [ 0.00101784578, 3.76378092e-07, 0.706920737 ]
+            rootPosition: [ 0, 0, 0.7135 ]
             rootAttitude: [ 
-              0.99999185, 1.33217879e-06, 0.00403734418, 
-              -1.33464986e-06, 1, 6.09360691e-07, 
-              -0.00403734418, -6.14744165e-07, 0.99999185 ]
+              1, 0, 0, 
+              0, 1, 0, 
+              0, 0, 1 ]
             jointPositions: [ 
-               0.000000, -0.038793,  0.000001,  0.077732, -0.043071,  0.000000,  0.176491, -0.003479,  0.000006, -1.569275, 
-              -0.000002,  0.000115,  0.000001,  0.000000, -0.038792,  0.000000,  0.077731, -0.043071,  0.000001,  0.176491, 
-              -0.003479,  0.000006, -1.569275, -0.000002,  0.000115,  0.000001,  0.004889,  0.000011, -0.000000 ]
+               0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+               0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+               0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
             initialRootPosition: [ 0, 0, 0.7135 ]
             initialRootAttitude: [ 
               1, 0, 0, 
               0, 1, 0, 
               0, 0, 1 ]
             initialJointPositions: [ 
-               0.000000, -0.036652,  0.000000,  0.078540, -0.041888,  0.000000,  0.174533, -0.003491,  0.000000, -1.570796, 
-               0.000000,  0.000000,  0.000000,  0.000000, -0.036652,  0.000000,  0.078540, -0.041888,  0.000000,  0.174533, 
-              -0.003491,  0.000000, -1.570796,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
+               0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+               0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+               0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
             zmp: [ 0, 0, 0 ]
             collisionDetection: true
             selfCollisionDetection: false
@@ -46,7 +46,7 @@ items:
           children: 
             - 
               id: 3
-              name: "SimpleController"
+              name: "InMoovController"
               plugin: Body
               class: SimpleControllerItem
               data: 
@@ -57,33 +57,11 @@ items:
                 RelativePathBase: "Controller directory"
         - 
           id: 4
-          name: "Floor"
-          plugin: Body
-          class: BodyItem
-          data: 
-            modelFile: "${SHARE}/model/misc/floor.body"
-            currentBaseLink: ""
-            rootPosition: [ 0, 0, -0.1 ]
-            rootAttitude: [ 
-              1, 0, 0, 
-              0, 1, 0, 
-              0, 0, 1 ]
-            jointPositions: [  ]
-            initialRootPosition: [ 0, 0, -0.1 ]
-            initialRootAttitude: [ 
-              1, 0, 0, 
-              0, 1, 0, 
-              0, 0, 1 ]
-            zmp: [ 0, 0, 0 ]
-            collisionDetection: true
-            selfCollisionDetection: false
-            isEditable: true
-        - 
-          id: 5
           name: "AISTSimulator"
           plugin: Body
           class: AISTSimulatorItem
           data: 
+            timestep: 0.001
             realtimeSync: true
             recording: "full"
             timeRangeMode: "Unlimited"
@@ -108,6 +86,29 @@ items:
             kinematicWalking: false
             2Dmode: false
             oldAccelSensorMode: false
+        - 
+          id: 5
+          name: "Floor"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "${SHARE}/model/misc/floor.body"
+            currentBaseLink: "Floor"
+            rootPosition: [ 0, 0, -0.1 ]
+            rootAttitude: [ 
+              1, 0, 0, 
+              0, 1, 0, 
+              0, 0, 1 ]
+            jointPositions: [  ]
+            initialRootPosition: [ 0, 0, -0.1 ]
+            initialRootAttitude: [ 
+              1, 0, 0, 
+              0, 1, 0, 
+              0, 0, 1 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: false
 views: 
   - 
     id: 0
@@ -120,8 +121,8 @@ views:
     class: ItemTreeView
     mounted: true
     state: 
-      selected: [ 3, 5 ]
-      checked: [ 2, 4 ]
+      selected: [ 2, 4 ]
+      checked: [ 2 ]
       expanded: [ 1, 2, 3 ]
   - 
     id: 2
@@ -146,7 +147,7 @@ views:
       worldLightAmbient: 0.3
       additionalLights: true
       fog: true
-      floorGrid: false
+      floorGrid: true
       floorGridSpan: 10
       floorGridInterval: 0.5
       xzGridSpan: 10
@@ -172,9 +173,9 @@ views:
           fieldOfView: 0.698132
           near: 0.01
           far: 100
-          eye: [ 1.67673633, 4.39000258, 0.610388163 ]
-          direction: [ -0.184960887, -0.976744127, 0.108445288 ]
-          up: [ 0.0201771329, 0.106551695, 0.994102419 ]
+          eye: [ 1.84872357, 1.96713147, 1.35324871 ]
+          direction: [ -0.721211224, -0.650177657, -0.239004988 ]
+          up: [ -0.177517841, -0.160033747, 0.97101834 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -211,6 +212,7 @@ views:
       spinBox: true
       slider: true
       labelOnLeft: true
+      currentBodyItem: 2
   - 
     id: 7
     plugin: Body
@@ -218,6 +220,7 @@ views:
     mounted: true
     state: 
       listingMode: "Link List"
+      currentBodyItem: 2
   - 
     id: 8
     plugin: Python
@@ -226,11 +229,11 @@ views:
 toolbars: 
   "TimeBar": 
     minTime: 0
-    maxTime: 16.102
-    frameRate: 500
+    maxTime: 30
+    frameRate: 100
     playbackFrameRate: 50
     idleLoopDrivenMode: false
-    currentTime: 0.152
+    currentTime: 0
     speedScale: 1
     syncToOngoingUpdates: true
     autoExpansion: true
@@ -242,6 +245,8 @@ toolbars:
     snapDistance: 0.025
     penetrationBlockDepth: 0.0005
     lazyCollisionDetectionMode: true
+  "BodyBar": 
+    current: 2
   "LeggedBodyBar": 
     stanceWidth: 0.15
   "BodyMotionGenerationBar": 
@@ -287,11 +292,6 @@ Body:
         showCenterOfMass: false
         showPpcom: false
         showZmp: false
-      - 
-        bodyItem: 4
-        showCenterOfMass: false
-        showPpcom: false
-        showZmp: false
     staticModelEditing: true
   "KinematicFaultChecker": 
     checkJointPositions: true
@@ -309,12 +309,12 @@ viewAreas:
     contents: 
       type: splitter
       orientation: horizontal
-      sizes: [ 220, 1075 ]
+      sizes: [ 317, 1544 ]
       children: 
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 323, 323 ]
+          sizes: [ 457, 455 ]
           children: 
             - 
               type: pane
@@ -327,12 +327,12 @@ viewAreas:
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 461, 185 ]
+          sizes: [ 651, 261 ]
           children: 
             - 
               type: splitter
               orientation: horizontal
-              sizes: [ 465, 604 ]
+              sizes: [ 542, 996 ]
               children: 
                 - 
                   type: pane
@@ -352,10 +352,11 @@ layoutOfToolBars:
       - { name: "FileBar", x: 0, priority: 0 }
       - { name: "ScriptBar", x: 47, priority: 0 }
       - { name: "TimeBar", x: 94, priority: 0 }
-      - { name: "SceneBar", x: 1032, priority: 0 }
+      - { name: "SceneBar", x: 1022, priority: 0 }
+      - { name: "GraphBar", x: 1292, priority: 0 }
+      - { name: "SimulationBar", x: 1399, priority: 0 }
+      - { name: "BodyBar", x: 1596, priority: 0 }
     - 
-      - { name: "GraphBar", x: 0, priority: 0 }
-      - { name: "SimulationBar", x: 107, priority: 0 }
-      - { name: "BodyBar", x: 304, priority: 0 }
-      - { name: "KinematicsBar", x: 564, priority: 0 }
-      - { name: "BodyMotionGenerationBar", x: 798, priority: 0 }
+      - { name: "KinematicsBar", x: 0, priority: 0 }
+      - { name: "BodyMotionGenerationBar", x: 234, priority: 0 }
+      - { name: "InMoov Kinematics", x: 371, priority: 0 }
