@@ -3,15 +3,22 @@
 #include <fstream>
 #include <limits>
 #include <stdint.h>
+
 using namespace std;
 
-int main () {
-   
-	ifstream ifs ("../STLFiles/Left Hand/lefttopsurface6.stl", ios::in | ios::binary);
+int main (int c, char *v[]) {
+
+	if (c < 2) {
+        printf ("Usage: STLtoDim <STLFile>\n");
+        return 1;
+    }   
+
+	ifstream ifs (v[1], ios::in | ios::binary);
 	if (!ifs.is_open()){
-		cout << "Unable to open file\n";
+		cout << "Unable to open " << v[1] << "\n";
 		return 0;
 	}
+
 	unsigned int numFaces = 0;
 	uint8_t buf[84];
 	ifs.read((char*)buf, 84);
@@ -46,6 +53,9 @@ int main () {
 	    uint16_t attrib;
 	    ifs.read((char *)&attrib, 2);
 	}
-	cout << "The dimensions of this part are [ " << maxX-minX << ", " << maxY-minY << ", " << maxZ-minZ << " ]\n"; 
+	ofstream dims;
+    dims.open ("dims.csv", std::ios_base::app);
+	dims << v[1] << "," << maxX-minX << "," << maxY-minY << "," << maxZ-minZ << "\n"; 
+	dims.close();
 	return 0;
 }
