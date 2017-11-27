@@ -1,0 +1,20 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: InMoov
+rootLink: TStoLowLeftV1
+links:
+  -
+    name: TStoLowLeftV1
+    jointType: free
+    translation: [ 0, 0, 0.1605 ]
+    rotation : [ 1, 0, 0, 0]
+    centerOfMass: [ 0.014070775509439625, -0.0010642631392533723, 0.018082091556018958 ]
+    mass: 0.16852
+    inertia: [
+      7.5307790665527126e-05, -1.7122423225418951e-06, -7.9600885666462265e-06,
+      -1.7122423225418951e-06, 9.8462174358634891e-05, 1.6233365559722733e-06,
+      -7.9600885666462265e-06, 1.6233365559722733e-06, 0.00012629712705606254 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "../inmoov-442/STLFiles/Low Stomach/Low-Stomach/TStoLowLeftV1.stl" }
