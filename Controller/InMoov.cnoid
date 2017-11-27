@@ -352,10 +352,11 @@ layoutOfToolBars:
       - { name: "FileBar", x: 0, priority: 0 }
       - { name: "ScriptBar", x: 47, priority: 0 }
       - { name: "TimeBar", x: 94, priority: 0 }
-      - { name: "SceneBar", x: 1032, priority: 0 }
+      - { name: "SceneBar", x: 1022, priority: 0 }
+      - { name: "GraphBar", x: 1292, priority: 0 }
+      - { name: "SimulationBar", x: 1399, priority: 0 }
+      - { name: "BodyBar", x: 1596, priority: 0 }
     - 
-      - { name: "GraphBar", x: 0, priority: 0 }
-      - { name: "SimulationBar", x: 107, priority: 0 }
-      - { name: "BodyBar", x: 304, priority: 0 }
-      - { name: "KinematicsBar", x: 564, priority: 0 }
-      - { name: "BodyMotionGenerationBar", x: 798, priority: 0 }
+      - { name: "KinematicsBar", x: 0, priority: 0 }
+      - { name: "BodyMotionGenerationBar", x: 234, priority: 0 }
+      - { name: "InMoov Kinematics", x: 371, priority: 0 }
