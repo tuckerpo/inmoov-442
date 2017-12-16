@@ -10,7 +10,7 @@ items:
       plugin: Body
       class: BodyItem
       data: 
-        modelFile: "${PROGRAM_TOP}/InMoov.body"
+        modelFile: "/home/nse/inmoov-442/InMoov.body"
         currentBaseLink: "TStoLowLeftV1"
         rootPosition: [ 0, 0, 0.1605 ]
         rootAttitude: [ 
@@ -40,6 +40,7 @@ views:
     class: ItemTreeView
     mounted: true
     state: 
+      selected: [ 1 ]
       checked: [ 1 ]
   - 
     id: 2
@@ -52,7 +53,7 @@ views:
     class: SceneView
     mounted: true
     state: 
-      editMode: false
+      editMode: true
       viewpointControlMode: thirdPerson
       collisionLines: false
       polygonMode: fill
@@ -90,9 +91,9 @@ views:
           fieldOfView: 0.698132
           near: 0.01
           far: 1e+06
-          eye: [ 345.89163, 442.758267, 95.2690309 ]
-          direction: [ -0.5950839, -0.787444802, -0.160641948 ]
-          up: [ -0.096853295, -0.128161128, 0.987012748 ]
+          eye: [ -563.24528, -700.673821, -25.3749022 ]
+          direction: [ 0.69890903, 0.712803785, 0.058625348 ]
+          up: [ -0.0410443792, -0.0418603675, 0.998280055 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -107,14 +108,17 @@ views:
     id: 4
     plugin: Body
     class: BodyLinkView
-    mounted: true
     state: 
       showRotationMatrix: false
   - 
     id: 5
+    name: "Body State"
+    plugin: Body
+    class: BodyStateView
+  - 
+    id: 6
     plugin: Body
     class: JointSliderView
-    mounted: true
     state: 
       showAllJoints: true
       jointId: false
@@ -125,7 +129,7 @@ views:
       labelOnLeft: true
       currentBodyItem: 1
   - 
-    id: 6
+    id: 7
     plugin: Body
     class: LinkSelectionView
     mounted: true
@@ -133,7 +137,7 @@ views:
       listingMode: "Link List"
       currentBodyItem: 1
   - 
-    id: 7
+    id: 8
     plugin: Python
     class: PythonConsoleView
     mounted: true
@@ -220,12 +224,12 @@ viewAreas:
     contents: 
       type: splitter
       orientation: horizontal
-      sizes: [ 446, 2178 ]
+      sizes: [ 178, 1117 ]
       children: 
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 730, 730 ]
+          sizes: [ 306, 305 ]
           children: 
             - 
               type: pane
@@ -233,29 +237,20 @@ viewAreas:
               current: 1
             - 
               type: pane
-              views: [ 0, 6 ]
+              views: [ 0, 7 ]
               current: 0
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 1043, 417 ]
+          sizes: [ 468, 143 ]
           children: 
             - 
-              type: splitter
-              orientation: horizontal
-              sizes: [ 753, 1419 ]
-              children: 
-                - 
-                  type: pane
-                  views: [ 4, 5 ]
-                  current: 4
-                - 
-                  type: pane
-                  views: [ 3 ]
-                  current: 3
+              type: pane
+              views: [ 3 ]
+              current: 3
             - 
               type: pane
-              views: [ 2, 7 ]
+              views: [ 2, 8 ]
               current: 2
 layoutOfToolBars: 
   rows: 
@@ -267,6 +262,7 @@ layoutOfToolBars:
       - { name: "GraphBar", x: 2003, priority: 0 }
       - { name: "SimulationBar", x: 2218, priority: 0 }
     - 
-      - { name: "BodyBar", x: 0, priority: 0 }
       - { name: "KinematicsBar", x: 548, priority: 0 }
       - { name: "BodyMotionGenerationBar", x: 1034, priority: 0 }
+    - 
+      - { name: "BodyBar", x: 0, priority: 0 }

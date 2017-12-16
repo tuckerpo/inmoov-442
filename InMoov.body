@@ -1,0 +1,129 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: InMoov
+rootLink: Base
+links:
+  -
+    name: Base
+    jointType: free
+    translation: [ 0, 0, 0 ]
+    rotation : [ 1, 0, 0, 0]
+    jointId: 0
+    centerOfMass: [ 0.014070775509439625, -0.0010642631392533723, 0.018082091556018958 ]
+    mass: 0.16852
+    inertia: [
+      7.5307790665527126e-05, -1.7122423225418951e-06, -7.9600885666462265e-06,
+      -1.7122423225418951e-06, 9.8462174358634891e-05, 1.6233365559722733e-06,
+      -7.9600885666462265e-06, 1.6233365559722733e-06, 0.00012629712705606254 ]
+    elements:
+      Shape:
+        geometry: { type: Box, size: [ 1, 1, 1 ] }
+  -
+    name: AnkToesFootV2
+    parent: Base
+    translation : [ 0, 0, 0 ]
+    rotation : [ 1, 0, 0, 0]
+    jointId: 1
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Legs-Ankle/AnkToesFootV2.stl" }
+  -
+    name: AnkMidleFootV1
+    parent: Base
+    translation : [ -98, 15, 43 ]
+    rotation : [ 1, 1, 1, 120]
+    jointId: 2
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Legs-Ankle/AnkMidleFootV1.stl" }
+  -
+    name: AnkBackFootV1
+    parent: Base
+    translation : [ -145, 25, 2 ]
+    rotation : [ 0, 0, 1, 90]
+    jointId: 3
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Legs-Ankle/AnkBackFootV1.stl" }
+  -
+    name: AnkleBaseV1
+    parent: Base
+    translation : [ -135, 37, 87 ]
+    rotation : [ 0, 0, 1, 90]
+    jointId: 4
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Legs-Ankle/AnkleBaseV1.stl" }
+  -
+    name: AnkleDownV2
+    parent: Base
+    translation : [ -170, 5, 125 ]
+    rotation : [ 0.7071068, 0.7071068, 0, 180]
+    jointId: 5
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Legs-Ankle/AnkleDownV2.stl" }
+  -
+    name: AnkHolderV1
+    parent: Base
+    translation : [ -150, 40, 125 ]
+    rotation : [ 0, 0, 1, 80]
+    jointId: 6
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Legs-Ankle/AnkHolderV1.stl" }
