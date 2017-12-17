@@ -30,3 +30,19 @@ else:
 	z /= norm
 
 print (x,y,z, angle/3.14*180.0);
+
+f = open(sys.argv[1], "r")
+lines = f.readlines()
+f.close()
+f = open(sys.argv[1], "w")
+updated = False
+linkFound = False
+for line in lines:
+    if "name:" in line and sys.argv[2] in line:
+        linkFound = True
+    if linkFound and "rotation :" in line:
+        f.write("    rotation : [ "+ str(x) + ", " + str(y) + ", " + str(z) + ", " + str(angle) + " ]\n")
+    else:
+        f.write(line)
+f.close()
+    
