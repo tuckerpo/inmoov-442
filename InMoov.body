@@ -184,8 +184,8 @@ links:
   -
     name: TibiaHighRightV1
     parent: Base
-    translation : [ -182, 30, 467 ]
-    rotation : [ 0.706063331434, -0.705403050969, 0.0622985368107, 187.090598298 ]
+    translation : [ -142, 30, 467 ]
+    rotation : [ -0.705757984387, -0.705757211839, 0.061744841179, 172.933475033 ]
     jointId: 10
     jointType: revolute
     jointAxis: -Y
@@ -202,8 +202,8 @@ links:
   -
     name: KneeLowRightV3
     parent: Base
-    translation : [ -257, 76, 453 ]
-    rotation : [ 0.08678249806, -0.0868516328191, -0.9924341751, 90.4353557095 ]
+    translation : [ -69, -20, 453 ]
+    rotation : [ 0.08678249806, 0.0868516328191, 0.9924341751, 90.4353557095 ]
     jointId: 11
     jointType: revolute
     jointAxis: -Y
@@ -218,10 +218,10 @@ links:
       Shape:
         geometry: { type: Resource, uri: "STLFiles/Legs-Knee/KneeLowRightV3.stl" }
   -
-    name: KneeClampRightV1
+    name: KneeClampRightV1S0
     parent: Base
-    translation : [ -257, 760, 453 ]
-    rotation : [ 0.08678249806, -0.0868516328191, -0.9924341751, 90.4353557095 ]
+    translation : [ -160, 55, 575 ]
+    rotation : [ 0.707106312093, 0.707107250279, 9.38185046295e-07, 180.000044531 ]
     jointId: 12
     jointType: revolute
     jointAxis: -Y
@@ -234,4 +234,4 @@ links:
       1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
     elements:
       Shape:
-        geometry: { type: Resource, uri: "STLFiles/Legs-Knee/KneeClampRightV1.stl" }
+        geometry: { type: Resource, uri: "STLFiles/Legs-Knee/KneeClampRightV1S0.stl" }
