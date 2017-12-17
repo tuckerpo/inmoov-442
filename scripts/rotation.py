@@ -42,7 +42,12 @@ for line in lines:
         linkFound = True
     if linkFound and "rotation :" in line:
         f.write("    rotation : [ "+ str(x) + ", " + str(y) + ", " + str(z) + ", " + str(angle) + " ]\n")
+        updated = True
     else:
         f.write(line)
+if not updated:
+    print("Rotation not updated")
+if not linkFound:
+    print("link not found")
 f.close()
     
