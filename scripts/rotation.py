@@ -41,7 +41,7 @@ for line in lines:
     if "name:" in line and sys.argv[2] in line:
         linkFound = True
     if linkFound and "rotation :" in line:
-        f.write("    rotation : [ "+ str(x) + ", " + str(y) + ", " + str(z) + ", " + str(angle) + " ]\n")
+        f.write("    rotation : [ "+ str(x) + ", " + str(y) + ", " + str(z) + ", " + str(angle/3.14*180.0) + " ]\n")
         updated = True
     else:
         f.write(line)
