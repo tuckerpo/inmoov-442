@@ -184,8 +184,8 @@ links:
   -
     name: TibiaHighRightV1
     parent: Base
-    translation : [ -160, 58, 500 ]
-    rotation : [ 1.0, 0.0, 0.0, 180.0 ]
+    translation : [ -182, 30, 467 ]
+    rotation : [ 0.706063331434, -0.705403050969, 0.0622985368107, 187.090598298 ]
     jointId: 9
     jointType: revolute
     jointAxis: -Y
