@@ -59,9 +59,10 @@ def originalAngles(line):
         print( "Original Angles : ", xRot/3.14159*180.0, yRot/3.14159*180.0, zRot/3.14159*180.0)
         return
 	
-    xRot = -math.atan2(y * s- x * z * t , x * y * t + z * s)
-    yRot = math.asin( 1 - (y*y+ z*z ) * t) 
-    zRot = math.atan2(x * s - y * z * t , 1 - (x*x + z*z) * t)
+    zRot = math.atan2(y * s- x * z * t , x * y * t + z * s)
+    xRot = math.atan2(x * s - y * z * t, 1-(y*y+x*x)*t)
+    yRot = -math.asin(-(x*z*t)-y*s)  # 1 - (x*x + z*z) * t  
+    #zRot = math.atan2(x*y*t + z*s , 1 - (y*y+ z*z ) * t)
     print( "Original Angles : ", xRot/3.14159*180.0, yRot/3.14159*180.0, zRot/3.14159*180.0)
     
 f = open(sys.argv[1], "r")
