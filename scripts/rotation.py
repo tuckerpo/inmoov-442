@@ -29,8 +29,41 @@ else:
 	y /= norm
 	z /= norm
 
-print (x,y,z, angle/3.14159*180.0);
+print (x,y,z, angle/3.14159*180.0, "\n")
 
+def originalAngles(line):
+    #print(line)
+    rxyz = line.split('[')[1].split(',')
+    x = float(rxyz[0])
+    y = float(rxyz[1])
+    z = float(rxyz[2])
+    angle = float(rxyz[3].split(']')[0])*3.14159/180.0
+    
+    s=math.sin(angle);
+    c=math.cos(angle);
+    t=1-c;
+	
+    #print (x,y,z, angle, "\n")
+
+    if x*y*t + z*s > 0.998: # north pole singularity detected
+        xRot = 2.0*math.atan2(x*math.sin(angle/2.0),math.cos(angle/2.))
+        yRot = 3.14159/2.0
+        zRot = 0
+        print( "Original Angles : ", xRot/3.14159*180.0, yRot/3.14159*180.0, zRot/3.14159*180.0)
+        return
+		
+    if x*y*t + z*s < -0.998: # south pole singularity detected
+        xRot = -2.0*math.atan2(x*math.sin(angle/2.0),math.cos(angle/2.0))
+        yRot = -3.14159/2.0
+        zRot = 0
+        print( "Original Angles : ", xRot/3.14159*180.0, yRot/3.14159*180.0, zRot/3.14159*180.0)
+        return
+	
+    xRot = -math.atan2(y * s- x * z * t , x * y * t + z * s)
+    yRot = math.asin( 1 - (y*y+ z*z ) * t) 
+    zRot = math.atan2(x * s - y * z * t , 1 - (x*x + z*z) * t)
+    print( "Original Angles : ", xRot/3.14159*180.0, yRot/3.14159*180.0, zRot/3.14159*180.0)
+    
 f = open(sys.argv[1], "r")
 lines = f.readlines()
 f.close()
@@ -41,6 +74,7 @@ for line in lines:
     if "name:" in line and sys.argv[2] in line:
         linkFound = True
     if linkFound and "rotation :" in line:
+        print(originalAngles(line))
         f.write("    rotation : [ "+ str(x) + ", " + str(y) + ", " + str(z) + ", " + str(angle/3.14159*180.0) + " ]\n")
         linkFound = False
         updated = True
