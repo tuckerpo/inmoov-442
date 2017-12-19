@@ -74,14 +74,15 @@ linkFound = False
 for line in lines:
     if "name:" in line and sys.argv[2] in line:
         linkFound = True
-    if linkFound and "rotation :" in line:
+    if linkFound and "rotation :" in line and not updated:
         print(originalAngles(line))
         f.write("    rotation : [ "+ str(x) + ", " + str(y) + ", " + str(z) + ", " + str(angle/3.14159*180.0) + " ]\n")
-        linkFound = False
         updated = True
     else:
         f.write(line)
 if not updated:
     print("Rotation not updated")
+if not linkFound:
+    print("Link not found")
 f.close()
     
