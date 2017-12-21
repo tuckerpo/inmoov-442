@@ -346,8 +346,8 @@ links:
   -
     name: TStoLowRightV1
     parent: Base
-    translation : [ -200, -55, 897 ]
-    rotation : [ 1, 0, 0, 0.0 ]
+    translation : [ -42, 20, 1000]
+    rotation : [ 0.577349503163, 0.577351801239, -0.577349503163, 120.00010136 ]
     jointId: 18
     jointType: revolute
     jointAxis: -Y
