@@ -348,7 +348,7 @@ links:
     parent: Base
     translation : [ -42, 20, 1000]
     rotation : [ 0.577349503163, 0.577351801239, -0.577349503163, 120.00010136 ]
-    jointId: 18
+    jointId: 19
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -362,11 +362,11 @@ links:
       Shape:
         geometry: { type: Resource, uri: "STLFiles/Low Stomach/Low-Stomach/TStoLowRightV1.stl" }
   -
-    name: StomSupportRightV1
+    name: BotFrontRigtV1
     parent: Base
-    translation : [ -60, 100, 1000]
-    rotation : [ 0.577349503163, 0.577351801239, -0.577349503163, 120.00010136 ]
-    jointId: 19
+    translation : [ 0, 53, 1067]
+    rotation : [ 0.707107250279, 0.707106312093, -9.38185046295e-07, 180.000044531 ]
+    jointId: 20
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -378,4 +378,40 @@ links:
       1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
     elements:
       Shape:
-        geometry: { type: Resource, uri: "STLFiles/Low Stomach/Low-Stomach/StomSupportRightV1.stl" }
+        geometry: { type: Resource, uri: "STLFiles/Mid Stomach/Mid-Stomach/BotFrontRigtV1.stl" }
+  -
+    name: BotFrontLeftV1
+    parent: Base
+    translation : [ -1, 163, 1070.5]
+    rotation : [ 0.707107250279, 0.707106312093, -9.38185046295e-07, 180.000044531 ]
+    jointId: 21
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Mid Stomach/Mid-Stomach/BotFrontLeftV1.stl" }
+  -
+    name: HipCoverFrontV1S0
+    parent: Base
+    translation : [ -60, 100, 1000]
+    rotation : [ 0.577349503163, 0.577351801239, -0.577349503163, 120.00010136 ]
+    jointId: 22
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Mid Stomach/Mid-Stomach/HipCoverFrontV1S0.stl" }

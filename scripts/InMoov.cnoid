@@ -10,7 +10,7 @@ items:
       plugin: Body
       class: BodyItem
       data: 
-        modelFile: "../../inmoov-442/InMoov.body"
+        modelFile: "/home/nse/inmoov-442/InMoov.body"
         currentBaseLink: "Base"
         rootPosition: [ 0, 0, 0.1605 ]
         rootAttitude: [ 
@@ -18,6 +18,7 @@ items:
           0, 1, 0, 
           0, 0, 1 ]
         jointPositions: [ 
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
            0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
            0.000000,  0.000000,  0.000000 ]
         initialRootPosition: [ 0, 0, 0.1605 ]
@@ -56,7 +57,7 @@ views:
     class: SceneView
     mounted: true
     state: 
-      editMode: true
+      editMode: false
       viewpointControlMode: thirdPerson
       collisionLines: false
       polygonMode: fill
@@ -94,9 +95,9 @@ views:
           fieldOfView: 0.698132
           near: 0.01
           far: 1e+06
-          eye: [ -322.470995, 562.590641, 570.615724 ]
-          direction: [ 0.19815403, -0.948093755, -0.248703059 ]
-          up: [ 0.05088018, -0.243442845, 0.968579779 ]
+          eye: [ 309.783629, 91.7956646, 988.152433 ]
+          direction: [ -0.985671095, -0.0165934341, 0.167860508 ]
+          up: [ 0.167836726, 0.0028254736, 0.985810758 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -140,10 +141,6 @@ views:
     state: 
       listingMode: "Link List"
       currentBodyItem: 1
-      bodyItems: 
-        - 
-          id: 1
-          selectedLinks: [ 11 ]
   - 
     id: 8
     plugin: Python
