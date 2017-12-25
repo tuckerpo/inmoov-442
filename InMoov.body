@@ -456,7 +456,7 @@ links:
     parent: Base
     translation : [ -82, 51, 1070]
     rotation : [ 0.707107250279, 0.707106312093, -9.38185046295e-07, 180.000044531 ]
-    jointId: 24
+    jointId: 25
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -469,3 +469,165 @@ links:
     elements:
       Shape:
         geometry: { type: Resource, uri: "STLFiles/Mid Stomach/Mid-Stomach/BotBackRigtV1.stl" }
+  -
+    name: RollFrontRightV1
+    parent: Base
+    translation : [ 0, 46, 1070]
+    rotation : [ 0.0, 0.0, 1.0, 90.0 ]
+    jointId: 26
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Stomach/Stomach/RollFrontRightV1.stl" }
+  -
+    name: RollFrontLeftV1
+    parent: Base
+    translation : [ 0, 161, 1070]
+    rotation : [ 0.0, 0.0, 1.0, 90.0 ]
+    jointId: 27
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Stomach/Stomach/RollFrontLeftV1.stl" }
+  -
+    name: RollBackLeftV1
+    parent: Base
+    translation : [ -83, 163, 1070]
+    rotation : [ 0.0, 0.0, 1.0, 90.0 ]
+    jointId: 28
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Stomach/Stomach/RollBackLeftV1.stl" }
+  -
+    name: RollBackRightV1
+    parent: Base
+    translation : [ -84, 53, 1070]
+    rotation : [ 0.0, 0.0, 1.0, 90.0 ]
+    jointId: 29
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Stomach/Stomach/RollBackRightV1.stl" }
+  -
+    name: ServoBackV1S0
+    parent: Base
+    translation : [ -51, 18, 1082]
+    rotation : [ 0.0, 0.0, 1.0, 90.0 ]
+    jointId: 30
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Stomach/Stomach/ServoBackV1S0.stl" }
+  -
+    name: ServoBackV1S1
+    parent: Base
+    translation : [ -81, 191, 1082]
+    rotation : [ 0.0, 0.0, 1.0, 90.0 ]
+    jointId: 31
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Stomach/Stomach/ServoBackV1S1.stl" }
+  -
+    name: TStoBackStandRightV1
+    parent: Base
+    translation : [ -91, 53, 1128]
+    rotation : [ 0.577349758506, 0.577350524531, 0.577350524531, 120.00001358 ]
+    jointId: 32
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Stomach/Stomach/TStoBackStandRightV1.stl" }
+  -
+    name: TStoBackStandLeftV1
+    parent: Base
+    translation : [ -91, 160, 1127.5]
+    rotation : [ 0.577349758506, 0.577350524531, 0.577350524531, 120.00001358 ]
+    jointId: 33
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Stomach/Stomach/TStoBackStandLeftV1.stl" }
+  -
+    name: TStomRotBackV1
+    parent: Base
+    translation : [ -82, 105, 1177]
+    rotation : [ 0.577349758506, 0.577350524531, 0.577350524531, 120.00001358 ]
+    jointId: 34
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Stomach/Stomach/TStomRotBackV1.stl" }
