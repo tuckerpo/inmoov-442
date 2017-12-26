@@ -1,6 +1,5 @@
 #!/bin/bash
-cd choreonoid
+cd ../../choreonoid
 misc/script/install-requisites-ubuntu-14.04.sh
 cmake .
-make
-bin/choreonoid sample/MVP/InMoov.cnoid
+make -j 4
