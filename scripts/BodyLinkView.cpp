@@ -850,6 +850,17 @@ void BodyLinkViewImpl::onXyzChanged()
                 activeSimulator->setForcedPosition(currentBodyItem, position);
             }
         }
+
+        char str[320];
+        strcpy(str, "python ../inmoov-442/scripts/translation.py ../inmoov-442/InMoov.body ");
+        strcat(str, currentLink->name().c_str()); 
+        strcat(str, " "); 
+        strcat(str, to_string(xyzSpin[0].value()).c_str()); 
+        strcat(str, " "); 
+        strcat(str, to_string(xyzSpin[1].value()).c_str()); 
+        strcat(str, " "); 
+        strcat(str, to_string(xyzSpin[2].value()).c_str());
+        system(str);
     }
 }
 
