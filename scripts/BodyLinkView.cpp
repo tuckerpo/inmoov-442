@@ -30,6 +30,9 @@
 #include <QGridLayout>
 #include <QGroupBox>
 #include "gettext.h"
+#include "../Base/ItemManager.h"
+#include "../Base/ItemList.h"
+#include <cnoid/ItemTreeView>
 
 using namespace std;
 using namespace std::placeholders;
@@ -96,6 +99,7 @@ public:
     WorldItem* currentWorldItem;
     BodyItemPtr currentBodyItem;
     Link* currentLink;
+    int previousLinkIndex;
 
     Connection currentBodyItemChangeConnection;
     ConnectionSet bodyItemConnections;
@@ -486,7 +490,8 @@ void BodyLinkViewImpl::onCurrentBodyItemChanged(BodyItem* bodyItem)
         activateCurrentBodyItem(false);
         
         currentBodyItem = bodyItem;
-        currentLink = 0;
+        //TODO Make sure that body item has a link at the value of whatever the previousLinkIndex is
+        currentLink = bodyItem->body()->link(previousLinkIndex);
     
         activateCurrentBodyItem(true);
     }
@@ -537,9 +542,11 @@ void BodyLinkViewImpl::update()
         LinkSelectionView::mainInstance()->selectedLinkIndices(currentBodyItem);
 
     if(selectedLinkIndices.empty()){
-        currentLink = body->rootLink();
+        //TODO Make sure that body item has a link at the value of whatever the previousLinkIndex is
+        currentLink = body->link(previousLinkIndex);
     } else {
         currentLink = body->link(selectedLinkIndices.front());
+        previousLinkIndex = selectedLinkIndices.front();
     }
 
     if(currentLink){
@@ -861,6 +868,8 @@ void BodyLinkViewImpl::onXyzChanged()
         strcat(str, " "); 
         strcat(str, to_string(xyzSpin[2].value()).c_str());
         system(str);
+        
+        ItemManager::reloadItems(ItemTreeView::mainInstance()->selectedItems());
     }
 }
 
@@ -886,6 +895,8 @@ void BodyLinkViewImpl::onRpyChanged()
         strcat(str, " "); 
         strcat(str, to_string(rpySpin[2].value()).c_str());
         system(str);
+        
+        ItemManager::reloadItems(ItemTreeView::mainInstance()->selectedItems());
     }
 
 }
