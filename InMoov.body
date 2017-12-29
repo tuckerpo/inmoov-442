@@ -654,7 +654,7 @@ links:
     parent: Base
     translation : [ -72.0, 8.0, 1206.3035 ]
     rotation : [ 0.577350524531, 0.577350524531, 0.577349758506, 120.00001358 ]
-    jointId: 35
+    jointId: 36
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -672,7 +672,7 @@ links:
     parent: Base
     translation : [ -72.0, 201.0, 1206.284 ]
     rotation : [ 0.577350524531, 0.577350524531, 0.577349758506, 120.00001358 ]
-    jointId: 35
+    jointId: 37
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
