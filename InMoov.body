@@ -634,7 +634,7 @@ links:
   -
     name: TStoMiddleV1
     parent: Base
-    translation : [ -70, 105, 1177]
+    translation : [ -72.0, 105.0, 1171.8025 ]
     rotation : [ 0.577350524531, 0.577350524531, 0.577349758506, 120.00001358 ]
     jointId: 35
     jointType: revolute
@@ -652,7 +652,7 @@ links:
   -
     name: TStoBackRightV1
     parent: Base
-    translation : [ -70, 0, 1177]
+    translation : [ -72.0, 8.0, 1206.3035 ]
     rotation : [ 0.577350524531, 0.577350524531, 0.577349758506, 120.00001358 ]
     jointId: 35
     jointType: revolute
@@ -670,7 +670,7 @@ links:
   -
     name: TStoBackLeftV1
     parent: Base
-    translation : [ -70, 220, 1200]
+    translation : [ -72.0, 201.0, 1206.284 ]
     rotation : [ 0.577350524531, 0.577350524531, 0.577349758506, 120.00001358 ]
     jointId: 35
     jointType: revolute
