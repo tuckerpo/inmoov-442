@@ -708,7 +708,7 @@ void BodyLinkViewImpl::updateKinematicState(bool blockSignals)
                 }
                 DoubleSpinBox& rpySpin_i = rpySpin[i];
                 if(!rpySpin_i.hasFocus()){
-                    rpySpin_i.setValue(degree(rpy[i]));
+                    //rpySpin_i.setValue(degree(rpy[i]));
                 }
             }
             if(!quatSpin[0].hasFocus() && !quatSpin[1].hasFocus() && !quatSpin[2].hasFocus() && !quatSpin[3].hasFocus()){
