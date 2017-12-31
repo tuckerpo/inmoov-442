@@ -725,7 +725,7 @@ links:
     name: TStoPistonRightV2S1
     parent: Base
     translation : [ -6.0, -40.0, 1201.8645 ]
-    rotation : [ 0.171087951246, -0.171087724247, 0.970287536533, 91.7279419004 ]
+    rotation : [ 0.0868266355953, -0.0868265203942, 0.992432511916, 90.435230212 ]
     jointId: 40
     jointType: revolute
     jointAxis: -Y
@@ -797,7 +797,7 @@ links:
     name: TStoPistonLeftV2S1
     parent: Base
     translation : [ -6.0, 194.0, 1206.3955 ]
-    rotation : [ -0.705757130227, 0.705757902775, -0.0617467068287, 187.066614439 ]
+    rotation : [ -0.0868266355953, 0.0868265203942, 0.992432511916, 90.435230212 ]
     jointId: 44
     jointType: revolute
     jointAxis: -Y
@@ -833,7 +833,7 @@ links:
     name: TStoFrontRightV1
     parent: Base
     translation : [ 5.0, 12.0, 1205.0 ]
-    rotation : [ -1.0, 0.0, 0.0, 90.0 ]
+    rotation : [ -0.577349758506, -0.577350524531, 0.577350524531, 120.00001358 ]
     jointId: 46
     jointType: revolute
     jointAxis: -Y
@@ -851,7 +851,7 @@ links:
     name: TStoFrontLeftV1
     parent: Base
     translation : [ 5.0, 197.0, 1205.321 ]
-    rotation : [ -1.0, 0.0, 0.0, 90.0 ]
+    rotation : [ -0.577349758506, -0.577350524531, 0.577350524531, 120.00001358 ]
     jointId: 47
     jointType: revolute
     jointAxis: -Y
@@ -869,7 +869,7 @@ links:
     name: TStomRotFrontV1
     parent: Base
     translation : [ 15.0, 105.0, 1174.926 ]
-    rotation : [ -1.0, 0.0, 0.0, 90.0 ]
+    rotation : [ -0.577349758506, -0.577350524531, 0.577350524531, 120.00001358 ]
     jointId: 48
     jointType: revolute
     jointAxis: -Y
@@ -887,7 +887,7 @@ links:
     name: TStoFrontStandV2
     parent: Base
     translation : [ 25.0, 106.0, 1125.889 ]
-    rotation : [ 1.0, 0.0, 0.0, 90.0 ]
+    rotation : [ 0.577350524531, -0.577350524531, -0.577349758506, 120.00001358 ]
     jointId: 49
     jointType: revolute
     jointAxis: -Y

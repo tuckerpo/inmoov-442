@@ -276,8 +276,8 @@ void BodyLinkViewImpl::setupWidgets()
         //xyzSpin[i].set_width_chars(7);
         xyzSpin[i].setAlignment(Qt::AlignCenter);
         xyzSpin[i].setDecimals(4);
-        xyzSpin[i].setRange(-4000, 4000);
-        xyzSpin[i].setSingleStep(0.0001);
+        xyzSpin[i].setRange(-4000.0, 4000.0);
+        xyzSpin[i].setSingleStep(0.5);
         
         stateWidgetConnections.add(
             xyzSpin[i].sigValueChanged().connect(
@@ -706,10 +706,10 @@ void BodyLinkViewImpl::updateKinematicState(bool blockSignals)
                 if(!xyzSpin_i.hasFocus()){
                     xyzSpin_i.setValue(currentLink->p()[i]);
                 }
-                DoubleSpinBox& rpySpin_i = rpySpin[i];
-                if(!rpySpin_i.hasFocus()){
+                //DoubleSpinBox& rpySpin_i = rpySpin[i];
+                //if(!rpySpin_i.hasFocus()){
                     //rpySpin_i.setValue(degree(rpy[i]));
-                }
+                //}
             }
             if(!quatSpin[0].hasFocus() && !quatSpin[1].hasFocus() && !quatSpin[2].hasFocus() && !quatSpin[3].hasFocus()){
                 Eigen::Quaterniond quat(R);
@@ -1020,9 +1020,9 @@ void BodyLinkViewImpl::switchRpyQuat(bool on)
         quat.normalize();
         Matrix3 R = quat.toRotationMatrix();
         Vector3 rpy = rpyFromRot(R);
-        rpySpin[0].setValue(degree(rpy[0]));
-        rpySpin[1].setValue(degree(rpy[1]));
-        rpySpin[2].setValue(degree(rpy[2]));
+        //rpySpin[0].setValue(degree(rpy[0]));
+        //rpySpin[1].setValue(degree(rpy[1]));
+        //rpySpin[2].setValue(degree(rpy[2]));
         for(int i=0; i<4; ++i){
             quatLabels[i]->hide();
             quatSpin[i].hide();
