@@ -99,7 +99,7 @@ public:
     WorldItem* currentWorldItem;
     BodyItemPtr currentBodyItem;
     Link* currentLink;
-    int previousLinkIndex;
+    int previousLinkIndex =0;
 
     Connection currentBodyItemChangeConnection;
     ConnectionSet bodyItemConnections;
