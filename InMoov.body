@@ -725,7 +725,7 @@ links:
     name: TStoPistonRightV2S1
     parent: Base
     translation : [ -6.0, -40.0, 1201.8645 ]
-    rotation : [ 0.0868266355953, -0.0868265203942, 0.992432511916, 90.435230212 ]
+    rotation : [ 0.171087951246, -0.171087724247, 0.970287536533, 91.7279419004 ]
     jointId: 40
     jointType: revolute
     jointAxis: -Y
@@ -742,9 +742,9 @@ links:
   -
     name: TStoPistonRightV2S2
     parent: Base
-    translation : [ 50.0, -43.0, 1153.1485 ]
-    rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 40
+    translation : [ 50.0, -22.0, 1134.914 ]
+    rotation : [ 0.129428369966, -0.129428198241, 0.983105609051, 90.9762008706 ]
+    jointId: 41
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -757,3 +757,21 @@ links:
     elements:
       Shape:
         geometry: { type: Resource, uri: "STLFiles/Stomach/Stomach/TStoPistonRightV2S2.stl" }
+  -
+    name: TStoServoHolsterV2S1
+    parent: Base
+    translation : [ -66.0, 19.0, 1139.9265 ]
+    rotation : [ 0.704062188321, 0.704062876502, 0.0926925072922, 190.591449108 ]
+    jointId: 42
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Stomach/Stomach/TStoServoHolsterV2S1.stl" }
