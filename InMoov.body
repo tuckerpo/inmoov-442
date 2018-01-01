@@ -904,7 +904,7 @@ links:
   -
     name: DiskUnderV1S1
     parent: Base
-    translation : [ 14.986, 126.9928, 1154.778 ]
+    translation : [ 14.986, 126.9928, 1164.9385 ]
     rotation : [ -0.250562924858, 0.935113152496, -0.250562592413, 93.840967544 ]
     jointId: 50
     jointType: revolute
@@ -922,7 +922,7 @@ links:
   -
     name: DiskUnderV1S2
     parent: Base
-    translation : [ 15.1859, 56.9466, 1162.8645 ]
+    translation : [ 15.1859, 56.9466, 1173.025 ]
     rotation : [ 0.577350524531, 0.577350524531, 0.577349758506, 120.00001358 ]
     jointId: 51
     jointType: revolute
@@ -1014,7 +1014,7 @@ links:
     parent: Base
     translation : [ 46.1859, 74.0, 1125.7125 ]
     rotation : [ 0.577349503163, 0.577351035214, 0.57735026919, 120.00010136 ]
-    jointId: 55
+    jointId: 56
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1027,3 +1027,21 @@ links:
     elements:
       Shape:
         geometry: { type: Resource, uri: "STLFiles/Stomach/Stomach/DiskInternV3 .stl" }
+  -
+    name: TStomCovRightV2
+    parent: Base
+    translation : [ 46.1859, 74.0, 1225.873 ]
+    rotation : [ 0.577349503163, 0.577351035214, 0.57735026919, 120.00010136 ]
+    jointId: 57
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Stomach/Stomach/TStomCovRightV2.stl" }
