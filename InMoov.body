@@ -1012,8 +1012,8 @@ links:
   -
     name: DiskInternV3
     parent: Base
-    translation : [ 55.1859, 143.5, 1126.268 ]
-    rotation : [ -0.577349758506, -0.577350524531, 0.577350524531, 120.00001358 ]
+    translation : [ 46.1859, 74.0, 1125.7125 ]
+    rotation : [ 0.577349503163, 0.577351035214, 0.57735026919, 120.00010136 ]
     jointId: 55
     jointType: revolute
     jointAxis: -Y
