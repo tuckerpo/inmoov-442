@@ -1030,8 +1030,8 @@ links:
   -
     name: TStomCovRightV2
     parent: Base
-    translation : [ 46.1859, 74.0, 1225.873 ]
-    rotation : [ 0.577349503163, 0.577351035214, 0.57735026919, 120.00010136 ]
+    translation : [ 19.1859, 28.0, 1236.0 ]
+    rotation : [ 0.707107250279, 0.707106312093, -9.38185046295e-07, 180.000044531 ]
     jointId: 57
     jointType: revolute
     jointAxis: -Y
