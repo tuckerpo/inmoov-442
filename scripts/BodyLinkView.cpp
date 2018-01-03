@@ -883,7 +883,7 @@ void BodyLinkViewImpl::onRpyChanged()
         }
         Matrix3 R = currentLink->calcRfromAttitude(rotFromRpy(rpy));
 
-        setPosture(R);
+        //setPosture(R);
 
         char str[320];
         strcpy(str, "python ../inmoov-442/scripts/rotation.py ../inmoov-442/InMoov.body ");
