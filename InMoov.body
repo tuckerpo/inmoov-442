@@ -1156,7 +1156,7 @@ links:
   -
     name: KinectSideBackV1Left
     parent: Base
-    translation : [ -72.0, 205.3, 1295.7445 ]
+    translation : [ -62.0, 203.8, 1294.0 ]
     rotation : [ 0.577349758506, -0.577350524531, -0.577350524531, 120.00001358 ]
     jointId: 64
     jointType: revolute
