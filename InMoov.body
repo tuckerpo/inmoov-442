@@ -1192,8 +1192,8 @@ links:
   -
     name: BatteryHolderLeftV3
     parent: Base
-    translation : [ -98.0, 21.6, 1288.0 ]
-    rotation : [ -0.577350524531, 0.577349758506, 0.577350524531, 120.00001358 ]
+    translation : [ -98.0, 188.3, 1288.0 ]
+    rotation : [ 0.577350524531, -0.577349758506, 0.577350524531, 120.00001358 ]
     jointId: 66
     jointType: revolute
     jointAxis: -Y
