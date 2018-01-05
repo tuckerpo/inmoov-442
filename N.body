@@ -1246,7 +1246,7 @@ links:
   -
     name: HomLowFront-V1Right
     parent: Base
-    translation : [ 0.0, 170.3, 1500.0 ]
+    translation : [ 5.0, 201.3, 1384.0 ]
     rotation : [ 0.577350524531, -0.577350524531, -0.577349758506, 120.00001358 ]
     jointId: 69
     jointType: revolute
