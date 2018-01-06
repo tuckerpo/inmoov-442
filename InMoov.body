@@ -1246,7 +1246,7 @@ links:
   -
     name: ChestLowV1
     parent: Base
-    translation : [ -70.0, 120.0, 1394.0 ]
+    translation : [ -34.0, 132.5, 1355.0 ]
     rotation : [ 1.0, 0.0, 0.0, 90.0 ]
     jointId: 68
     jointType: revolute
