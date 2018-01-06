@@ -1248,7 +1248,7 @@ links:
     parent: Base
     translation : [ -34.0, 132.5, 1355.0 ]
     rotation : [ 1.0, 0.0, 0.0, 90.0 ]
-    jointId: 68
+    jointId: 74
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1266,7 +1266,7 @@ links:
     parent: Base
     translation : [ -35.0, 132.3, 1274.0 ]
     rotation : [ -0.577348481797, -0.577350779871, 0.577351545897, 240.000114939 ]
-    jointId: 68
+    jointId: 75
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1279,3 +1279,21 @@ links:
     elements:
       Shape:
         geometry: { type: Resource, uri: "STLFiles/Torso/InMoov Print Files - Torso/InterKinectMidV1.stl" }
+  -
+    name: ThroatLowerV1
+    parent: Base
+    translation : [ -33.7, 132.55, 1439.8 ]
+    rotation : [ 1.0, 0.0, 0.0, 90.0 ]
+    jointId: 75
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Torso/InMoov Print Files - Torso/ThroatLowerV1.stl" }
