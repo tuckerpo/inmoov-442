@@ -1912,8 +1912,8 @@ links:
   -
     name: leftPivMitV1
     parent: Base
-    translation : [ -39.0, 100.0, 1432.0 ]
-    rotation : [ 1.0, 0.0, 0.0, 90.0 ]
+    translation : [ -38.3, 259.0, 1432.0 ]
+    rotation : [ 9.38185046295e-07, 0.707107250279, 0.707106312093, 180.000044531 ]
     jointId: 106
     jointType: revolute
     jointAxis: -Y
