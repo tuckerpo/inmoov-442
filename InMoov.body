@@ -1873,3 +1873,21 @@ links:
     elements:
       Shape:
         geometry: { type: Resource, uri: "STLFiles/Shoulder/Shoulder_for_Robot_InMoov/PivMitV1.stl" }
+  -
+    name: PivConnectorV1RightBack
+    parent: Base
+    translation : [ -60.0, -111.0, 1447.0 ]
+    rotation : [ 0.577349758506, 0.577350524531, 0.577350524531, 120.00001358 ]
+    jointId: 104
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Shoulder/Shoulder_for_Robot_InMoov/PivConnectorV1.stl" }
