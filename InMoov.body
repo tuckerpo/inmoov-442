@@ -1570,7 +1570,7 @@ links:
   -
     name: ThroatHoleV2
     parent: Base
-    translation : [ -58.0, 105.0, 1521.2 ]
+    translation : [ -58.0, 106.2, 1521.2 ]
     rotation : [ 0.707106312093, 0.707107250279, 9.38185046295e-07, 180.000044531 ]
     jointId: 86
     jointType: revolute
