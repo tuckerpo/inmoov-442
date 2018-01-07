@@ -1985,7 +1985,7 @@ links:
     name: BackCoverTopLeftV3
     parent: Base
     translation : [ -122.0, 249.0, 1470.0 ]
-    rotation : [ 0.862856270036, -0.357406434114, 0.357406908319, 98.4210620718 ]
+    rotation : [ 0.862357526506, -0.286171992519, 0.417666238972, 99.7554806229 ]
     jointId: 110
     jointType: revolute
     jointAxis: -Y
@@ -2003,7 +2003,7 @@ links:
     name: BackCoverTopRightV3
     parent: Base
     translation : [ -122.0, -40.0, 1470.0 ]
-    rotation : [ -0.281085194599, 0.678597779031, 0.678598679391, 148.600311959 ]
+    rotation : [ -0.230922182464, 0.695863338916, 0.680036145509, 142.749499293 ]
     jointId: 111
     jointType: revolute
     jointAxis: -Y
@@ -2020,7 +2020,7 @@ links:
   -
     name: BackCoverTopMid.V2
     parent: Base
-    translation : [ -133.0, 143.0, 1497.0 ]
+    translation : [ -118.0, 143.0, 1501.0 ]
     rotation : [ 1.0, 0.0, 0.0, 90.0 ]
     jointId: 112
     jointType: revolute
