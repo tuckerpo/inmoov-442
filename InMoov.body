@@ -1318,8 +1318,8 @@ links:
   -
     name: ChestRightV1
     parent: Base
-    translation : [ 330.0, 40.7, 1304.0 ]
-    rotation : [ 1, 0, 0, 0.0 ]
+    translation : [ 29.0, 10.7, 1335.5 ]
+    rotation : [ 0.0, 0.0, 1.0, 180.0 ]
     jointId: 73
     jointType: revolute
     jointAxis: -Y
@@ -1696,7 +1696,7 @@ links:
   -
     name: BottomChestV1Left
     parent: Base
-    translation : [ 29.1859, 139.0, 1337.0 ]
+    translation : [ 29.1859, 138.5, 1337.5 ]
     rotation : [ -0.577350524531, 0.577349758506, 0.577350524531, 120.00001358 ]
     jointId: 94
     jointType: revolute
@@ -1732,7 +1732,7 @@ links:
   -
     name: MiddleChestV1
     parent: Base
-    translation : [ 25.181, 69.0, 1333.5 ]
+    translation : [ 25.181, 69.0, 1334.0 ]
     rotation : [ -1.0, 0.0, 0.0, 90.0 ]
     jointId: 96
     jointType: revolute
