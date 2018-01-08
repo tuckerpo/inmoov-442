@@ -2218,8 +2218,8 @@ links:
   -
     name: ThroatPistonV3
     parent: Base
-    translation : [ -1500.0, 1000.0, 1750.7 ]
-    rotation : [ 0.707106312093, 0.707107250279, 9.38185046295e-07, 180.000044531 ]
+    translation : [ 1037.0, -1327.0, 1450.0 ]
+    rotation : [ 1, 0, 0, 0.0 ]
     jointId: 123
     jointType: revolute
     jointAxis: -Y
