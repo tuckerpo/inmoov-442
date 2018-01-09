@@ -10,7 +10,7 @@ items:
       plugin: Body
       class: BodyItem
       data: 
-        modelFile: "../../inmoov-442/InMoov.body"
+        modelFile: "/home/nse/inmoov-442/InMoov.body"
         currentBaseLink: "Base"
         rootPosition: [ 0, 0, 0 ]
         rootAttitude: [ 
@@ -22,7 +22,16 @@ items:
            0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
            0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
            0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
-           0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+           0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000, 
+           0.000000 ]
         initialRootPosition: [ 0, 0, 0 ]
         initialRootAttitude: [ 
           1, 0, 0, 
@@ -99,7 +108,7 @@ views:
           far: 1e+06
           eye: [ 367.095517, 85.2395685, 1633.91083 ]
           direction: [ -0.72246777, 0.0456968665, -0.68989283 ]
-          up: [ -0.68851693, 0.0435494392, 0.723911516 ]
+          up: [ -0.688516931, 0.0435494392, 0.723911516 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -149,6 +158,28 @@ views:
     class: PythonConsoleView
     mounted: true
 toolbars: 
+  "TimeBar": 
+    minTime: 0
+    maxTime: 30
+    frameRate: 100
+    playbackFrameRate: 50
+    idleLoopDrivenMode: false
+    currentTime: 0
+    speedScale: 1
+    syncToOngoingUpdates: true
+    autoExpansion: true
+  "LeggedBodyBar": 
+    stanceWidth: 0.15
+  "KinematicsBar": 
+    mode: AUTO
+    enablePositionDragger: true
+    penetrationBlock: false
+    collisionLinkHighlight: false
+    snapDistance: 0.025
+    penetrationBlockDepth: 0.0005
+    lazyCollisionDetectionMode: true
+  "BodyBar": 
+    current: 1
   "BodyMotionGenerationBar": 
     autoGenerationForNewBody: true
     balancer: false
@@ -182,28 +213,6 @@ toolbars:
     waistHeightRelaxation: false
     gravity: 9.8
     dynamicsTimeRatio: 1
-  "TimeBar": 
-    minTime: 0
-    maxTime: 30
-    frameRate: 100
-    playbackFrameRate: 50
-    idleLoopDrivenMode: false
-    currentTime: 0
-    speedScale: 1
-    syncToOngoingUpdates: true
-    autoExpansion: true
-  "LeggedBodyBar": 
-    stanceWidth: 0.15
-  "KinematicsBar": 
-    mode: AUTO
-    enablePositionDragger: true
-    penetrationBlock: false
-    collisionLinkHighlight: false
-    snapDistance: 0.025
-    penetrationBlockDepth: 0.0005
-    lazyCollisionDetectionMode: true
-  "BodyBar": 
-    current: 1
 Body: 
   "BodyMotionEngine": 
     updateJointVelocities: false
@@ -236,17 +245,17 @@ viewAreas:
     contents: 
       type: splitter
       orientation: horizontal
-      sizes: [ 288, 474 ]
+      sizes: [ 578, 951 ]
       children: 
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 358, 357 ]
+          sizes: [ 372, 371 ]
           children: 
             - 
               type: splitter
               orientation: vertical
-              sizes: [ 279, 73 ]
+              sizes: [ 290, 76 ]
               children: 
                 - 
                   type: pane
@@ -263,7 +272,7 @@ viewAreas:
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 548, 167 ]
+          sizes: [ 569, 174 ]
           children: 
             - 
               type: pane
