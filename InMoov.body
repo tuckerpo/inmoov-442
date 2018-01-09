@@ -2416,8 +2416,8 @@ links:
   -
     name: TopskullRightV3S2
     parent: Base
-    translation : [ 30.0, 64.0, 1762.0 ]
-    rotation : [ 0.0369736948471, 0.923393088441, -0.382070870532, 177.164074498 ]
+    translation : [ 36.0, 65.0, 1760.0 ]
+    rotation : [ -0.00788071573867, 0.930527900278, -0.366136205698, 174.981911016 ]
     jointId: 134
     jointType: revolute
     jointAxis: -Y
