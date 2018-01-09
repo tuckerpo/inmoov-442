@@ -2470,7 +2470,7 @@ links:
   -
     name: SideHearV2Left
     parent: Base
-    translation : [ -20.0, 32.0, 1620.0 ]
+    translation : [ -20.0, 172.0, 1620.0 ]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
     jointId: 137
     jointType: revolute
