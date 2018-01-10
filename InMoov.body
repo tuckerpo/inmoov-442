@@ -2452,7 +2452,7 @@ links:
   -
     name: SideHearV2Right
     parent: Base
-    translation : [ -20.0, 32.0, 1620.0 ]
+    translation : [ -12.0, 32.0, 1620.0 ]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
     jointId: 136
     jointType: revolute
@@ -2470,7 +2470,7 @@ links:
   -
     name: SideHearV2Left
     parent: Base
-    translation : [ -20.0, 172.0, 1620.0 ]
+    translation : [ -13.0, 174.0, 1620.0 ]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
     jointId: 137
     jointType: revolute
@@ -2521,3 +2521,21 @@ links:
     elements:
       Shape:
         geometry: { type: Resource, uri: "STLFiles/Face and Jaw/InMoov Print Files - Face & Jaw/TopMouthV3NoSupport.stl" }
+  -
+    name: JawV4
+    parent: Base
+    translation : [ 46.0, 104.5, 1640.0 ]
+    rotation : [ 0.382683125915, 0.923879659447, 5.0774201851e-07, 180.000011573 ]
+    jointId: 140
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Face and Jaw/InMoov Print Files - Face & Jaw/JawV4.stl" }
