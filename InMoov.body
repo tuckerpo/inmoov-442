@@ -2737,3 +2737,21 @@ links:
     elements:
       Shape:
         geometry: { type: Resource, uri: "STLFiles/Right Hand/robpart5V4.stl" }
+  -
+    name: robpart2V4
+    parent: Base
+    translation : [ -85.0, -126.0, 1040.0 ]
+    rotation : [ 0.906307942794, -0.422617927717, 5.6072730974e-07, 180.000014245 ]
+    jointId: 152
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Right Hand/robpart2V4.stl" }
