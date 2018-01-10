@@ -2809,3 +2809,39 @@ links:
     elements:
       Shape:
         geometry: { type: Resource, uri: "STLFiles/Rotation Wrist/InMoov-Rotational-Wrist/RotaWrist3V3.stl" }
+  -
+    name: leftRotcenterV2
+    parent: Base
+    translation : [ -37.2, 316.9, 1377.2 ]
+    rotation : [ 0.0, 0.0, 1.0, 90.0 ]
+    jointId: 156
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Biceps/Bicep_for_Robot_InMoov/leftRotcenterV2.stl" }
+  -
+    name: leftRotTitV2
+    parent: Base
+    translation : [ -32.3, 320.0, 1401.6 ]
+    rotation : [ 0.0, 0.0, 1.0, 90.0 ]
+    jointId: 157
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Biceps/Bicep_for_Robot_InMoov/leftRotTitV2.stl" }
