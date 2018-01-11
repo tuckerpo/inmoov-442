@@ -218,47 +218,11 @@ links:
       Shape:
         geometry: { type: Resource, uri: "STLFiles/Legs-Knee/KneeLowRightV3.stl" }
   -
-    name: KneeClampRightV1S0
-    parent: Base
-    translation : [ -160, 55, 575 ]
-    rotation : [ 0.70677052586, 0.706769506236, -0.0308591774316, 183.535015027 ]
-    jointId: 12
-    jointType: revolute
-    jointAxis: -Y
-    jointRange: [ -0.873, 2.269 ]
-    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
-    mass: 0.02905
-    inertia: [
-      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
-      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
-      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
-    elements:
-      Shape:
-        geometry: { type: Resource, uri: "STLFiles/Legs-Knee/KneeClampRightV1S0.stl" }
-  -
-    name: KneeClampRightV1S1
-    parent: Base
-    translation : [ -160, 8, 575 ]
-    rotation : [ 0.0435779134264, 0.0435779712454, 0.998099156338, 90.1090139879 ]
-    jointId: 13
-    jointType: revolute
-    jointAxis: -Y
-    jointRange: [ -0.873, 2.269 ]
-    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
-    mass: 0.02905
-    inertia: [
-      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
-      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
-      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
-    elements:
-      Shape:
-        geometry: { type: Resource, uri: "STLFiles/Legs-Knee/KneeClampRightV1S1.stl" }
-  -
     name: KneeHighRightV3
     parent: Base
     translation : [ -135, -20, 570 ]
     rotation : [ 0.707107250279, 0.707106312093, -9.38185046295e-07, 180.000044531 ]
-    jointId: 14
+    jointId: 12
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -276,7 +240,7 @@ links:
     parent: Base
     translation : [ -172, -38, 566 ]
     rotation : [ 1, 0, 0, 360.00004074 ]
-    jointId: 15
+    jointId: 13
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -294,7 +258,7 @@ links:
     parent: Base
     translation : [ -91, 18, 675 ]
     rotation : [ 1, 0, 0, 360.00004074 ]
-    jointId: 16
+    jointId: 14
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -312,7 +276,7 @@ links:
     parent: Base
     translation : [ 4, -67, 786 ]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 17
+    jointId: 15
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -330,7 +294,7 @@ links:
     parent: Base
     translation : [ -200, -55, 897 ]
     rotation : [ 1, 0, 0, 0.0 ]
-    jointId: 18
+    jointId: 16
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -348,7 +312,7 @@ links:
     parent: Base
     translation : [ -42, 20, 1000]
     rotation : [ 0.577349503163, 0.577351801239, -0.577349503163, 120.00010136 ]
-    jointId: 19
+    jointId: 17
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -366,7 +330,7 @@ links:
     parent: Base
     translation : [ 0, 53, 1067]
     rotation : [ 0.707107250279, 0.707106312093, -9.38185046295e-07, 180.000044531 ]
-    jointId: 20
+    jointId: 18
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -384,7 +348,7 @@ links:
     parent: Base
     translation : [ -1, 163, 1070.5]
     rotation : [ 0.707107250279, 0.707106312093, -9.38185046295e-07, 180.000044531 ]
-    jointId: 21
+    jointId: 19
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -402,7 +366,7 @@ links:
     parent: Base
     translation : [ 25, 106, 1003]
     rotation : [ 1.0, 0.0, 0.0, 90.0 ]
-    jointId: 22
+    jointId: 20
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -420,7 +384,7 @@ links:
     parent: Base
     translation : [ 25, 106, 1003]
     rotation : [ -9.38185046295e-07, 0.707106312093, 0.707107250279, 180.000044531 ]
-    jointId: 23
+    jointId: 21
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -438,7 +402,7 @@ links:
     parent: Base
     translation : [ -84, 163, 1070]
     rotation : [ 0.707107250279, 0.707106312093, -9.38185046295e-07, 180.000044531 ]
-    jointId: 24
+    jointId: 22
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -456,7 +420,7 @@ links:
     parent: Base
     translation : [ -82, 51, 1070]
     rotation : [ 0.707107250279, 0.707106312093, -9.38185046295e-07, 180.000044531 ]
-    jointId: 25
+    jointId: 23
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -474,7 +438,7 @@ links:
     parent: Base
     translation : [ 0, 46, 1070]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 26
+    jointId: 24
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -492,7 +456,7 @@ links:
     parent: Base
     translation : [ 0, 161, 1070]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 27
+    jointId: 25
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -510,7 +474,7 @@ links:
     parent: Base
     translation : [ -83, 163, 1070]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 28
+    jointId: 26
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -528,7 +492,7 @@ links:
     parent: Base
     translation : [ -84, 53, 1070]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 29
+    jointId: 27
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -546,7 +510,7 @@ links:
     parent: Base
     translation : [ -51, 18, 1082]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 30
+    jointId: 28
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -564,7 +528,7 @@ links:
     parent: Base
     translation : [ -81, 191, 1082]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 31
+    jointId: 29
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -582,7 +546,7 @@ links:
     parent: Base
     translation : [ -91, 53, 1128]
     rotation : [ 0.577349758506, 0.577350524531, 0.577350524531, 120.00001358 ]
-    jointId: 32
+    jointId: 30
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -600,7 +564,7 @@ links:
     parent: Base
     translation : [ -91, 160, 1127.5]
     rotation : [ 0.577349758506, 0.577350524531, 0.577350524531, 120.00001358 ]
-    jointId: 33
+    jointId: 31
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -618,7 +582,7 @@ links:
     parent: Base
     translation : [ -82, 105, 1177]
     rotation : [ 0.577349758506, 0.577350524531, 0.577350524531, 120.00001358 ]
-    jointId: 34
+    jointId: 32
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -636,7 +600,7 @@ links:
     parent: Base
     translation : [ -72.0, 105.0, 1171.8025 ]
     rotation : [ 0.577350524531, 0.577350524531, 0.577349758506, 120.00001358 ]
-    jointId: 35
+    jointId: 33
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -654,7 +618,7 @@ links:
     parent: Base
     translation : [ -72.0, 8.0, 1206.3035 ]
     rotation : [ 0.577349758506, 0.577350524531, 0.577350524531, 120.00001358 ]
-    jointId: 36
+    jointId: 34
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -672,7 +636,7 @@ links:
     parent: Base
     translation : [ -72.0, 201.0, 1206.605 ]
     rotation : [ 0.577350524531, 0.577350524531, 0.577349758506, 120.00001358 ]
-    jointId: 37
+    jointId: 35
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -690,7 +654,7 @@ links:
     parent: Base
     translation : [ -62.0, 104.0, 1163.531 ]
     rotation : [ 0.577350524531, 0.577350524531, 0.577349758506, 120.00001358 ]
-    jointId: 38
+    jointId: 36
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -708,7 +672,7 @@ links:
     parent: Base
     translation : [ -5.0, 104.0, 1169.6175 ]
     rotation : [ 0.577349758506, 0.577350524531, 0.577350524531, 120.00001358 ]
-    jointId: 39
+    jointId: 37
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -726,7 +690,7 @@ links:
     parent: Base
     translation : [ -6.0, -40.0, 1201.8645 ]
     rotation : [ 0.0868266355953, -0.0868265203942, 0.992432511916, 90.435230212 ]
-    jointId: 40
+    jointId: 38
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -744,7 +708,7 @@ links:
     parent: Base
     translation : [ 50.0, -22.0, 1134.914 ]
     rotation : [ 0.129428369966, -0.129428198241, 0.983105609051, 90.9762008706 ]
-    jointId: 41
+    jointId: 39
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -762,7 +726,7 @@ links:
     parent: Base
     translation : [ -66.0, 19.0, 1139.9265 ]
     rotation : [ 0.704062188321, 0.704062876502, 0.0926925072922, 190.591449108 ]
-    jointId: 42
+    jointId: 40
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -780,7 +744,7 @@ links:
     parent: Base
     translation : [ -2.0, 199.0, 1140.6919 ]
     rotation : [ -0.701673463139, 0.701674065804, -0.123724922728, 194.106080274 ]
-    jointId: 43
+    jointId: 41
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -798,7 +762,7 @@ links:
     parent: Base
     translation : [ -6.0, 194.0, 1206.3955 ]
     rotation : [ -0.0868266355953, 0.0868265203942, 0.992432511916, 90.435230212 ]
-    jointId: 44
+    jointId: 42
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -816,7 +780,7 @@ links:
     parent: Base
     translation : [ -56.0, 120.0, 1168.161 ]
     rotation : [ -1.0, 0.0, 0.0, 13.0 ]
-    jointId: 45
+    jointId: 43
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -834,7 +798,7 @@ links:
     parent: Base
     translation : [ 5.0, 12.0, 1205.0 ]
     rotation : [ -0.577349758506, -0.577350524531, 0.577350524531, 120.00001358 ]
-    jointId: 46
+    jointId: 44
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -852,7 +816,7 @@ links:
     parent: Base
     translation : [ 5.0, 197.0, 1205.321 ]
     rotation : [ -0.577349758506, -0.577350524531, 0.577350524531, 120.00001358 ]
-    jointId: 47
+    jointId: 45
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -870,7 +834,7 @@ links:
     parent: Base
     translation : [ 15.0, 105.0, 1174.926 ]
     rotation : [ -0.577349758506, -0.577350524531, 0.577350524531, 120.00001358 ]
-    jointId: 48
+    jointId: 46
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -888,7 +852,7 @@ links:
     parent: Base
     translation : [ 25.0, 106.0, 1125.889 ]
     rotation : [ 0.577350524531, -0.577350524531, -0.577349758506, 120.00001358 ]
-    jointId: 49
+    jointId: 47
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -906,7 +870,7 @@ links:
     parent: Base
     translation : [ 14.986, 126.9928, 1164.9385 ]
     rotation : [ -0.250562924858, 0.935113152496, -0.250562592413, 93.840967544 ]
-    jointId: 50
+    jointId: 48
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -924,7 +888,7 @@ links:
     parent: Base
     translation : [ 15.1859, 56.9466, 1173.025 ]
     rotation : [ 0.577350524531, 0.577350524531, 0.577349758506, 120.00001358 ]
-    jointId: 51
+    jointId: 49
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -942,7 +906,7 @@ links:
     parent: Base
     translation : [ 35.1859, 74.5, 1122.7905 ]
     rotation : [ 0.577350524531, 0.577350524531, 0.577349758506, 120.00001358 ]
-    jointId: 52
+    jointId: 50
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -960,7 +924,7 @@ links:
     parent: Base
     translation : [ 35.1859, 71.0, 1193.3955 ]
     rotation : [ 0.0, 1.0, 0.0, 90.0 ]
-    jointId: 53
+    jointId: 51
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -978,7 +942,7 @@ links:
     parent: Base
     translation : [ 35.1859, 140.0, 1196.8235 ]
     rotation : [ -0.577350524531, 0.577350524531, -0.577349758506, 120.00001358 ]
-    jointId: 54
+    jointId: 52
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -996,7 +960,7 @@ links:
     parent: Base
     translation : [ 35.1859, 143.5, 1126.1075 ]
     rotation : [ -0.707107250279, 9.38185046295e-07, -0.707106312093, 180.000044531 ]
-    jointId: 55
+    jointId: 53
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1014,7 +978,7 @@ links:
     parent: Base
     translation : [ 46.1859, 74.0, 1125.7125 ]
     rotation : [ 0.577349503163, 0.577351035214, 0.57735026919, 120.00010136 ]
-    jointId: 56
+    jointId: 54
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1032,7 +996,7 @@ links:
     parent: Base
     translation : [ 19.1859, 28.0, 1236.0 ]
     rotation : [ 0.707107250279, 0.707106312093, -9.38185046295e-07, 180.000044531 ]
-    jointId: 57
+    jointId: 55
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1050,7 +1014,7 @@ links:
     parent: Base
     translation : [ 19.1859, 184.0, 1238.0 ]
     rotation : [ 0.707107250279, 0.707106312093, -9.38185046295e-07, 180.000044531 ]
-    jointId: 58
+    jointId: 56
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1068,7 +1032,7 @@ links:
     parent: Base
     translation : [ 50.0, 36.0, 1268.642 ]
     rotation : [ 0.0, 1.0, 0.0, 180.0 ]
-    jointId: 59
+    jointId: 57
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1086,7 +1050,7 @@ links:
     parent: Base
     translation : [ 50.1859, 176.5, 1269.284 ]
     rotation : [ 1.0, 0.0, 0.0, 180.0 ]
-    jointId: 60
+    jointId: 58
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1104,7 +1068,7 @@ links:
     parent: Base
     translation : [ -5.0, 102.5, 1235.1605 ]
     rotation : [ 0.577349758506, 0.577350524531, 0.577350524531, 120.00001358 ]
-    jointId: 61
+    jointId: 59
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1122,7 +1086,7 @@ links:
     parent: Base
     translation : [ -72.0, 105.0, 1266.433 ]
     rotation : [ 0.577349758506, 0.577350524531, 0.577350524531, 120.00001358 ]
-    jointId: 62
+    jointId: 60
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1140,7 +1104,7 @@ links:
     parent: Base
     translation : [ -72.0, 6.3, 1294.3 ]
     rotation : [ 0.577349758506, 0.577350524531, 0.577350524531, 120.00001358 ]
-    jointId: 63
+    jointId: 61
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1158,7 +1122,7 @@ links:
     parent: Base
     translation : [ -62.0, 203.8, 1294.0 ]
     rotation : [ 0.577349758506, -0.577350524531, -0.577350524531, 120.00001358 ]
-    jointId: 64
+    jointId: 62
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1176,7 +1140,7 @@ links:
     parent: Base
     translation : [ -98.0, 21.6, 1288.0 ]
     rotation : [ -0.577350524531, 0.577349758506, 0.577350524531, 120.00001358 ]
-    jointId: 65
+    jointId: 63
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1194,7 +1158,7 @@ links:
     parent: Base
     translation : [ -98.0, 188.3, 1288.0 ]
     rotation : [ 0.577350524531, -0.577349758506, 0.577350524531, 120.00001358 ]
-    jointId: 66
+    jointId: 64
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1212,7 +1176,7 @@ links:
     parent: Base
     translation : [ -71.6, 8.3, 1386.2 ]
     rotation : [ 0.577350524531, 0.577350524531, 0.577349758506, 120.00001358 ]
-    jointId: 67
+    jointId: 65
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1230,7 +1194,7 @@ links:
     parent: Base
     translation : [ -62.0, 202.3, 1386.2 ]
     rotation : [ 0.577350524531, -0.577350524531, -0.577349758506, 120.00001358 ]
-    jointId: 68
+    jointId: 66
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1248,7 +1212,7 @@ links:
     parent: Base
     translation : [ 5.0, 201.3, 1384.0 ]
     rotation : [ 0.577350524531, -0.577350524531, -0.577349758506, 120.00001358 ]
-    jointId: 69
+    jointId: 67
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1266,7 +1230,7 @@ links:
     parent: Base
     translation : [ 5.0, 197.7, 1288.5 ]
     rotation : [ 0.577350524531, -0.577350524531, -0.577349758506, 120.00001358 ]
-    jointId: 70
+    jointId: 68
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1284,7 +1248,7 @@ links:
     parent: Base
     translation : [ -5.0, 6.7, 1384.0 ]
     rotation : [ 0.577349758506, 0.577350524531, 0.577350524531, 120.00001358 ]
-    jointId: 71
+    jointId: 69
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1302,7 +1266,7 @@ links:
     parent: Base
     translation : [ -5.0, 10.7, 1288.5 ]
     rotation : [ 0.577349758506, 0.577350524531, 0.577350524531, 120.00001358 ]
-    jointId: 72
+    jointId: 70
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1320,7 +1284,7 @@ links:
     parent: Base
     translation : [ 29.0, 10.7, 1335.5 ]
     rotation : [ 0.0, 0.0, 1.0, 180.0 ]
-    jointId: 73
+    jointId: 71
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1338,7 +1302,7 @@ links:
     parent: Base
     translation : [ -34.0, 132.5, 1356.4 ]
     rotation : [ 1.0, 0.0, 0.0, 90.0 ]
-    jointId: 74
+    jointId: 72
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1356,7 +1320,7 @@ links:
     parent: Base
     translation : [ -35.0, 132.3, 1275.4 ]
     rotation : [ -0.577348481797, -0.577350779871, 0.577351545897, 240.000114939 ]
-    jointId: 75
+    jointId: 73
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1374,7 +1338,7 @@ links:
     parent: Base
     translation : [ -33.7, 132.55, 1441.2 ]
     rotation : [ 1.0, 0.0, 0.0, 90.0 ]
-    jointId: 76
+    jointId: 74
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1392,7 +1356,7 @@ links:
     parent: Base
     translation : [ -71.9, 140.6, 1374.7 ]
     rotation : [ 0.577349758506, 0.577350524531, 0.577350524531, 120.00001358 ]
-    jointId: 77
+    jointId: 75
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1410,7 +1374,7 @@ links:
     parent: Base
     translation : [ -61.9, 70.6, 1374.7 ]
     rotation : [ 0.577349758506, -0.577350524531, -0.577350524531, 120.00001358 ]
-    jointId: 78
+    jointId: 76
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1428,7 +1392,7 @@ links:
     parent: Base
     translation : [ -61.9, 202.4, 1470.3 ]
     rotation : [ 0.577349758506, -0.577350524531, -0.577350524531, 120.00001358 ]
-    jointId: 79
+    jointId: 77
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1446,7 +1410,7 @@ links:
     parent: Base
     translation : [ -71.9, 8.4, 1470.3 ]
     rotation : [ 0.577349758506, 0.577350524531, 0.577350524531, 120.00001358 ]
-    jointId: 80
+    jointId: 78
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1464,7 +1428,7 @@ links:
     parent: Base
     translation : [ -61.9, 70.4, 1483.3 ]
     rotation : [ 0.577351290555, 0.577348992481, -0.577350524531, 240.000027159 ]
-    jointId: 81
+    jointId: 79
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1482,7 +1446,7 @@ links:
     parent: Base
     translation : [ -61.9, 136.4, 1481.3 ]
     rotation : [ 0.577349758506, -0.577350524531, -0.577350524531, 120.00001358 ]
-    jointId: 82
+    jointId: 80
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1500,7 +1464,7 @@ links:
     parent: Base
     translation : [ -34.0, 86.5, 1356.4 ]
     rotation : [ 1.0, 0.0, 0.0, 90.0 ]
-    jointId: 83
+    jointId: 81
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1518,7 +1482,7 @@ links:
     parent: Base
     translation : [ -35.0, 86.3, 1275.4 ]
     rotation : [ -0.577348481797, -0.577350779871, 0.577351545897, 240.000114939 ]
-    jointId: 84
+    jointId: 82
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1536,7 +1500,7 @@ links:
     parent: Base
     translation : [ -33.7, 86.55, 1441.2 ]
     rotation : [ 1.0, 0.0, 0.0, 90.0 ]
-    jointId: 85
+    jointId: 83
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1554,7 +1518,7 @@ links:
     parent: Base
     translation : [ -72.0, 105.0, 1520.2 ]
     rotation : [ -0.577349758506, -0.577350524531, 0.577350524531, 120.00001358 ]
-    jointId: 86
+    jointId: 84
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1572,7 +1536,7 @@ links:
     parent: Base
     translation : [ -58.0, 106.2, 1521.2 ]
     rotation : [ 0.707106312093, 0.707107250279, 9.38185046295e-07, 180.000044531 ]
-    jointId: 87
+    jointId: 85
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1590,7 +1554,7 @@ links:
     parent: Base
     translation : [ -73.4, 104.2, 1636.4 ]
     rotation : [ 0.707106312093, 0.707107250279, 9.38185046295e-07, 180.000044531 ]
-    jointId: 88
+    jointId: 86
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1608,7 +1572,7 @@ links:
     parent: Base
     translation : [ 5.0, 139.3, 1373.0 ]
     rotation : [ 0.0, -1.0, 0.0, 90.0 ]
-    jointId: 89
+    jointId: 87
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1626,7 +1590,7 @@ links:
     parent: Base
     translation : [ 5.0, 71.0, 1373.0 ]
     rotation : [ 0.577349758506, -0.577350524531, -0.577350524531, 120.00001358 ]
-    jointId: 90
+    jointId: 88
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1644,7 +1608,7 @@ links:
     parent: Base
     translation : [ 5.0, 202.0, 1450.5 ]
     rotation : [ 0.577349758506, -0.577350524531, -0.577350524531, 120.00001358 ]
-    jointId: 91
+    jointId: 89
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1662,7 +1626,7 @@ links:
     parent: Base
     translation : [ -5.0, 6.0, 1450.5 ]
     rotation : [ 0.577349758506, 0.577350524531, 0.577350524531, 120.00001358 ]
-    jointId: 92
+    jointId: 90
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1680,7 +1644,7 @@ links:
     parent: Base
     translation : [ -5.0, 104.0, 1461.0 ]
     rotation : [ 0.577349758506, 0.577350524531, 0.577350524531, 120.00001358 ]
-    jointId: 93
+    jointId: 91
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1698,7 +1662,7 @@ links:
     parent: Base
     translation : [ 29.1859, 138.5, 1337.5 ]
     rotation : [ -0.577350524531, 0.577349758506, 0.577350524531, 120.00001358 ]
-    jointId: 94
+    jointId: 92
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1716,7 +1680,7 @@ links:
     parent: Base
     translation : [ 29.181, 69.0, 1337.0 ]
     rotation : [ 0.577350524531, -0.577349758506, 0.577350524531, 120.00001358 ]
-    jointId: 95
+    jointId: 93
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1734,7 +1698,7 @@ links:
     parent: Base
     translation : [ 25.181, 69.0, 1334.0 ]
     rotation : [ -1.0, 0.0, 0.0, 90.0 ]
-    jointId: 96
+    jointId: 94
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1752,7 +1716,7 @@ links:
     parent: Base
     translation : [ 29.0, 196.0, 1335.5 ]
     rotation : [ 1, 0, 0, 0.0 ]
-    jointId: 97
+    jointId: 95
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1770,7 +1734,7 @@ links:
     parent: Base
     translation : [ 29.0, 104.0, 1399.0 ]
     rotation : [ 1.0, 0.0, 0.0, 90.0 ]
-    jointId: 98
+    jointId: 96
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1788,7 +1752,7 @@ links:
     parent: Base
     translation : [ 29.0, 104.0, 1399.0 ]
     rotation : [ -9.38185046295e-07, 0.707106312093, 0.707107250279, 180.000044531 ]
-    jointId: 99
+    jointId: 97
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1806,7 +1770,7 @@ links:
     parent: Base
     translation : [ 5.0, 104.0, 1447.0 ]
     rotation : [ -9.38185046295e-07, 0.707106312093, 0.707107250279, 180.000044531 ]
-    jointId: 100
+    jointId: 98
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1824,7 +1788,7 @@ links:
     parent: Base
     translation : [ 5.0, 104.0, 1447.0 ]
     rotation : [ 1.0, 0.0, 0.0, 90.0 ]
-    jointId: 101
+    jointId: 99
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1842,7 +1806,7 @@ links:
     parent: Base
     translation : [ -40.0, -83.0, 1428.0 ]
     rotation : [ -1.0, 0.0, 0.0, 90.0 ]
-    jointId: 102
+    jointId: 100
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1860,7 +1824,7 @@ links:
     parent: Base
     translation : [ -39.0, -51.0, 1432.0 ]
     rotation : [ 1.0, 0.0, 0.0, 90.0 ]
-    jointId: 103
+    jointId: 101
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1878,7 +1842,7 @@ links:
     parent: Base
     translation : [ -60.0, -111.0, 1447.0 ]
     rotation : [ 0.577349758506, 0.577350524531, 0.577350524531, 120.00001358 ]
-    jointId: 104
+    jointId: 102
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1896,7 +1860,7 @@ links:
     parent: Base
     translation : [ -14.0, -111.0, 1447.0 ]
     rotation : [ 0.577349758506, 0.577350524531, 0.577350524531, 120.00001358 ]
-    jointId: 105
+    jointId: 103
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1914,7 +1878,7 @@ links:
     parent: Base
     translation : [ -38.3, 259.0, 1432.0 ]
     rotation : [ 9.38185046295e-07, 0.707107250279, 0.707106312093, 180.000044531 ]
-    jointId: 106
+    jointId: 104
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1932,7 +1896,7 @@ links:
     parent: Base
     translation : [ -40.5, 291.0, 1427.0 ]
     rotation : [ 0.577350524531, 0.577349758506, -0.577350524531, 120.00001358 ]
-    jointId: 107
+    jointId: 105
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1950,7 +1914,7 @@ links:
     parent: Base
     translation : [ -6.3, 320.0, 1446.5 ]
     rotation : [ 0.577349758506, -0.577350524531, -0.577350524531, 120.00001358 ]
-    jointId: 108
+    jointId: 106
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1968,7 +1932,7 @@ links:
     parent: Base
     translation : [ -52.3, 320.0, 1446.0 ]
     rotation : [ 0.577349758506, -0.577350524531, -0.577350524531, 120.00001358 ]
-    jointId: 109
+    jointId: 107
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -1986,7 +1950,7 @@ links:
     parent: Base
     translation : [ -122.0, 249.0, 1470.0 ]
     rotation : [ 0.862357526506, -0.286171992519, 0.417666238972, 99.7554806229 ]
-    jointId: 110
+    jointId: 108
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2004,7 +1968,7 @@ links:
     parent: Base
     translation : [ -122.0, -40.0, 1470.0 ]
     rotation : [ -0.230922182464, 0.695863338916, 0.680036145509, 142.749499293 ]
-    jointId: 111
+    jointId: 109
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2022,7 +1986,7 @@ links:
     parent: Base
     translation : [ -118.0, 143.0, 1501.0 ]
     rotation : [ 1.0, 0.0, 0.0, 90.0 ]
-    jointId: 112
+    jointId: 110
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2040,7 +2004,7 @@ links:
     parent: Base
     translation : [ -120.0, 213.0, 1300.0 ]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 113
+    jointId: 111
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2058,7 +2022,7 @@ links:
     parent: Base
     translation : [ -120.0, -4.0, 1300.0 ]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 114
+    jointId: 112
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2076,7 +2040,7 @@ links:
     parent: Base
     translation : [ -155.0, 160.0, 1342.0 ]
     rotation : [ 1.0, 0.0, 0.0, 90.0 ]
-    jointId: 115
+    jointId: 113
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2094,7 +2058,7 @@ links:
     parent: Base
     translation : [ -111.0, -22.0, 1235.0 ]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 116
+    jointId: 114
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2112,7 +2076,7 @@ links:
     parent: Base
     translation : [ -111.0, 229.0, 1235.0 ]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 117
+    jointId: 115
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2130,7 +2094,7 @@ links:
     parent: Base
     translation : [ -121.0, 11.5, 1259.0 ]
     rotation : [ 0.707106312093, 0.707107250279, 9.38185046295e-07, 180.000044531 ]
-    jointId: 118
+    jointId: 116
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2148,7 +2112,7 @@ links:
     parent: Base
     translation : [ -121.0, 197.0, 1259.0 ]
     rotation : [ 0.707106312093, 0.707107250279, 9.38185046295e-07, 180.000044531 ]
-    jointId: 119
+    jointId: 117
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2166,7 +2130,7 @@ links:
     parent: Base
     translation : [ -154.5, 104.0, 1212.0 ]
     rotation : [ 0.707106312093, 0.707107250279, 9.38185046295e-07, 180.000044531 ]
-    jointId: 120
+    jointId: 118
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2184,7 +2148,7 @@ links:
     parent: Base
     translation : [ -48.5, 105.4, 1650.7 ]
     rotation : [ 0.707106312093, 0.707107250279, 9.38185046295e-07, 180.000044531 ]
-    jointId: 121
+    jointId: 119
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2202,7 +2166,7 @@ links:
     parent: Base
     translation : [ 1418.0, 1193.0, 1512.0 ]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 122
+    jointId: 120
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2220,7 +2184,7 @@ links:
     parent: Base
     translation : [ 1037.0, -1327.0, 1450.0 ]
     rotation : [ 1, 0, 0, 0.0 ]
-    jointId: 123
+    jointId: 121
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2238,7 +2202,7 @@ links:
     parent: Base
     translation : [ -68.1, 104.65, 1650.0 ]
     rotation : [ 1, 0, 0, 0.0 ]
-    jointId: 124
+    jointId: 122
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2256,7 +2220,7 @@ links:
     parent: Base
     translation : [ -49.5, 105.0, 1650.7 ]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 125
+    jointId: 123
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2274,7 +2238,7 @@ links:
     parent: Base
     translation : [ -75.9, 105.5, 1708.0 ]
     rotation : [ 0.382684351714, 0.923879151703, -1.22579814363e-06, 180.000093856 ]
-    jointId: 126
+    jointId: 124
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2292,7 +2256,7 @@ links:
     parent: Base
     translation : [ -32.7, -111.4, 1401.6 ]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 127
+    jointId: 125
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2310,7 +2274,7 @@ links:
     parent: Base
     translation : [ -65.7, 117.0, 1729.1 ]
     rotation : [ 0.678599081798, 0.678598181437, 0.281083251606, 211.399785772 ]
-    jointId: 128
+    jointId: 126
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2328,7 +2292,7 @@ links:
     parent: Base
     translation : [ -79.4, 75.5, 1745.2 ]
     rotation : [ 0.178378080096, -0.910393484884, 0.373316170587, 169.433123306 ]
-    jointId: 129
+    jointId: 127
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2346,7 +2310,7 @@ links:
     parent: Base
     translation : [ -70.0, 105.0, 1738.0 ]
     rotation : [ -0.526575123958, 0.60575451704, 0.596473053804, 123.522503752 ]
-    jointId: 130
+    jointId: 128
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2364,7 +2328,7 @@ links:
     parent: Base
     translation : [ -65.0, 104.0, 1734.0 ]
     rotation : [ 0.554048964552, 0.583844972176, -0.593426316693, 122.927547912 ]
-    jointId: 131
+    jointId: 129
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2382,7 +2346,7 @@ links:
     parent: Base
     translation : [ 30.0, 105.0, 1754.0 ]
     rotation : [ -0.0616292994081, 0.704415480084, 0.707107248494, 180.000039846 ]
-    jointId: 132
+    jointId: 130
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2400,7 +2364,7 @@ links:
     parent: Base
     translation : [ 30.0, 105.0, 1750.0 ]
     rotation : [ 8.99009869444e-07, 0.708453006508, -0.70575798796, 172.93347034 ]
-    jointId: 133
+    jointId: 131
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2418,7 +2382,7 @@ links:
     parent: Base
     translation : [ 36.0, 65.0, 1760.0 ]
     rotation : [ -0.00788071573867, 0.930527900278, -0.366136205698, 174.981911016 ]
-    jointId: 134
+    jointId: 132
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2436,7 +2400,7 @@ links:
     parent: Base
     translation : [ 42.0, 139.5, 1754.5 ]
     rotation : [ -0.0403058493069, 0.923128397424, 0.382373378234, 178.087190392 ]
-    jointId: 135
+    jointId: 133
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2454,7 +2418,7 @@ links:
     parent: Base
     translation : [ -12.0, 32.0, 1620.0 ]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 136
+    jointId: 134
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2472,7 +2436,7 @@ links:
     parent: Base
     translation : [ -13.0, 174.0, 1620.0 ]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 137
+    jointId: 135
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2490,7 +2454,7 @@ links:
     parent: Base
     translation : [ 45.0, 105.0, 1725.0 ]
     rotation : [ -0.382683125915, 0.923879659447, -5.0774201851e-07, 180.000011573 ]
-    jointId: 138
+    jointId: 136
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2508,7 +2472,7 @@ links:
     parent: Base
     translation : [ 58.0, 104.5, 1625.5 ]
     rotation : [ 0.0, 0.0, 1.0, 45.0 ]
-    jointId: 139
+    jointId: 137
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2526,7 +2490,7 @@ links:
     parent: Base
     translation : [ 46.0, 104.5, 1640.0 ]
     rotation : [ 0.382683125915, 0.923879659447, 5.0774201851e-07, 180.000011573 ]
-    jointId: 140
+    jointId: 138
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2544,7 +2508,7 @@ links:
     parent: Base
     translation : [ -37.8, -107.6, 1377.2 ]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 141
+    jointId: 139
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2562,7 +2526,7 @@ links:
     parent: Base
     translation : [ -33.0, -117.0, 1376.8 ]
     rotation : [ 0.707107250279, 0.707106312093, -9.38185046295e-07, 180.000044531 ]
-    jointId: 142
+    jointId: 140
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2580,7 +2544,7 @@ links:
     parent: Base
     translation : [ -41.0, -135.5, 1308.0 ]
     rotation : [ 0.999315002237, 0.0261679621582, -0.0261679968778, 90.0392609593 ]
-    jointId: 143
+    jointId: 141
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2598,7 +2562,7 @@ links:
     parent: Base
     translation : [ -41.0, -90.5, 1308.0 ]
     rotation : [ 0.999315002237, 0.0261679621582, -0.0261679968778, 90.0392609593 ]
-    jointId: 144
+    jointId: 142
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2616,7 +2580,7 @@ links:
     parent: Base
     translation : [ -40.0, -98.0, 1208.0 ]
     rotation : [ -0.0370315337037, 0.7066222928, 0.706621256989, 175.758376483 ]
-    jointId: 145
+    jointId: 143
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2634,7 +2598,7 @@ links:
     parent: Base
     translation : [ -40.0, -143.0, 1208.0 ]
     rotation : [ -0.0370315337037, 0.7066222928, 0.706621256989, 175.758376483 ]
-    jointId: 146
+    jointId: 144
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2652,7 +2616,7 @@ links:
     parent: Base
     translation : [ -57.0, -150.5, 1132.0 ]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 147
+    jointId: 145
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2670,7 +2634,7 @@ links:
     parent: Base
     translation : [ -67.7, -116.4, 1145.1 ]
     rotation : [ 0.913545601551, -0.406736319852, 5.39655673474e-07, 180.000013144 ]
-    jointId: 148
+    jointId: 146
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2688,7 +2652,7 @@ links:
     parent: Base
     translation : [ -50.0, -100.0, 1140.0 ]
     rotation : [ 0.909961420657, -0.414692913994, 5.50212441975e-07, 180.000013689 ]
-    jointId: 149
+    jointId: 147
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2706,7 +2670,7 @@ links:
     parent: Base
     translation : [ -53.0, -100.0, 1040.0 ]
     rotation : [ 0.898794214325, -0.438370802285, 5.81628143324e-07, 180.000015387 ]
-    jointId: 150
+    jointId: 148
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2724,7 +2688,7 @@ links:
     parent: Base
     translation : [ -81.0, -126.0, 1140.0 ]
     rotation : [ 0.906307942794, -0.422617927717, 5.6072730974e-07, 180.000014245 ]
-    jointId: 151
+    jointId: 149
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2742,7 +2706,7 @@ links:
     parent: Base
     translation : [ -85.0, -126.0, 1040.0 ]
     rotation : [ 0.906307942794, -0.422617927717, 5.6072730974e-07, 180.000014245 ]
-    jointId: 152
+    jointId: 150
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2760,7 +2724,7 @@ links:
     parent: Base
     translation : [ -75.0, -106.0, 947.0 ]
     rotation : [ 0.898794214325, -0.438370802285, 5.81628143324e-07, 180.000015387 ]
-    jointId: 153
+    jointId: 151
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2778,7 +2742,7 @@ links:
     parent: Base
     translation : [ -77.0, -104.0, 865.0 ]
     rotation : [ 0.0, 0.0, 1.0, 126.0 ]
-    jointId: 154
+    jointId: 152
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2796,7 +2760,7 @@ links:
     parent: Base
     translation : [ -76.6, -105.0, 865.0 ]
     rotation : [ 0.707107250279, -0.707106312093, 9.38185046295e-07, 180.000044531 ]
-    jointId: 155
+    jointId: 153
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2814,7 +2778,7 @@ links:
     parent: Base
     translation : [ -37.2, 316.9, 1377.2 ]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 156
+    jointId: 154
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2832,7 +2796,7 @@ links:
     parent: Base
     translation : [ -32.3, 320.0, 1401.6 ]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 157
+    jointId: 155
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2850,7 +2814,7 @@ links:
     parent: Base
     translation : [ -32.7, 326.0, 1376.8 ]
     rotation : [ 0.707107250279, 0.707106312093, -9.38185046295e-07, 180.000044531 ]
-    jointId: 158
+    jointId: 156
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2868,7 +2832,7 @@ links:
     parent: Base
     translation : [ -41.0, 307.5, 1308.0 ]
     rotation : [ 0.999315002237, 0.0261679621582, -0.0261679968778, 90.0392609593 ]
-    jointId: 159
+    jointId: 157
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2886,7 +2850,7 @@ links:
     parent: Base
     translation : [ -41.0, 352.5, 1308.0 ]
     rotation : [ 0.999315002237, 0.0261679621582, -0.0261679968778, 90.0392609593 ]
-    jointId: 160
+    jointId: 158
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2904,7 +2868,7 @@ links:
     parent: Base
     translation : [ -40.0, 300.0, 1208.0 ]
     rotation : [ -0.0370315337037, 0.7066222928, 0.706621256989, 175.758376483 ]
-    jointId: 161
+    jointId: 159
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2922,7 +2886,7 @@ links:
     parent: Base
     translation : [ -40.0, 345.0, 1208.0 ]
     rotation : [ -0.0370315337037, 0.7066222928, 0.706621256989, 175.758376483 ]
-    jointId: 162
+    jointId: 160
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2940,7 +2904,7 @@ links:
     parent: Base
     translation : [ -57.0, 292.5, 1132.0 ]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 163
+    jointId: 161
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2958,7 +2922,7 @@ links:
     parent: Base
     translation : [ -66.5, 328.1, 1145.1 ]
     rotation : [ 0.406737531939, -0.913545061894, 1.21208692601e-06, 180.000090199 ]
-    jointId: 164
+    jointId: 162
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2976,7 +2940,7 @@ links:
     parent: Base
     translation : [ -51.0, 311.0, 1140.0 ]
     rotation : [ 0.390732037695, -0.920504467516, 1.22132062987e-06, 180.000092633 ]
-    jointId: 165
+    jointId: 163
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -2994,7 +2958,7 @@ links:
     parent: Base
     translation : [ -55.0, 311.0, 1040.0 ]
     rotation : [ 0.390732037695, -0.920504467516, 1.22132062987e-06, 180.000092633 ]
-    jointId: 166
+    jointId: 164
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -3012,7 +2976,7 @@ links:
     parent: Base
     translation : [ -80.0, 338.0, 1140.0 ]
     rotation : [ 0.398749967968, -0.917059683469, 1.21675010798e-06, 180.000091414 ]
-    jointId: 167
+    jointId: 165
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -3030,7 +2994,7 @@ links:
     parent: Base
     translation : [ -85.0, 339.0, 1040.0 ]
     rotation : [ 0.390732037695, -0.920504467516, 1.22132062987e-06, 180.000092633 ]
-    jointId: 168
+    jointId: 166
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -3048,7 +3012,7 @@ links:
     parent: Base
     translation : [ -78.0, 318.0, 947.0 ]
     rotation : [ 0.927183976062, 0.374606292704, -4.97025717424e-07, 180.000011071 ]
-    jointId: 169
+    jointId: 167
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -3066,7 +3030,7 @@ links:
     parent: Base
     translation : [ -79.0, 316.0, 865.0 ]
     rotation : [ 0.0, 0.0, -1.0, 134.0 ]
-    jointId: 170
+    jointId: 168
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -3084,7 +3048,7 @@ links:
     parent: Base
     translation : [ -76.6, 316.8, 865.0 ]
     rotation : [ 0.707107250279, -0.707106312093, 9.38185046295e-07, 180.000044531 ]
-    jointId: 171
+    jointId: 169
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -3102,7 +3066,7 @@ links:
     parent: Base
     translation : [ -42.0, 193.0, 1000.0 ]
     rotation : [ -0.577350524531, -0.577349758506, -0.577350524531, 120.00001358 ]
-    jointId: 172
+    jointId: 170
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -3120,7 +3084,7 @@ links:
     parent: Base
     translation : [ -1.0, 120.0, 786.0 ]
     rotation : [ 0.0, 0.0, 1.0, 90.0 ]
-    jointId: 173
+    jointId: 171
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -3138,7 +3102,7 @@ links:
     parent: Base
     translation : [ -2.0, 268.0, 897.0 ]
     rotation : [ 0.0, 0.0, 1.0, 180.0 ]
-    jointId: 174
+    jointId: 172
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -3156,7 +3120,7 @@ links:
     parent: Base
     translation : [ -94.0, 199.0, 675.0 ]
     rotation : [ 0.0, 0.0, 1.0, 180.0 ]
-    jointId: 175
+    jointId: 173
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
@@ -3174,7 +3138,7 @@ links:
     parent: Base
     translation : [ -29.0, 255.0, 566.0 ]
     rotation : [ 0, 0, 1, 180 ]
-    jointId: 176
+    jointId: 174
     jointType: revolute
     jointAxis: -Y
     jointRange: [ -0.873, 2.269 ]
