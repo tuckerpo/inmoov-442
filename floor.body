@@ -9,5 +9,5 @@ links:
     material: Ground
     elements:
       Shape:
-        geometry: { type: Box, size: [ 10.0, 10.0, 0.2 ] }
+        geometry: { type: Box, size: [ 200000.0, 200000.0, 0.2 ] }
         appearance: { material: { diffuseColor: [ 0, 0, 1 ] }}
