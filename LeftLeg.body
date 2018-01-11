@@ -8,7 +8,7 @@ links:
     name: Base
     jointType: free
     translation: [ 0, 0, 0 ]
-    rotation : [ 1, 0, 0, 0]
+    rotation : [ 0.0, 0.0, 1.0, 180.0 ]
     jointId: 0
     centerOfMass: [ 0.014070775509439625, -0.0010642631392533723, 0.018082091556018958 ]
     mass: 0.16852
@@ -20,10 +20,10 @@ links:
       Shape:
         geometry: { type: Box, size: [ 1, 1, 1 ] }
   -
-    name: AnkToesFootV2
+    name: LeftAnkToesFootV2
     parent: Base
     translation : [ 0, 0, 0 ]
-    rotation : [ 1, 0, 0, 0]
+    rotation : [ 0.0, 0.0, 1.0, 180.0 ]
     jointId: 1
     jointType: revolute
     jointAxis: -Y
@@ -36,4 +36,4 @@ links:
       1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
     elements:
       Shape:
-        geometry: { type: Resource, uri: "STLFiles/Legs-Ankle/AnkToesFootV2.stl" }
+        geometry: { type: Resource, uri: "STLFiles/Legs-Ankle/LeftAnkToesFootV2.stl" }
