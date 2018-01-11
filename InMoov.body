@@ -3043,3 +3043,57 @@ links:
     elements:
       Shape:
         geometry: { type: Resource, uri: "STLFiles/Left Hand/LeftRobpart2V4.stl" }
+  -
+    name: Rotawrist1V4Left
+    parent: Base
+    translation : [ -78.0, 318.0, 947.0 ]
+    rotation : [ 0.927183976062, 0.374606292704, -4.97025717424e-07, 180.000011071 ]
+    jointId: 169
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Rotation Wrist/InMoov-Rotational-Wrist/Rotawrist1V4.stl" }
+  -
+    name: RotaWrist2V3Left
+    parent: Base
+    translation : [ -79.0, 316.0, 865.0 ]
+    rotation : [ 0.0, 0.0, -1.0, 134.0 ]
+    jointId: 170
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Rotation Wrist/InMoov-Rotational-Wrist/RotaWrist2V3.stl" }
+  -
+    name: RotaWrist3V3Left
+    parent: Base
+    translation : [ -76.6, 316.8, 865.0 ]
+    rotation : [ 0.707107250279, -0.707106312093, 9.38185046295e-07, 180.000044531 ]
+    jointId: 171
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ -0.873, 2.269 ]
+    centerOfMass: [ 0.0015461746197516959, -0.00033796007273481838, -0.015625257207349728 ]
+    mass: 0.02905
+    inertia: [
+      1.0789525167996373e-05, -3.9905699607782306e-09, 1.7978343823012256e-06,
+      -3.9905699607782306e-09, 1.1003152501217637e-05, 4.0040500729103886e-08,
+      1.7978343823012256e-06, 4.0040500729103886e-08, 3.259107193487409e-06 ]
+    elements:
+      Shape:
+        geometry: { type: Resource, uri: "STLFiles/Rotation Wrist/InMoov-Rotational-Wrist/RotaWrist3V3.stl" }
